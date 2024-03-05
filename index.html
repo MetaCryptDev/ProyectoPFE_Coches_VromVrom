@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Mecánico</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="yodas.png" alt="Logo" width="80" height="80" class="d-inline-block align-top">
+            
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#inicio">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Inicio -->
+    <section id="inicio" class="p-5 text-center bg-light">
+        <div class="container">
+            <h1 class="mb-3">Bienvenidos a Taller Mecánico</h1>
+            <p class="lead mb-5">Tu solución para el cuidado y mantenimiento de tu vehículo.</p>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="p-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="mb-4">Sobre Nosotros</h2>
+            <p>Somos un equipo de mecánicos profesionales dedicados al mantenimiento y reparación de vehículos de todas las marcas y modelos. Contamos con años de experiencia y la tecnología necesaria para brindarte el mejor servicio.</p>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="p-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Nuestros Servicios</h2>
+            <div class="row">
+                <!-- Servicio 1 -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Servicio General</h5>
+                            <p class="card-text">Incluye diagnóstico, mantenimiento preventivo y correctivo de tu vehículo.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Cambio de Aceite</h5>
+                            <p class="card-text">Utilizamos los mejores productos para garantizar el buen funcionamiento de tu motor.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Reparaciones Específicas</h5>
+                            <p class="card-text">Solucionamos cualquier problema específico que tenga tu vehículo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="p-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="mb-4">Contacto</h2>
+            <p>Para más información o para programar una cita, por favor completa el siguiente formulario:</p>
+            <!-- Formulario de contacto -->
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            <h6>© 2024 Taller XYZ</h6>
+            <a class="text-dark" href="#">Política de Privacidad</a> | 
+            <a class="text-dark" href="#">Términos de Servicio</a> | 
+            <a class="text-dark" href="#">Contáctanos</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
