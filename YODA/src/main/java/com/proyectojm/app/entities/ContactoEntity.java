@@ -21,23 +21,21 @@ public class ContactoEntity implements Serializable{
 	@Column(name = "ID_CONTACTO")
 	private Integer id;
 	
-	@Id
 	@Column(name = "NOMBRE")
 	private String nombre;
 	
-	@Id
 	@Column(name = "APELLIDOS")
 	private String apellidos;
 	
-	@Id
+
 	@Column(name = "MAIL")
 	private String mail;
 	
-	@Id
+
 	@Column(name = "CONSULTA")
 	private String consulta;
 	
-	@Id
+
 	@Column(name = "CONTESTADO")
 	private Integer contestado;
 
