@@ -6,7 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-//holi
+//holi hiiiiiii
 @Entity
 @Table(name="ROL")
 public class RolEntity implements Serializable{
