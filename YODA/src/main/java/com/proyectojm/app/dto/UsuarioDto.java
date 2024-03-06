@@ -1,4 +1,4 @@
-package com.proyectojm.app.entities;
+package com.proyectojm.app.dto;
 
 import java.io.Serializable;
 
@@ -9,39 +9,29 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "USUARIO")
-public class UsuarioEntity implements Serializable {
+public class UsuarioDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name = "ID_USUARIO")
 	private String id_usuario;
 
-	@Column(name = "NOMBRE")
 	private String nombre;
 
-	@Column(name = "APELLIDO1")
 	private String apellido1;
 
-	@Column(name = "APELLIDO2")
 	private String apellido2;
 
-	@Column(name = "MAIL")
 	private String mail;
 
-	@Column(name = "PASSWD")
 	private String passwd;
 
-	@Column(name = "ID_ROL")
-	private RolEntity rol;
+	private RolDto rol;
 
-	public UsuarioEntity() {
+	public UsuarioDto() {
 	}
 
-	public UsuarioEntity(String id_usuario, String nombre, String apellido1, String apellido2, String mail,
-			String passwd, RolEntity rol) {
+	public UsuarioDto(String id_usuario, String nombre, String apellido1, String apellido2, String mail, String passwd,
+			RolDto rol) {
 		this.id_usuario = id_usuario;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
@@ -99,11 +89,11 @@ public class UsuarioEntity implements Serializable {
 		this.passwd = passwd;
 	}
 
-	public RolEntity getRol() {
+	public RolDto getRol() {
 		return rol;
 	}
 
-	public void setRol(RolEntity rol) {
+	public void setRol(RolDto rol) {
 		this.rol = rol;
 	}
 
