@@ -9,8 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "CONTACTO")
-public class ContactoEntity implements Serializable{
-
+public class ContactoEntity implements Serializable {
 
 	/**
 	 * 
@@ -20,6 +19,7 @@ public class ContactoEntity implements Serializable{
 	@Id
 	@Column(name = "ID_CONTACTO")
 	private Integer id;
+
 	
 	@Column(name = "NOMBRE")
 	private String nombre;
@@ -35,7 +35,6 @@ public class ContactoEntity implements Serializable{
 	@Column(name = "CONSULTA")
 	private String consulta;
 	
-
 	@Column(name = "CONTESTADO")
 	private Integer contestado;
 
@@ -102,5 +101,5 @@ public class ContactoEntity implements Serializable{
 	public void setContestado(Integer contestado) {
 		this.contestado = contestado;
 	}
-	
+
 }

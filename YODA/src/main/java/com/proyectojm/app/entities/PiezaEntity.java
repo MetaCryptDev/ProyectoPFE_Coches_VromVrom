@@ -8,8 +8,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="PIEZA")
-public class PiezaEntity implements Serializable{
+@Table(name = "PIEZA")
+public class PiezaEntity implements Serializable {
+
 
 	/**
 	 * 
