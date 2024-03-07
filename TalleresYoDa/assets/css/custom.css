@@ -112,10 +112,24 @@ section .container {
 /* Fin Ofertas */
 
 /*Botones servicios*/
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #69bb7e;
+/*Botones servicios*/
+.nav-pills .nav-link {
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
+
+.nav-pills .nav-link:hover {
+    background-color: #5a9e6e;
+    border-color: #5a9e6e;
+    transform: scale(1.05);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: #69bb7e;
+    color: #fff;
+    transform: scale(1);
+}
+
 
 #btnServicios {
     background-color: #69bb7e;
@@ -129,8 +143,6 @@ section .container {
     box-shadow: 0 0 15px rgba(90, 158, 110, 0.7);
     transform: scale(1.05); /* Escala el botón al 105% */
 }
-
-
 
 /* zona contacto */
 
