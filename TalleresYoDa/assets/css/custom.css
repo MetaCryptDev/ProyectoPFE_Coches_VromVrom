@@ -24,9 +24,11 @@ section .container {
 .bg-light .heading h2 {
     color: #000;
 }
+
 .bg-light .title {
     color: #111;
 }
+
 .bg-light p {
     color: #333;
 }
@@ -38,11 +40,57 @@ section .container {
 .bg-dark .heading h2 {
     color: #ffff;
 }
+
 .bg-dark .title {
     color: #fff;
 }
+
 .bg-dark p {
     color: #aaa;
 }
 
+/*Inicio cabezera*/
+.bg-image {
+    background-image: url('../../imagenes/fondoCabecera.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
+/*Fin cabezera*/
+
+
+/* Inicio Ofertas */
+.ofertas {
+    color: #FDFEFE !important;
+}
+
+.ofertas p {
+    color: #FDFEFE !important;
+}
+
+.ofertas h1 {
+    font-weight: bolder !important;
+}
+
+.fondoOferta {
+    background-color: #9bf36e !important;
+    color: #003869 !important;
+}
+
+.botonOferta {
+    background-color: #003869 !important;
+    color: #9bf36e !important;
+    border-color: #9bf36e !important;
+}
+
+.botonOferta:hover {
+    background-color: #9bf36e !important;
+    color: #003869 !important;
+    border-color: #003869 !important;
+}
+
+.bg-secondary{
+    border-radius: 1.5% !important;
+}
+
+/* Fin Ofertas */
