@@ -92,5 +92,21 @@ section .container {
 .bg-secondary{
     border-radius: 1.5% !important;
 }
+.cabecera {
+    position: relative; 
+  
+    width: 100% !important;
+   align-items: center;
+}
+
+.socialmedia {
+    position: absolute;
+    width: 100%; /* Asegúrate de que sea 100%, no 150% */
+    bottom: 3%; /* Ajusta según sea necesario para la posición desde la parte inferior */
+    
+    text-align: center;
+}
+
+
 
 /* Fin Ofertas */
