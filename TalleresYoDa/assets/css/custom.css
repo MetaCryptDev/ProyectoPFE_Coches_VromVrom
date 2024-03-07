@@ -176,3 +176,20 @@ section .container {
 .bootstrap-datetimepicker-widget table td.today::before {
     border-bottom-color: var(--primary);
 }
+
+.contacto{
+    background-color: #003869 !important;
+}
+
+.btnContacto{
+
+    background-color: #9bf36e !important;
+    color: #003869 !important;
+    border-color: #003869 !important;
+}
+
+.btnContacto:hover {
+    background-color: #5a9e6e !important;
+    color: #FDFEFE !important;
+    
+}
