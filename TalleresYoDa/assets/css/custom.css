@@ -94,3 +94,9 @@ section .container {
 }
 
 /* Fin Ofertas */
+
+/*Botones servicios*/
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #69bb7e;
+}
