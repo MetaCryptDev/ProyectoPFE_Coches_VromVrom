@@ -1,4 +1,4 @@
-package com.proyectojm.app.dao;
+package com.proyectojm.app.dto;
 
 import java.io.Serializable;
 

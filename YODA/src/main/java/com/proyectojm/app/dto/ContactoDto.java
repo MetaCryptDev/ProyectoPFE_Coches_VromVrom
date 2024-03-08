@@ -1,4 +1,4 @@
-package com.proyectojm.app.dao;
+package com.proyectojm.app.dto;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "CONTACTO")
-public class ContactoDao implements Serializable {
+public class ContactoDto implements Serializable {
 
 	/**
 	 * 
@@ -37,12 +37,12 @@ public class ContactoDao implements Serializable {
 	
 	private Integer contestado;
 
-	public ContactoDao() {
+	public ContactoDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContactoDao(Integer id, String nombre, String apellidos, String mail, String consulta,
+	public ContactoDto(Integer id, String nombre, String apellidos, String mail, String consulta,
 			Integer contestado) {
 		super();
 		this.id = id;

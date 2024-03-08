@@ -1,4 +1,4 @@
-package com.proyectojm.app.dao;
+package com.proyectojm.app.dto;
 
 import java.io.Serializable;
 
@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="TALLER")
-public class TallerDao implements Serializable{
+public class TallerDto implements Serializable{
 
 	/**
 	 * 
@@ -25,12 +25,12 @@ public class TallerDao implements Serializable{
 	
 	private String descripcion;
 
-	public TallerDao() {
+	public TallerDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TallerDao(Integer id, String cIF, String descripcion) {
+	public TallerDto(Integer id, String cIF, String descripcion) {
 		super();
 		this.id = id;
 		CIF = cIF;
