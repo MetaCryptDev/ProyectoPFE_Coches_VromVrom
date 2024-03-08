@@ -13,7 +13,7 @@ public class UsuarioDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String id_usuario;
+	private Integer id_usuario;
 
 	private String nombre;
 
@@ -30,7 +30,7 @@ public class UsuarioDto implements Serializable {
 	public UsuarioDto() {
 	}
 
-	public UsuarioDto(String id_usuario, String nombre, String apellido1, String apellido2, String mail, String passwd,
+	public UsuarioDto(Integer id_usuario, String nombre, String apellido1, String apellido2, String mail, String passwd,
 			RolDto rol) {
 		this.id_usuario = id_usuario;
 		this.nombre = nombre;
@@ -41,11 +41,11 @@ public class UsuarioDto implements Serializable {
 		this.rol = rol;
 	}
 
-	public String getId_usuario() {
+	public Integer getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(String id_usuario) {
+	public void setId_usuario(Integer id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 

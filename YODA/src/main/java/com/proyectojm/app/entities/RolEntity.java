@@ -17,7 +17,7 @@ public class RolEntity implements Serializable {
 
 	@Id
 	@Column(name = "ID_ROL")
-	private String id_rol;
+	private Integer id_rol;
 	@Column(name = "DESCRIPCION")
 	private String descripcion;
 
@@ -25,17 +25,17 @@ public class RolEntity implements Serializable {
 		super();
 	}
 
-	public RolEntity(String id_rol, String descripcion) {
+	public RolEntity(Integer id_rol, String descripcion) {
 		super();
 		this.id_rol = id_rol;
 		this.descripcion = descripcion;
 	}
 
-	public String getId_rol() {
+	public Integer getId_rol() {
 		return id_rol;
 	}
 
-	public void setId_rol(String id_rol) {
+	public void setId_rol(Integer id_rol) {
 		this.id_rol = id_rol;
 	}
 

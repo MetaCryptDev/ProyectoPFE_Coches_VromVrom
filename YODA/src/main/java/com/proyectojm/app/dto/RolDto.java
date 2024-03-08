@@ -11,24 +11,24 @@ public class RolDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String id_rol;
+	private Integer id_rol;
 	private String descripcion;
 
 	public RolDto() {
 		super();
 	}
 
-	public RolDto(String id_rol, String descripcion) {
+	public RolDto(Integer id_rol, String descripcion) {
 		super();
 		this.id_rol = id_rol;
 		this.descripcion = descripcion;
 	}
 
-	public String getId_rol() {
+	public Integer getId_rol() {
 		return id_rol;
 	}
 
-	public void setId_rol(String id_rol) {
+	public void setId_rol(Integer id_rol) {
 		this.id_rol = id_rol;
 	}
 

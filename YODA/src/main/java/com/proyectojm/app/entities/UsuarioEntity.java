@@ -17,7 +17,7 @@ public class UsuarioEntity implements Serializable {
 
 	@Id
 	@Column(name = "ID_USUARIO")
-	private String id_usuario;
+	private Integer id_usuario;
 
 	@Column(name = "NOMBRE")
 	private String nombre;
@@ -40,7 +40,7 @@ public class UsuarioEntity implements Serializable {
 	public UsuarioEntity() {
 	}
 
-	public UsuarioEntity(String id_usuario, String nombre, String apellido1, String apellido2, String mail,
+	public UsuarioEntity(Integer id_usuario, String nombre, String apellido1, String apellido2, String mail,
 			String passwd, RolEntity rol) {
 		this.id_usuario = id_usuario;
 		this.nombre = nombre;
@@ -51,11 +51,11 @@ public class UsuarioEntity implements Serializable {
 		this.rol = rol;
 	}
 
-	public String getId_usuario() {
+	public Integer getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(String id_usuario) {
+	public void setId_usuario(Integer id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 
