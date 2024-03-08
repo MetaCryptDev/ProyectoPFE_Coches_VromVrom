@@ -145,13 +145,19 @@ section .container {
 /* zona contacto */
 
 #about{
-    background-image: url('../../imagenes/image.png');
+    
     background-size: cover;
     background-position: center;
 }
 
 .contacto{
     color: white !important;
+
+}
+.section-contacto{
+    background-image: url('../../imagenes/image.png');
+    background-size: cover;
+    background-position: center;
 
 }
 
