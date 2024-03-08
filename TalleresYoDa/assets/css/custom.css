@@ -55,7 +55,6 @@ section .container {
     background-size: cover;
     background-position: center;
 }
-
 /*Fin cabezera*/
 
 
@@ -106,13 +105,10 @@ section .container {
     
     text-align: center;
 }
-
-
-
 /* Fin Ofertas */
 
-/*Botones servicios*/
-/*Botones servicios*/
+
+/*Inicio Botones servicios*/
 .nav-pills .nav-link {
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
@@ -143,53 +139,23 @@ section .container {
     box-shadow: 0 0 15px rgba(90, 158, 110, 0.7);
     transform: scale(1.05); /* Escala el botón al 105% */
 }
+/*Fin Botones servicios*/
+
 
 /* zona contacto */
 
-.booking {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../imagenes/carousel-bg-2.jpg) center center no-repeat;
+#about{
+    background-image: url('../../imagenes/image.png');
     background-size: cover;
-}
-
-.bootstrap-datetimepicker-widget.bottom {
-    top: auto !important;
-}
-
-.bootstrap-datetimepicker-widget .table * {
-    border-bottom-width: 0px;
-}
-
-.bootstrap-datetimepicker-widget .table th {
-    font-weight: 500;
-}
-
-.bootstrap-datetimepicker-widget.dropdown-menu {
-    padding: 10px;
-    border-radius: 2px;
-}
-
-.bootstrap-datetimepicker-widget table td.active,
-.bootstrap-datetimepicker-widget table td.active:hover {
-    background: var(--primary);
-}
-
-.bootstrap-datetimepicker-widget table td.today::before {
-    border-bottom-color: var(--primary);
+    background-position: center;
 }
 
 .contacto{
-    background-color: #003869 !important;
+    color: white !important;
+
 }
 
-.btnContacto{
-
-    background-color: #9bf36e !important;
-    color: #003869 !important;
-    border-color: #003869 !important;
+.texto-form{
+    color:black !important;
 }
-
-.btnContacto:hover {
-    background-color: #5a9e6e !important;
-    color: #FDFEFE !important;
-    
-}
+/*Fin contacto*/
