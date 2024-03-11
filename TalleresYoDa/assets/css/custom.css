@@ -180,6 +180,13 @@ section .container {
 
 }
 
+.section-cita{
+    background-image: url('../../imagenes/cita.jpeg');
+    background-size: cover;
+    background-position: center;
+
+}
+
 .texto-form{
     color:black !important;
 }
