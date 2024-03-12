@@ -237,3 +237,28 @@ section .container {
     padding: 12px;
  }
 /* Fin de la Vista de Admin */
+
+
+/* Inicio Inventario */ 
+.inventario {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 48px;
+    grid-row-gap: 48px;
+    padding-bottom: 3rem;
+    }
+    
+    .card-body{
+        background-color: #daffca61;
+    }
+    
+    .buscador{
+        background-color: #b9bcc3 !important;
+        border-radius: 5px !important;
+    }
+    
+    .top-buscador{
+        width: 90% !important;
+    }
+    
+    /* Fin Inventario */
