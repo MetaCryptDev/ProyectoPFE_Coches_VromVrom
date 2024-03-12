@@ -35,13 +35,13 @@ public class UsuarioEntity implements Serializable {
 	private String passwd;
 
 	@Column(name = "ID_ROL")
-	private RolEntity rol;
+	private Integer rol;
 
 	public UsuarioEntity() {
 	}
 
 	public UsuarioEntity(Integer id_usuario, String nombre, String apellido1, String apellido2, String mail,
-			String passwd, RolEntity rol) {
+			String passwd, Integer rol) {
 		this.id_usuario = id_usuario;
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
@@ -99,11 +99,11 @@ public class UsuarioEntity implements Serializable {
 		this.passwd = passwd;
 	}
 
-	public RolEntity getRol() {
+	public Integer getRol() {
 		return rol;
 	}
 
-	public void setRol(RolEntity rol) {
+	public void setRol(Integer rol) {
 		this.rol = rol;
 	}
 
