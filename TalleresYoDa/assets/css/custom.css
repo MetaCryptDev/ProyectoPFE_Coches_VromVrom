@@ -219,5 +219,15 @@ section .container {
 
 /* Vista de Admin */
   
+ #textoBoton{
+    color:black;
+    text-align: center;
+ }
 
+ #volver{
+    color:white;
+    background-color:#69bb7e;
+    border-radius: 2%;
+    padding: 12px;
+ }
 /* Fin de la Vista de Admin */
