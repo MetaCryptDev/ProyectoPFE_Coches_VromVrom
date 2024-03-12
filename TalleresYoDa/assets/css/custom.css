@@ -49,13 +49,19 @@ section .container {
     color: #aaa;
 }
 
-/*Inicio cabezera*/
+/*Inicio cabecera*/
 .bg-image {
     background-image: url('../../imagenes/fondoCabecera.jpg');
     background-size: cover;
     background-position: center;
 }
 
+/* #menuNavBar {
+    display: grid !important;
+    grid-template-rows: 1fr !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    min-width: 70%;
+} */
 
 #login {
     position: absolute;
@@ -71,10 +77,10 @@ section .container {
     background-color: #5a9e6e;
     border-color: #5a9e6e;
     box-shadow: 0 0 15px rgba(90, 158, 110, 0.7);
-    transform: scale(1.05); /* Escala el botón al 105% */
+    transform: scale(1.05);
   }
 
-/*Fin cabezera*/
+/*Fin cabecera*/
 
 
 /* Inicio Ofertas */
@@ -119,8 +125,8 @@ section .container {
 
 .socialmedia {
     position: absolute;
-    width: 100%; /* Asegúrate de que sea 100%, no 150% */
-    bottom: 3%; /* Ajusta según sea necesario para la posición desde la parte inferior */
+    width: 100%;
+    bottom: 3%;
     
     text-align: center;
 }
@@ -156,7 +162,7 @@ section .container {
     background-color: #5a9e6e;
     border-color: #5a9e6e;
     box-shadow: 0 0 15px rgba(90, 158, 110, 0.7);
-    transform: scale(1.05); /* Escala el botón al 105% */
+    transform: scale(1.05);
 }
 /*Fin Botones servicios*/
 
