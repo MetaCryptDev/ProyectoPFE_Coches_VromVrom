@@ -21,11 +21,9 @@ public class PiezaEntity implements Serializable {
 	@Column(name = "ID_PIEZA")
 	private Integer id;
 	
-	@Id
 	@Column(name = "DESCRIPCION")
 	private String descripcion;
 	
-	@Id
 	@Column(name = "COSTE")
 	private Integer coste;
 
