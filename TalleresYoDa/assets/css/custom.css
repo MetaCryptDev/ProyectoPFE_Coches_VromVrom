@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Starjedi';
+    src: url('../webfonts/Starjout.ttf') format('truetype');
+  }
+  
+#title {
+    font-family: 'Starjedi' !important;
+  }
+
+
 section {
     min-height: 85vh;
     display: flex;
