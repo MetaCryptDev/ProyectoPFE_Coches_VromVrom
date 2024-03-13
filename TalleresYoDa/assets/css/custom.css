@@ -433,10 +433,10 @@ p#start
     -ms-transform: perspective(300px) rotateX(8deg);
     -o-transform: perspective(300px) rotateX(8deg);
     transform: perspective(300px) rotateX(8deg);
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    z-index: 1000;
+    overflow-y: scroll; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+   
   }
   #titles::-webkit-scrollbar {
     display: none; 
