@@ -416,7 +416,7 @@ p#start
 #titles {
     position: absolute;
     width: 80%; /* Ajusta el ancho como un porcentaje de la ventana de visualización */
-    height: 400%; /* Mantén o ajusta la altura según sea necesario */
+    height: 100%; /* Mantén o ajusta la altura según sea necesario */
     bottom: 10%;
     left: 50%;
     margin-left: -40%; /* Esto debe ser la mitad del ancho para mantenerlo centrado */
@@ -428,11 +428,11 @@ p#start
     -ms-transform-origin: 50% 100%;
     -o-transform-origin: 50% 100%;
     transform-origin: 50% 100%;
-    -webkit-transform: perspective(300px) rotateX(25deg);
-    -moz-transform: perspective(300px) rotateX(25deg);
-    -ms-transform: perspective(300px) rotateX(25deg);
-    -o-transform: perspective(300px) rotateX(25deg);
-    transform: perspective(300px) rotateX(25deg);
+    -webkit-transform: perspective(300px) rotateX(8deg);
+    -moz-transform: perspective(300px) rotateX(8deg);
+    -ms-transform: perspective(300px) rotateX(8deg);
+    -o-transform: perspective(300px) rotateX(8deg);
+    transform: perspective(300px) rotateX(8deg);
   }
 
 #titles:after
@@ -443,11 +443,7 @@ p#start
 	right: 0;
 	top: 0;
 	bottom: 60%;
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-	background-image: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-	background-image: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-	background-image: -o-linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+
 	pointer-events: none;
 }
 
@@ -470,6 +466,7 @@ p#start
 
 #titlecontent
 {
+
 	position: absolute;
 	top: 100%;
 	-webkit-animation: scroll 100s linear 4s infinite;
@@ -477,6 +474,11 @@ p#start
 	-ms-animation: scroll 100s linear 4s infinite;
 	-o-animation: scroll 100s linear 4s infinite;
 	animation: scroll 100s linear 4s infinite;
+}
+
+#titles p{
+    font-size: 200px !important;
+    color: #ff6 !important;
 }
 
 /* animation */
