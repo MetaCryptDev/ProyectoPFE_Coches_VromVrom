@@ -82,7 +82,7 @@ section .container {
 
   .horas {
     animation: neonAnim 2s alternate-reverse infinite;
-    color: #2EFF6D;
+    color: #2EFF6D !important;
     font-size: 19px;
 }
 @keyframes neonAnim {
