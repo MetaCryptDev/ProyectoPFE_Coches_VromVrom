@@ -84,6 +84,7 @@ section .container {
     animation: neonAnim 2s alternate-reverse infinite;
     color: #2EFF6D !important;
     font-size: 19px;
+    font-weight: bolder !important;
 }
 @keyframes neonAnim {
     from {
