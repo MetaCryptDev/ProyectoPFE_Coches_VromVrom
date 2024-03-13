@@ -80,7 +80,29 @@ section .container {
     transform: scale(1.05);
   }
 
+  .horas {
+    animation: neonAnim 2s alternate-reverse infinite;
+    color: #2EFF6D;
+    font-size: 19px;
+}
+@keyframes neonAnim {
+    from {
+        text-shadow:
+          0 0 11px rgba(46, 255, 109, .7),
+          0 0 41px rgba(46, 255, 109, .7),
+          0 0 101px rgba(46, 255, 109, .7);
+      }
+      to {
+        text-shadow:
+          0 0 6px rgba(46, 255, 109, .7),
+          0 0 21px rgba(46, 255, 109, .7),
+          0 0 61px rgba(46, 255, 109, .7);
+      }
+}
+
 /*Fin cabecera*/
+
+
 
 
 /* Inicio Ofertas */
