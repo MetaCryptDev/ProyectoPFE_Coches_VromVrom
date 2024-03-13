@@ -417,7 +417,7 @@ p#start
     position: absolute;
     width: 80%; /* Ajusta el ancho como un porcentaje de la ventana de visualización */
     height: 100%; /* Mantén o ajusta la altura según sea necesario */
-    bottom: 10%;
+    bottom: 18%;
     left: 50%;
     margin-left: -40%; /* Esto debe ser la mitad del ancho para mantenerlo centrado */
     font-size: 400%; /* Ajusta el tamaño del texto basado en el ancho de la ventana de visualización */
@@ -433,8 +433,12 @@ p#start
     -ms-transform: perspective(300px) rotateX(8deg);
     -o-transform: perspective(300px) rotateX(8deg);
     transform: perspective(300px) rotateX(8deg);
+    scrollbar-width: none; / Para Firefox /
+    -ms-overflow-style: none; / Para Internet Explorer 10+ /
   }
-
+  #titles::-webkit-scrollbar {
+    display: none; / Para Chrome, Safari y Opera */
+  }
 #titles:after
 {
 	position: absolute;
@@ -477,7 +481,7 @@ p#start
 }
 
 #titles p{
-    font-size: 200px !important;
+    font-size: 50px !important;
     color: #ff6 !important;
 }
 
