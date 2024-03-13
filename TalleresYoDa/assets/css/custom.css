@@ -93,22 +93,22 @@ section .container {
 
   .horas {
     animation: neonAnim 2s alternate-reverse infinite;
-    color: #2EFF6D !important;
+    color: rgb(255, 255, 102) !important;
     font-size: 19px;
     font-weight: bolder !important;
 }
 @keyframes neonAnim {
     from {
         text-shadow:
-          0 0 11px rgba(46, 255, 109, .7),
-          0 0 41px rgba(46, 255, 109, .7),
-          0 0 101px rgba(46, 255, 109, .7);
+          0 0 11px rgba(255, 255, 102, .7),
+          0 0 41px rgba(255, 255, 102, .7),
+          0 0 101px rgba(255, 255, 102, .7);
       }
       to {
         text-shadow:
-          0 0 6px rgba(46, 255, 109, .7),
-          0 0 21px rgba(46, 255, 109, .7),
-          0 0 61px rgba(46, 255, 109, .7);
+          0 0 6px rgba(255, 255, 102, .7),
+          0 0 21px rgba(255, 255, 102, .7),
+          0 0 61px rgba(255, 255, 102, .7);
       }
 }
 
@@ -433,12 +433,15 @@ p#start
     -ms-transform: perspective(300px) rotateX(8deg);
     -o-transform: perspective(300px) rotateX(8deg);
     transform: perspective(300px) rotateX(8deg);
-    scrollbar-width: none; / Para Firefox /
-    -ms-overflow-style: none; / Para Internet Explorer 10+ /
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    z-index: 1000;
   }
   #titles::-webkit-scrollbar {
-    display: none; / Para Chrome, Safari y Opera */
+    display: none; 
   }
+
 #titles:after
 {
 	position: absolute;
