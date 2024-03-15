@@ -173,21 +173,21 @@ section .container {
 }
 
 .nav-pills .nav-link:hover {
-    background-color: #5a9e6e;
+    background-color: #5a9e6e !important;
     border-color: #5a9e6e;
     transform: scale(1.05);
 }
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-    background-color: #69bb7e;
+    background-color: #69bb7e !important;
     color: #fff;
     transform: scale(1);
 }
 
 
 #btnServicios {
-    background-color: #69bb7e;
+    background-color: #69bb7e !important;
     border-color: #69bb7e;
     transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
