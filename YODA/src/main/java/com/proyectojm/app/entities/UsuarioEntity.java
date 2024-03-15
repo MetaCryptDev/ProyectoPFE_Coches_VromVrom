@@ -5,106 +5,93 @@ import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "USUARIO")
 public class UsuarioEntity implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@Column(name = "ID_USUARIO")
-	private Integer id_usuario;
+    @Id
+    @Column(name = "ID_USUARIO")
+    private Integer idUsuario;
 
-	@Column(name = "NOMBRE")
-	private String nombre;
+    @Column(name = "NOMBRE")
+    private String nombre;
 
-	@Column(name = "APELLIDO1")
-	private String apellido1;
+    @Column(name = "APELLIDO")
+    private String apellido;
 
-	@Column(name = "APELLIDO2")
-	private String apellido2;
+    @Column(name = "TELEFONO")
+    private String telefono;
 
-	@Column(name = "MAIL")
-	private String mail;
+    @Column(name = "MAIL")
+    private String mail;
 
-	@Column(name = "PASSWD")
-	private String passwd;
+    @Column(name = "PASSWD")
+    private String passwd;
 
-	@Column(name = "ID_ROL")
-	private Integer rol;
+    // Constructor vacío
+    public UsuarioEntity() {
+    }
 
-	public UsuarioEntity() {
-	}
+    // Constructor con todos los campos
+    public UsuarioEntity(Integer idUsuario, String nombre, String apellido, String telefono, String mail, String passwd) {
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.mail = mail;
+        this.passwd = passwd;
+    }
 
-	public UsuarioEntity(Integer id_usuario, String nombre, String apellido1, String apellido2, String mail,
-			String passwd, Integer rol) {
-		this.id_usuario = id_usuario;
-		this.nombre = nombre;
-		this.apellido1 = apellido1;
-		this.apellido2 = apellido2;
-		this.mail = mail;
-		this.passwd = passwd;
-		this.rol = rol;
-	}
+    // Getters y setters
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
 
-	public Integer getId_usuario() {
-		return id_usuario;
-	}
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-	public void setId_usuario(Integer id_usuario) {
-		this.id_usuario = id_usuario;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getApellido() {
+        return apellido;
+    }
 
-	public String getApellido1() {
-		return apellido1;
-	}
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
-	public void setApellido1(String apellido1) {
-		this.apellido1 = apellido1;
-	}
+    public String getTelefono() {
+        return telefono;
+    }
 
-	public String getApellido2() {
-		return apellido2;
-	}
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
-	public void setApellido2(String apellido2) {
-		this.apellido2 = apellido2;
-	}
+    public String getMail() {
+        return mail;
+    }
 
-	public String getMail() {
-		return mail;
-	}
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
+    public String getPasswd() {
+        return passwd;
+    }
 
-	public String getPasswd() {
-		return passwd;
-	}
-
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
-	}
-
-	public Integer getRol() {
-		return rol;
-	}
-
-	public void setRol(Integer rol) {
-		this.rol = rol;
-	}
-
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
 }

@@ -24,82 +24,80 @@ public class ContactoEntity implements Serializable {
 	@Column(name = "NOMBRE")
 	private String nombre;
 	
-	@Column(name = "APELLIDOS")
-	private String apellidos;
-	
 
 	@Column(name = "MAIL")
 	private String mail;
 	
 
-	@Column(name = "CONSULTA")
-	private String consulta;
+	@Column(name = "MOTIVO")
+	private String motivo;
 	
-	@Column(name = "CONTESTADO")
-	private Integer contestado;
+	@Column(name = "MENSAJE")
+	private Integer mensaje;
 
-	public ContactoEntity() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public ContactoEntity(Integer id, String nombre, String apellidos, String mail, String consulta,
-			Integer contestado) {
+	
+	public ContactoEntity(Integer id, String nombre, String mail, String motivo, Integer mensaje) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.apellidos = apellidos;
 		this.mail = mail;
-		this.consulta = consulta;
-		this.contestado = contestado;
+		this.motivo = motivo;
+		this.mensaje = mensaje;
 	}
+
+	
+	public ContactoEntity() {
+	
+	}
+
 
 	public Integer getId() {
 		return id;
 	}
 
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 
 	public String getNombre() {
 		return nombre;
 	}
 
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
 
 	public String getMail() {
 		return mail;
 	}
 
+
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
 
-	public String getConsulta() {
-		return consulta;
+
+	public String getMotivo() {
+		return motivo;
 	}
 
-	public void setConsulta(String consulta) {
-		this.consulta = consulta;
+
+	public void setMotivo(String motivo) {
+		this.motivo = motivo;
 	}
 
-	public Integer getContestado() {
-		return contestado;
+
+	public Integer getMensaje() {
+		return mensaje;
 	}
 
-	public void setContestado(Integer contestado) {
-		this.contestado = contestado;
+
+	public void setMensaje(Integer mensaje) {
+		this.mensaje = mensaje;
 	}
 
 }
