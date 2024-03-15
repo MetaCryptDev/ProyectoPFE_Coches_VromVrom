@@ -7,7 +7,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['../assets/css/custom.css','../assets/css/templatemo.css','../assets/css/bootstrap.min.css','../assets/css/fontawesome.css'],
+  styleUrls: ['../assets/css/custom.css','../assets/css/bootstrap.min.css','../assets/css/templatemo.css','../assets/css/fontawesome.css','../assets/css/fontawesome.min.css'],
 })
 export class AppComponent {
   title = 'angular-17-app';
