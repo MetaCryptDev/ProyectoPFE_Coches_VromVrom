@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import bootstrap from '../main.server';
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,4 +11,5 @@ import bootstrap from '../main.server';
 })
 export class AppComponent {
   title = 'angular-17-app';
+  imagen = "../imagenes/logo.png"
 }

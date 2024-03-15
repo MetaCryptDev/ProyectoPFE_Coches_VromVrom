@@ -62,7 +62,7 @@ section .container {
 
 /*Inicio cabecera*/
 .bg-image {
-    background-image: url('../../imagenes/fondoCabecera.jpg');
+    background-image: url('../imagenes/fondoCabecera.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -214,14 +214,14 @@ section .container {
 
 }
 .section-contacto{
-    background-image: url('../../imagenes/image.png');
+    background-image: url('../imagenes/image.png');
     background-size: cover;
     background-position: center;
 
 }
 
 .section-cita{
-    background-image: url('../../imagenes/cita.jpeg');
+    background-image: url('../imagenes/cita.jpeg');
     background-size: cover;
     background-position: center;
 
