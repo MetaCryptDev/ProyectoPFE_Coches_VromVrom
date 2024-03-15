@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import bootstrap from '../main.server';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['../assets/css/custom.css','../assets/css/templatemo.css','../assets/css/bootstrap.min.css','../assets/css/fontawesome.css'],
 })
 export class AppComponent {
   title = 'angular-17-app';
