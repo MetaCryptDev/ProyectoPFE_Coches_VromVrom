@@ -9,8 +9,6 @@ import jakarta.persistence.Table;
 
 
 public class PiezaDto implements Serializable {
-
-
 	/**
 	 * 
 	 */

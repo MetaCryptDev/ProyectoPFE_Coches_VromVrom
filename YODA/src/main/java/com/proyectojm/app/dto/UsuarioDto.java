@@ -2,99 +2,76 @@ package com.proyectojm.app.dto;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-
 public class UsuarioDto implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
 
-	private static final long serialVersionUID = 1L;
+    private Integer idUsuario;
+    private String nombre;
+    private String apellido;
+    private String telefono;
+    private String mail;
+    private String passwd;
 
-	private Integer id_usuario;
+    public UsuarioDto() {
+        super();
+    }
 
-	private String nombre;
+    public UsuarioDto(Integer idUsuario, String nombre, String apellido, String telefono, String mail, String passwd) {
+        super();
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.mail = mail;
+        this.passwd = passwd;
+    }
 
-	private String apellido1;
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
 
-	private String apellido2;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-	private String mail;
+    public String getNombre() {
+        return nombre;
+    }
 
-	private String passwd;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	private RolDto rol;
+    public String getApellido() {
+        return apellido;
+    }
 
-	public UsuarioDto() {
-	}
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
 
-	public UsuarioDto(Integer id_usuario, String nombre, String apellido1, String apellido2, String mail, String passwd,
-			RolDto rol) {
-		this.id_usuario = id_usuario;
-		this.nombre = nombre;
-		this.apellido1 = apellido1;
-		this.apellido2 = apellido2;
-		this.mail = mail;
-		this.passwd = passwd;
-		this.rol = rol;
-	}
+    public String getTelefono() {
+        return telefono;
+    }
 
-	public Integer getId_usuario() {
-		return id_usuario;
-	}
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
-	public void setId_usuario(Integer id_usuario) {
-		this.id_usuario = id_usuario;
-	}
+    public String getMail() {
+        return mail;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public String getPasswd() {
+        return passwd;
+    }
 
-	public String getApellido1() {
-		return apellido1;
-	}
-
-	public void setApellido1(String apellido1) {
-		this.apellido1 = apellido1;
-	}
-
-	public String getApellido2() {
-		return apellido2;
-	}
-
-	public void setApellido2(String apellido2) {
-		this.apellido2 = apellido2;
-	}
-
-	public String getMail() {
-		return mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public String getPasswd() {
-		return passwd;
-	}
-
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
-	}
-
-	public RolDto getRol() {
-		return rol;
-	}
-
-	public void setRol(RolDto rol) {
-		this.rol = rol;
-	}
-
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
 }

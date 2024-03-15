@@ -2,102 +2,66 @@ package com.proyectojm.app.dto;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-
 public class ContactoDto implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    private Integer id;
+    private String nombre;
+    private String mail;
+    private String motivo;
+    private Integer mensaje;
 
-	
-	private Integer id;
+    public ContactoDto() {
+        super();
+    }
 
-	
-	
-	private String nombre;
-	
-	
-	private String apellidos;
-	
+    public ContactoDto(Integer id, String nombre, String mail, String motivo, Integer mensaje) {
+        super();
+        this.id = id;
+        this.nombre = nombre;
+        this.mail = mail;
+        this.motivo = motivo;
+        this.mensaje = mensaje;
+    }
 
-	
-	private String mail;
-	
+    public Integer getId() {
+        return id;
+    }
 
-	
-	private String consulta;
-	
-	
-	private Integer contestado;
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public ContactoDto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public ContactoDto(Integer id, String nombre, String apellidos, String mail, String consulta,
-			Integer contestado) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.mail = mail;
-		this.consulta = consulta;
-		this.contestado = contestado;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public String getMail() {
+        return mail;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getMotivo() {
+        return motivo;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
 
-	public String getApellidos() {
-		return apellidos;
-	}
+    public Integer getMensaje() {
+        return mensaje;
+    }
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-
-	public String getMail() {
-		return mail;
-	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public String getConsulta() {
-		return consulta;
-	}
-
-	public void setConsulta(String consulta) {
-		this.consulta = consulta;
-	}
-
-	public Integer getContestado() {
-		return contestado;
-	}
-
-	public void setContestado(Integer contestado) {
-		this.contestado = contestado;
-	}
-
+    public void setMensaje(Integer mensaje) {
+        this.mensaje = mensaje;
+    }
 }
