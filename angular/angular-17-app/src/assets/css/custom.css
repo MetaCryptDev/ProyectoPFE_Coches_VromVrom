@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
 @font-face {
     font-family: 'Starjedi';
     src: url('../webfonts/Starjout.ttf') format('truetype');
@@ -303,7 +305,7 @@ section .container {
 
    
 
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
 
 p#start
 {
