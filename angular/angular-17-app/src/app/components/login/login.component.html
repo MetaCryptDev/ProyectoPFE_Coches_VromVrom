@@ -1,1 +1,61 @@
-<p>login works!</p>
+<section class="user bg-light">
+    <div class="user_options-container">
+        <div class="user_options-text">
+            <div class="user_options-unregistered">
+                <h2 class="card-title h2 text-success  mb-4">¿No tienes cuenta?</h2>
+                <p class="text-muted">Regístrate ahora y disfruta de ofertas exclusivas.</p>
+                <button class="btn btn-success" id="signup-button" style="width: 150px;">Sign up</button>
+            </div>
+
+            <div class="user_options-registered">
+                <h2 class="card-title h2 text-success font-weight-bold mb-4">¿Ya estás registrado?</h2>
+                <p class="text-muted">Inicia sesión para informarte de las nuevas ofertas.</p>
+                <button class="btn btn-success" id="login-button" style="width: 150px;">Login</button>
+            </div>
+        </div>
+
+        <div class="user_options-forms" id="user_options-forms">
+            <div class="user_forms-signup">
+                <form class="forms_form signup-form" th:action="@{/recuperarValores}" method="POST" th:object="${usuario}">
+                    <h2 class="card-title h2 text-success text-center mb-4">Registro</h2>
+                    <div class="mb-3">
+                        <label for="fullname" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nombre de Usuario</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-success w-100">Registrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="user_forms-login">
+                <form class="forms_form login-form" th:action="@{/login}" method="POST" th:object="${usuario}">
+                    <h2 class="card-title h2 text-success text-center mb-4">Iniciar Sesión</h2>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nombre de Usuario</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-success w-100">Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
