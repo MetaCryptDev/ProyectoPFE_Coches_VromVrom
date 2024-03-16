@@ -43,7 +43,7 @@
                         <input type="text" class="form-control" name="passwd" id="passwd" [(ngModel)] = "usuario.passwd">
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-success w-100">Registrar</button>
+                        <button class="btn btn-primary" type="submit" (click)="crearUsuario()">Registrar</button>
                     </div>
                 </form>
             </div>

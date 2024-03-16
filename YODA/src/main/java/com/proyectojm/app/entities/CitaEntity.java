@@ -36,7 +36,7 @@ public class CitaEntity implements Serializable {
     private ServicioEntity servicio;
 
     @ManyToOne
-    @JoinColumn(name = "MATRICULA", referencedColumnName = "MATRICULA") //TABLA VEHICULO SUST
+    @JoinColumn(name = "MATRICULA2", referencedColumnName = "MATRICULA") //TABLA VEHICULO SUST
     private VehiculoSustitucionEntity vehiculoSustitucion;
 
     @Column(name = "DESCRIPCION_AVERIA")

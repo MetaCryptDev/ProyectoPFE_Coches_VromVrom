@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.proyectojm.app.entities.VehiculoEntity;
 
-public interface IDAOVehiculo extends CrudRepository<VehiculoEntity, Integer> {
+public interface IDAOVehiculo extends CrudRepository<VehiculoEntity, String> {
 }
