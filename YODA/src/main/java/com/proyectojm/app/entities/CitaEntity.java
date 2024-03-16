@@ -22,22 +22,22 @@ public class CitaEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID_USUARIO")
-    private String usuario;
+    private UsuarioEntity usuario;
 
     @ManyToOne
     @JoinColumn(name = "MATRICULA", referencedColumnName = "MATRICULA")
-    private String vehiculo;
+    private VehiculoEntity vehiculo;
 
     @Column(name = "ENTRADA")
     private Date entrada;
 
     @ManyToOne
     @JoinColumn(name = "ID_SERVICIO", referencedColumnName = "ID_SERVICIO")
-    private String servicio;
+    private ServicioEntity servicio;
 
     @ManyToOne
     @JoinColumn(name = "MATRICULA", referencedColumnName = "MATRICULA") //TABLA VEHICULO SUST
-    private String vehiculoSustitucion;
+    private VehiculoSustitucionEntity vehiculoSustitucion;
 
     @Column(name = "DESCRIPCION_AVERIA")
     private String descripcionAveria;
@@ -46,8 +46,8 @@ public class CitaEntity implements Serializable {
     public CitaEntity() {
     }
 
-	public CitaEntity(Integer idCita, String usuario, String vehiculo, Date entrada, String servicio,
-			String vehiculoSustitucion, String descripcionAveria) {
+	public CitaEntity(Integer idCita, UsuarioEntity usuario, VehiculoEntity vehiculo, Date entrada, ServicioEntity servicio,
+			VehiculoSustitucionEntity vehiculoSustitucion, String descripcionAveria) {
 		super();
 		this.idCita = idCita;
 		this.usuario = usuario;
@@ -66,19 +66,19 @@ public class CitaEntity implements Serializable {
 		this.idCita = idCita;
 	}
 
-	public String getUsuario() {
+	public UsuarioEntity getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(String usuario) {
+	public void setUsuario(UsuarioEntity usuario) {
 		this.usuario = usuario;
 	}
 
-	public String getVehiculo() {
+	public VehiculoEntity getVehiculo() {
 		return vehiculo;
 	}
 
-	public void setVehiculo(String vehiculo) {
+	public void setVehiculo(VehiculoEntity vehiculo) {
 		this.vehiculo = vehiculo;
 	}
 
@@ -90,19 +90,19 @@ public class CitaEntity implements Serializable {
 		this.entrada = entrada;
 	}
 
-	public String getServicio() {
+	public ServicioEntity getServicio() {
 		return servicio;
 	}
 
-	public void setServicio(String servicio) {
+	public void setServicio(ServicioEntity servicio) {
 		this.servicio = servicio;
 	}
 
-	public String getVehiculoSustitucion() {
+	public VehiculoSustitucionEntity getVehiculoSustitucion() {
 		return vehiculoSustitucion;
 	}
 
-	public void setVehiculoSustitucion(String vehiculoSustitucion) {
+	public void setVehiculoSustitucion(VehiculoSustitucionEntity vehiculoSustitucion) {
 		this.vehiculoSustitucion = vehiculoSustitucion;
 	}
 

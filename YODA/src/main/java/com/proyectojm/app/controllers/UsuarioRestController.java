@@ -19,7 +19,7 @@ import com.proyectojm.app.service.IServiceUsuario;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping(value = "/productos")
+@RequestMapping(value = "/usuarios")
 public class UsuarioRestController {
 	
 	@Autowired

@@ -18,18 +18,18 @@ public class UsuarioServiceImpl implements IServiceUsuario {
 
 	@Override
 	public void guardarUsuario(UsuarioDto usuario) {
-		//UsuarioEntity usuarioEntty=  new UsuarioEntity();
+		UsuarioEntity usuarioEntty=  new UsuarioEntity();
 		try {
-			/*usuarioEntty.setId_usuario(usuario.getId_usuario());
+			usuarioEntty.setIdUsuario(usuario.getIdUsuario());
 			usuarioEntty.setNombre(usuario.getNombre());
-			usuarioEntty.setApellido1(usuario.getApellido1());
-			usuarioEntty.setApellido2(usuario.getApellido2());
+			usuarioEntty.setApellido(usuario.getApellido());
 			usuarioEntty.setMail(usuario.getMail());
+			usuarioEntty.setTelefono(usuario.getTelefono());
 			usuarioEntty.setPasswd(usuario.getPasswd());
-			usuarioEntty.setRol(1);
+			
 			System.out.println("usuario "+usuario.getIdUsuario());
 			usuarioDao.save(usuarioEntty);
-			System.out.println("hecho");*/
+			System.out.println("hecho");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
