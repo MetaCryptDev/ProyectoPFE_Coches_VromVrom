@@ -71,7 +71,7 @@ public class UsuarioRestController {
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public void insertar(@RequestBody UsuarioDto usuario) {
 		try {
-			System.out.println("controller insertar");
+		
 			usuarioService.guardarUsuario(usuario);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

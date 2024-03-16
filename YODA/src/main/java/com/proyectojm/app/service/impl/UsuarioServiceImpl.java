@@ -20,14 +20,20 @@ public class UsuarioServiceImpl implements IServiceUsuario {
 	public void guardarUsuario(UsuarioDto usuario) {
 		UsuarioEntity usuarioEntty=  new UsuarioEntity();
 		try {
+			System.out.println("getIdUsuario "+usuario.getIdUsuario());
 			usuarioEntty.setIdUsuario(usuario.getIdUsuario());
+			System.out.println("getNombre "+usuario.getNombre());
 			usuarioEntty.setNombre(usuario.getNombre());
+			System.out.println("getApellido "+usuario.getApellido());
 			usuarioEntty.setApellido(usuario.getApellido());
+			System.out.println("getMail "+usuario.getMail());
 			usuarioEntty.setMail(usuario.getMail());
+			System.out.println("getTelefono "+usuario.getTelefono());
 			usuarioEntty.setTelefono(usuario.getTelefono());
+			System.out.println("getPasswd "+usuario.getPasswd());
 			usuarioEntty.setPasswd(usuario.getPasswd());
 			
-			System.out.println("usuario "+usuario.getIdUsuario());
+			
 			usuarioDao.save(usuarioEntty);
 			System.out.println("hecho");
 		} catch (Exception e) {
