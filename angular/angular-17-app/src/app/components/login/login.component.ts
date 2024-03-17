@@ -22,9 +22,22 @@ export class LoginComponent  {
                 private router : Router,
                 private activatedRouter : ActivatedRoute) {}
 
-    login():void{
 
-      
+                ngOnInit(){
+                this.loadScript("../../../assets/js/login.js")
+              }
+          
+              loadScript(src: string) {
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = src;
+                document.body.appendChild(script);
+              }
+
+
+
+
+    login():void{
     }
 
   
