@@ -30,7 +30,7 @@ public class ContactoEntity implements Serializable {
 	private String nombre;
 	
 
-	@Column(name = "MAIL")
+	@Column(name = "CORREO")
 	private String mail;
 	
 
@@ -38,10 +38,10 @@ public class ContactoEntity implements Serializable {
 	private String motivo;
 	
 	@Column(name = "MENSAJE")
-	private Integer mensaje;
+	private String mensaje;
 
 	
-	public ContactoEntity(Integer id, String nombre, String mail, String motivo, Integer mensaje) {
+	public ContactoEntity(Integer id, String nombre, String mail, String motivo, String mensaje) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -96,12 +96,12 @@ public class ContactoEntity implements Serializable {
 	}
 
 
-	public Integer getMensaje() {
+	public String getMensaje() {
 		return mensaje;
 	}
 
 
-	public void setMensaje(Integer mensaje) {
+	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
 	}
 

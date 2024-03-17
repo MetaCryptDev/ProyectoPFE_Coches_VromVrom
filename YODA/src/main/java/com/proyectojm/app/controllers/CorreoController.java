@@ -7,6 +7,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
+import com.proyectojm.app.dto.ContactoDto;
+
 @Component
 public class CorreoController {
 
@@ -50,17 +52,17 @@ public class CorreoController {
         }
     }
     
-    public void correoContacto(String mensaje, String email, String motivo, String nombre) {
+    public void correoContacto(ContactoDto contacto) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
 
         try {
-            helper.setTo(email);
-            helper.setSubject("Consulta: " + motivo + ". Talleres YoDa");
-            helper.setText("¡Hola, " + nombre + "! \n"
+            helper.setTo(contacto.getMail());
+            helper.setSubject("Consulta: " + contacto.getMotivo() + ". Talleres YoDa");
+            helper.setText("¡Hola, " + contacto.getNombre() + "! \n"
             		+ "Gracias por ponerte en contacto con nosotros, hemos recibido la siguiente consulta: \n" 
-            		+ motivo + "\n" 
-            		+ mensaje + "\n"
+            		+ contacto.getMotivo() + "\n" 
+            		+ contacto.getMensaje() + "\n"
             		+ "Intentaremos resolver tu consulta a la mayor brevedad posible.");
 
             javaMailSender.send(mimeMessage);

@@ -43,6 +43,7 @@ export class IndexComponent implements OnInit {
   }
 
   crearContacto() : void {
+   
     this.contactoService.saveContacto(this.contacto).subscribe(
       response => {
          alert(this.contacto.mensaje);

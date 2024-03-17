@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyectojm.app.dto.ContactoDto;
 import com.proyectojm.app.service.IServiceContacto;
 
-@CrossOrigin(origins = {"http://localhost:4200"},allowedHeaders = "*")
+@CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping(value = "/contacto")
 public class ContactoController {
@@ -22,16 +22,15 @@ public class ContactoController {
 	private IServiceContacto contactoService;
 	@Autowired
 	private CorreoController correos;
-	
-	@GetMapping(value = "/verTodos")
-	
-	
+		
 	@PostMapping(value = "/insertar")
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public void insertar(@RequestBody ContactoDto contacto) {
+		System.out.println(contacto.getNombre());
 		try {
 		
 			contactoService.guardarContacto(contacto);
+			correos.correoContacto(contacto);
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

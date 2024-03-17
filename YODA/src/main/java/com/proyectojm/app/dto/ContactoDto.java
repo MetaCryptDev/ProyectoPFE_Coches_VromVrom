@@ -10,13 +10,13 @@ public class ContactoDto implements Serializable {
     private String nombre;
     private String mail;
     private String motivo;
-    private Integer mensaje;
+    private String mensaje;
 
     public ContactoDto() {
         super();
     }
 
-    public ContactoDto(Integer id, String nombre, String mail, String motivo, Integer mensaje) {
+    public ContactoDto(Integer id, String nombre, String mail, String motivo, String mensaje) {
         super();
         this.id = id;
         this.nombre = nombre;
@@ -57,11 +57,11 @@ public class ContactoDto implements Serializable {
         this.motivo = motivo;
     }
 
-    public Integer getMensaje() {
+    public String getMensaje() {
         return mensaje;
     }
 
-    public void setMensaje(Integer mensaje) {
+    public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
 }
