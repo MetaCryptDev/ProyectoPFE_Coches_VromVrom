@@ -10,7 +10,7 @@ export class ContactoService {
 
   constructor(private http : HttpClient) { }
 
-  private urlEndPoint : string = 'http://localhost:8080/usuarios/';
+  private urlEndPoint : string = 'http://localhost:8080/contacto/';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   findAll() : Observable<Contacto[]> {

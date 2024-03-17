@@ -15,7 +15,7 @@ import com.proyectojm.app.service.IServiceContacto;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping(value = "/usuarios")
+@RequestMapping(value = "/contacto")
 public class ContactoController {
 	
 	@Autowired

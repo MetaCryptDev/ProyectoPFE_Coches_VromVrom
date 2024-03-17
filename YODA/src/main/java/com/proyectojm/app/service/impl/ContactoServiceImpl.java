@@ -3,13 +3,16 @@ package com.proyectojm.app.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.proyectojm.app.dao.IDAOContacto;
 import com.proyectojm.app.dto.ContactoDto;
 import com.proyectojm.app.dto.UsuarioDto;
 import com.proyectojm.app.entities.ContactoEntity;
+import com.proyectojm.app.service.IServiceContacto;
 
-public class ContactoServiceImpl {
+@Service
+public class ContactoServiceImpl implements IServiceContacto {
 	
 	@Autowired IDAOContacto contactoDao;
 	
@@ -21,7 +24,7 @@ public class ContactoServiceImpl {
 			contactoEntty.setMotivo(contacto.getMotivo());
 			contactoEntty.setNombre(contacto.getNombre());
 			contactoDao.save(contactoEntty);
-			System.out.println("hecho");
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
