@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -54,7 +55,7 @@ public class UsuarioRestController {
 	
 	@GetMapping(value = "/recuperarUnUsuario/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
-	public UsuarioDto recuperarUnProducto(@PathVariable Integer id) {
+	public UsuarioDto recuperarUnUsuario(@PathVariable Integer id) {
 		UsuarioDto usuario = null;
 		
 		try {
@@ -79,6 +80,25 @@ public class UsuarioRestController {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	
+	@PostMapping(value = "/login")
+	public ResponseEntity<?> login(@RequestBody UsuarioDto usuarioDto) {
+		 System.out.println("en controller");
+	    try {
+	    	System.out.println(usuarioDto.getNombre()+" "+usuarioDto.getPasswd());
+	    	UsuarioDto usuario = usuarioService.login(usuarioDto.getNombre(), usuarioDto.getPasswd());
+	        if (usuario != null) {
+	           System.out.println("ok");
+	            return new ResponseEntity<>(usuario, HttpStatus.OK);
+	        } else {
+	        	System.out.println("UNAUTHORIZED");
+	            return new ResponseEntity<>("Credenciales incorrectas", HttpStatus.UNAUTHORIZED);
+	        }
+	    } catch (Exception e) {
+	        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
 	}
 	
 }

@@ -19,7 +19,7 @@ public class UsuarioServiceImpl implements IServiceUsuario {
 	@Autowired IDAOUsuario usuarioDao;
 	
 	
-	public boolean login(String username, String password) {
+	public UsuarioDto login(String username, String password) {
         boolean isLogged = false;
         List<UsuarioDto> lstUsuarios = this.recuperarTodosLosUsuarios();
         UsuarioDto usuario = lstUsuarios.stream().filter(u -> u.getNombre().equals(username) && u.getPasswd().equals(password)).findFirst().orElse(null);
@@ -28,7 +28,7 @@ public class UsuarioServiceImpl implements IServiceUsuario {
             isLogged = true;
         }
 
-        return isLogged;
+        return usuario;
     }
 
 	@Override

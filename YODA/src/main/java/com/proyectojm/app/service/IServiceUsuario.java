@@ -6,7 +6,7 @@ import com.proyectojm.app.dto.UsuarioDto;
 
 public interface IServiceUsuario {
 
-	public boolean login(String username, String password);
+	public UsuarioDto login(String username, String password);
 	public void guardarUsuario(UsuarioDto usuario);
 	public void modificarUsuario(UsuarioDto usuario);
 	public void eliminarUsuario(Integer id);

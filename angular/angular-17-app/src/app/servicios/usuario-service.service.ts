@@ -33,4 +33,8 @@ export class UsuarioService {
     return this.http.put<Usuario>(this.urlEndPoint + 'actualizar/' + usuario.idUsuario, usuario, {headers: this.httpHeaders});
   }
 
+  login(username: string, password: string): Observable<any> {
+    return this.http.post(`${this.urlEndPoint}login`, {nombre: username, passwd: password}, {headers: this.httpHeaders});
+}
+
 }

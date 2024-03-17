@@ -38,8 +38,20 @@ export class LoginComponent  {
 
 
     login():void{
+      this.usuarioService.login(this.usuario.nombre, this.usuario.passwd).subscribe(
+        data => {
+            
+            localStorage.setItem('currentUser', JSON.stringify(data));
+
+            this.router.navigate(['']); 
+        },
+        error => {
+           alert("usuario o contraseña no encontrado")
+        }
+    );
     }
 
+    
   
 
     crearUsuario() : void {

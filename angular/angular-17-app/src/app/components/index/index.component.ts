@@ -22,7 +22,14 @@ export class IndexComponent implements OnInit {
               private activatedRouter : ActivatedRoute) {}
 
   ngOnInit(): void {
-   this.cargarContacto();
+    const currentUser = localStorage.getItem('currentUser');
+  if (currentUser) {
+    let userData = JSON.parse(currentUser);
+    
+    alert(userData.nombre);
+  }else{
+    alert("no hay nadie");
+  }
   }
 
   cargarContacto() : void {

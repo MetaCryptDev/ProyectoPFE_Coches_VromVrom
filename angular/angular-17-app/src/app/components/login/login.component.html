@@ -45,15 +45,17 @@
                 </form>
             </div>
             <div class="user_forms-login">
-                <form class="forms_form login-form" th:action="@{/login}" method="POST" th:object="${usuario}">
+                <form class="forms_form login-form">
                     <h2 class="card-title h2 text-success text-center mb-4">Iniciar Sesión</h2>
                     <div class="mb-3">
-                        <label for="username" class="form-label">Nombre de Usuario</label>
-                        <input type="text" class="form-control" id="username" name="username" required>
+                        <label for="name" class="form-label">Nombre de Usuario</label>
+                        <input type="text" class="form-control" id="name" name="name" required [(ngModel)] = "usuario.nombre">
+                        
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <label for="passwd" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="passwd" name="passwd" [(ngModel)] = "usuario.passwd" required>
+                        
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-success w-100" (click)="login()">Iniciar Sesión</button>
