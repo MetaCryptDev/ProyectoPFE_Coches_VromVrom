@@ -94,24 +94,25 @@ section .container {
   }
 
   .horas {
+    color: #7acd8f !important;
     animation: neonAnim 2s alternate-reverse infinite;
-    color: rgb(255, 255, 102) !important;
     font-size: 19px;
     font-weight: bolder !important;
 }
+
 @keyframes neonAnim {
     from {
         text-shadow:
-          0 0 11px rgba(255, 255, 102, .7),
-          0 0 41px rgba(255, 255, 102, .7),
-          0 0 101px rgba(255, 255, 102, .7);
-      }
-      to {
+            0 0 11px rgba(105, 187, 126, .7),
+            0 0 41px rgba(105, 187, 126, .7),
+            0 0 101px rgba(105, 187, 126, .7);
+    }
+    to {
         text-shadow:
-          0 0 6px rgba(255, 255, 102, .7),
-          0 0 21px rgba(255, 255, 102, .7),
-          0 0 61px rgba(255, 255, 102, .7);
-      }
+            0 0 6px rgba(105, 187, 126, .7),
+            0 0 21px rgba(105, 187, 126, .7),
+            0 0 61px rgba(105, 187, 126, .7);
+    }
 }
 
 /*Fin cabecera*/
@@ -366,7 +367,7 @@ p#start
 	line-height: 0.8em;
 	letter-spacing: -0.05em;
 	color: #000;
-	text-shadow: -2px -2px 0 #69bb7e, 2px -2px 0 #69bb7e, -2px 2px 0 #69bb7e, 2px 2px 0 #69bb7e;
+	text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6;
 	opacity: 0;
 	z-index: 1;
 	-webkit-animation: logo 5s ease-out 2.5s;
@@ -438,7 +439,7 @@ p#start
     overflow-y: scroll; 
     scrollbar-width: none; 
     -ms-overflow-style: none; 
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   
   }
   #titles::-webkit-scrollbar {
     display: none; 
@@ -469,7 +470,7 @@ p#start
 
 #titles a
 {
-	color: #69bb7e;
+	color: #ff6;
 	text-decoration: underline;
 }
 
@@ -487,7 +488,7 @@ p#start
 
 #titles p{
     font-size: 50px !important;
-    color: #69bb7e !important;
+    color: #ff6 !important;
 }
 
 /* animation */
