@@ -25,8 +25,8 @@ export class IndexComponent implements OnInit {
     const currentUser = localStorage.getItem('currentUser');
   if (currentUser) {
     let userData = JSON.parse(currentUser);
-    
-    
+    this.contacto.nombre = userData.nombre;
+    this.contacto.mail = userData.mail;
   }
   }
 
