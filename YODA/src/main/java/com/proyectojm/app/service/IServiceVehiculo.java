@@ -8,8 +8,8 @@ public interface IServiceVehiculo {
 
     public void guardarVehiculo(VehiculoDto vehiculo);
     public void modificarVehiculo(VehiculoDto vehiculo);
-    public void eliminarVehiculo(Integer id);
     public List<VehiculoDto> recuperarTodosLosVehiculos();
-    public VehiculoDto recuperarUnVehiculo(Integer id);
+	VehiculoDto recuperarUnVehiculo(String matricula);
+	void eliminarVehiculo(String matricula);
 
 }
