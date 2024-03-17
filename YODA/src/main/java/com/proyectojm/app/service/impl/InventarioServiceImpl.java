@@ -13,7 +13,7 @@ import com.proyectojm.app.service.IServiceInventario;
 public class InventarioServiceImpl implements IServiceInventario {
 
     @Autowired
-    private IDAOInventario inventarioDao;
+    private IDAOInventario dao;
 
     @Override
     public void guardarInventario(InventarioDto inventario) {
