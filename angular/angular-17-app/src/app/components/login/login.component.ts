@@ -42,8 +42,9 @@ export class LoginComponent  {
         data => {
             
             localStorage.setItem('currentUser', JSON.stringify(data));
-
+            window.location.reload();
             this.router.navigate(['']); 
+           
         },
         error => {
            alert("usuario o contraseña no encontrado")

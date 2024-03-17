@@ -26,9 +26,7 @@ export class IndexComponent implements OnInit {
   if (currentUser) {
     let userData = JSON.parse(currentUser);
     
-    alert(userData.nombre);
-  }else{
-    alert("no hay nadie");
+    
   }
   }
 
