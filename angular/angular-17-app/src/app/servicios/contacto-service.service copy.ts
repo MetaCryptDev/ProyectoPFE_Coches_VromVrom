@@ -18,7 +18,6 @@ export class ContactoService {
   }
 
   saveContacto(contacto : Contacto) : Observable<Contacto> {
-    alert(contacto.mail+" "+contacto.nombre+" "+contacto.motivo+" "+contacto.mensaje)
     return this.http.post<Contacto>(this.urlEndPoint + 'insertar', contacto, {headers: this.httpHeaders});
   }
 

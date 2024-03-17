@@ -94,24 +94,25 @@ section .container {
   }
 
   .horas {
+    color: #7acd8f !important;
     animation: neonAnim 2s alternate-reverse infinite;
-    color: rgb(255, 255, 102) !important;
     font-size: 19px;
     font-weight: bolder !important;
 }
+
 @keyframes neonAnim {
     from {
         text-shadow:
-          0 0 11px rgba(255, 255, 102, .7),
-          0 0 41px rgba(255, 255, 102, .7),
-          0 0 101px rgba(255, 255, 102, .7);
-      }
-      to {
+            0 0 11px rgba(105, 187, 126, .7),
+            0 0 41px rgba(105, 187, 126, .7),
+            0 0 101px rgba(105, 187, 126, .7);
+    }
+    to {
         text-shadow:
-          0 0 6px rgba(255, 255, 102, .7),
-          0 0 21px rgba(255, 255, 102, .7),
-          0 0 61px rgba(255, 255, 102, .7);
-      }
+            0 0 6px rgba(105, 187, 126, .7),
+            0 0 21px rgba(105, 187, 126, .7),
+            0 0 61px rgba(105, 187, 126, .7);
+    }
 }
 
 /*Fin cabecera*/
