@@ -1,10 +1,10 @@
 package com.proyectojm.app.service.impl;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.proyectojm.app.dao.IDAOServicio;
 import com.proyectojm.app.dto.ServicioDto;
 import com.proyectojm.app.entities.ServicioEntity;
@@ -18,28 +18,81 @@ public class ServicioServiceImpl implements IServiceServicio {
 
     @Override
     public void guardarServicio(ServicioDto servicio) {
-        // Implementa la lógica para guardar un servicio
+        ServicioEntity servicioEntity = new ServicioEntity();
+        try {
+            servicioEntity.setIdServicio(servicio.getIdServicio());
+            servicioEntity.setNombre(servicio.getNombre());
+            servicioEntity.setManoDeObra(servicio.getManoDeObra());
+            servicioDao.save(servicioEntity);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void modificarServicio(ServicioDto servicio) {
-        // Implementa la lógica para modificar un servicio
+        try {
+            ServicioEntity servicioEntity = servicioDao.findById(servicio.getIdServicio()).orElse(null);
+            if (servicioEntity != null) {
+                servicioEntity.setNombre(servicio.getNombre());
+                servicioEntity.setManoDeObra(servicio.getManoDeObra());
+                servicioDao.save(servicioEntity);
+            } else {
+                System.out.println("El servicio no existe.");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void eliminarServicio(Integer id) {
-        // Implementa la lógica para eliminar un servicio por su ID
+        ServicioEntity entidad = null;
+        try {
+            entidad = servicioDao.findById(id).orElse(null);
+            if (entidad != null) {
+                servicioDao.delete(entidad);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public List<ServicioDto> recuperarTodosLosServicios() {
-        // Implementa la lógica para recuperar todos los servicios
-        return null; // Cambia esto para devolver la lista real de servicios
+        List<ServicioDto> lstResultado = null;
+        Iterable<ServicioEntity> lstEntidades = null;
+        try {
+            lstResultado = new ArrayList<>();
+            lstEntidades = servicioDao.findAll();
+            for (Iterator<ServicioEntity> iterator = lstEntidades.iterator(); iterator.hasNext();) {
+                ServicioEntity entity = iterator.next();
+                ServicioDto actual = new ServicioDto();
+                actual.setIdServicio(entity.getIdServicio());
+                actual.setNombre(entity.getNombre());
+                actual.setManoDeObra(entity.getManoDeObra());
+                lstResultado.add(actual);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return lstResultado;
     }
 
     @Override
     public ServicioDto recuperarUnServicio(Integer id) {
-        // Implementa la lógica para recuperar un servicio por su ID
-        return null; // Cambia esto para devolver el servicio real
+        ServicioDto actual = new ServicioDto();
+        ServicioEntity entity = null;
+        try {
+            entity = servicioDao.findById(id).orElse(null);
+            if (entity != null) {
+                actual.setIdServicio(entity.getIdServicio());
+                actual.setNombre(entity.getNombre());
+                actual.setManoDeObra(entity.getManoDeObra());
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return actual;
     }
 }
