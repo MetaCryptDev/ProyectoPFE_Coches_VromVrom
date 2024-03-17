@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     crearUsuario() : void {
       this.usuarioService.saveUsuario(this.usuario).subscribe(
         response => {
-           alert(this.usuario.nombre);
+          
             
         }
       );

@@ -401,30 +401,32 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control texto-form" id="name" placeholder="Your Name">
-                                        <label for="name" class="texto-form">Nombre</label>
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)] = "contacto.nombre">
+                                        <label for="nombre" class="texto-form">Nombre</label>
+                                       
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control texto-form" id="email" placeholder="Your Email">
-                                        <label for="email" class="texto-form">Correo</label>
+                                        
+                                        <input type="email" class="form-control texto-form" name="mail" id="mail" placeholder="Email" [(ngModel)] = "contacto.mail">
+                                        <label for="mail" class="texto-form">Correo</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control texto-form" id="subject" placeholder="Subject">
-                                        <label for="subject" class="texto-form">Motivo</label>
+                                        <input type="text" class="form-control texto-form" id="motivo" name="motivo" placeholder="Motivo" [(ngModel)] = "contacto.motivo">
+                                        <label for="motivo" class="texto-form">Motivo</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control texto-form" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                        <label for="message" class="texto-form">Mensaje</label>
+                                        <textarea class="form-control texto-form" placeholder="Deja un mensaje" name="mensaje" id="mensaje" style="height: 100px" [(ngModel)] = "contacto.mensaje"></textarea>
+                                        <label for="mensaje" class="texto-form">Mensaje</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button href="#" id="btnServicios" class="btn btn-primary py-3 px-5 mt-3">
+                                    <button href="#" id="btnServicios" class="btn btn-primary py-3 px-5 mt-3" (click)="crearContacto()">
                                         Enviar
                                         <i class="fa fa-arrow-right ms-3"></i>
                                     </button>
