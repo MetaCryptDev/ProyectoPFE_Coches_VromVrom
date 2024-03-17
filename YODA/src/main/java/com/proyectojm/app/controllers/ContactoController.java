@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyectojm.app.dto.ContactoDto;
 import com.proyectojm.app.service.IServiceContacto;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"http://localhost:4200"},allowedHeaders = "*")
 @RestController
 @RequestMapping(value = "/contacto")
 public class ContactoController {
