@@ -24,6 +24,8 @@ public class UsuarioRestController {
 	
 	@Autowired
 	private IServiceUsuario usuarioService;
+	@Autowired
+	private CorreoController correos;
 	
 	@GetMapping(value = "/verTodos")
 	
@@ -73,6 +75,7 @@ public class UsuarioRestController {
 		try {
 		
 			usuarioService.guardarUsuario(usuario);
+			correos.registro(usuario.getNombre(), usuario.getMail());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

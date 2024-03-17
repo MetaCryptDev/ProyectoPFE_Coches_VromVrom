@@ -18,10 +18,7 @@
             <div class="user_forms-signup">
                 <form class="forms_form signup-form" >
                     <h2 class="card-title h2 text-success text-center mb-4">Registro</h2>
-                    <div class="mb-3">
-                        <label for="id" class="form-label">Id</label>
-                        <input type="text" class="form-control" name="id" id="id" [(ngModel)] = "usuario.idUsuario">
-                    </div>
+                    
                     <div class="mb-3">
                         <label for="name" class="form-label">Nombre</label>
                         <input type="text" class="form-control" name="name" id="name" [(ngModel)] = "usuario.nombre">
@@ -43,7 +40,7 @@
                         <input type="text" class="form-control" name="passwd" id="passwd" [(ngModel)] = "usuario.passwd">
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-primary" type="submit" (click)="crearUsuario()">Registrar</button>
+                        <button class="btn btn-success w-100" type="submit" (click)="crearUsuario()">Registrar</button>
                     </div>
                 </form>
             </div>
