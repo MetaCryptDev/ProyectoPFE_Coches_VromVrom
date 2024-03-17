@@ -79,10 +79,10 @@ public class CorreoController {
 
         try {
             helper.setTo("talleresyoda@gmail.com");
-            helper.setSubject("Consulta " + contacto.getId() + ": " + contacto.getMotivo());
+            helper.setSubject("Consulta: " + contacto.getNombre() + " - " + contacto.getMotivo());
             helper.setText("Nueva consulta de " + contacto.getNombre() + "\n"
             		+ "Motivo de la consulta: \n" 
-            		+ contacto.getMotivo()
+            		+ contacto.getMotivo() + "\n"
             		+ "Mensaje de la consulta: \n" 
             		+ contacto.getMensaje() + "\n"
             		+ "Correo del cliente:" + "\n"
