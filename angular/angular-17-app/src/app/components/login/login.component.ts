@@ -8,7 +8,7 @@ import { Usuario } from '../../dto/usuario';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FooterComponent,FormsModule,HttpClientModule],
+  imports: [FooterComponent,FormsModule,HttpClientModule,RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['../../../assets/css/custom.css','../../../assets/css/templatemo.css','../../../assets/css/fontawesome.css','../../../assets/css/fontawesome.min.css',"../../../assets/css/login.css"]
 })
