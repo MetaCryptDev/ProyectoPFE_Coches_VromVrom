@@ -66,6 +66,29 @@ public class CorreoController {
             		+ "Intentaremos resolver tu consulta a la mayor brevedad posible.");
 
             javaMailSender.send(mimeMessage);
+            correoContactoTaller(contacto);
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void correoContactoTaller(ContactoDto contacto) {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+
+        try {
+            helper.setTo("talleresyoda@gmail.com");
+            helper.setSubject("Consulta " + contacto.getId() + ": " + contacto.getMotivo());
+            helper.setText("Nueva consulta de " + contacto.getNombre() + "\n"
+            		+ "Motivo de la consulta: \n" 
+            		+ contacto.getMotivo()
+            		+ "Mensaje de la consulta: \n" 
+            		+ contacto.getMensaje() + "\n"
+            		+ "Correo del cliente:" + "\n"
+            		+ contacto.getMail());
+
+            javaMailSender.send(mimeMessage);
 
         } catch (MessagingException e) {
             e.printStackTrace();
