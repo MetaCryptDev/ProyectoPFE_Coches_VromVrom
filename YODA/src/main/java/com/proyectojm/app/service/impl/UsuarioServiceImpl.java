@@ -15,6 +15,18 @@ public class UsuarioServiceImpl implements IServiceUsuario {
 	
 	@Autowired IDAOUsuario usuarioDao;
 	
+	
+	public boolean login(String username, String password) {
+        boolean isLogged = false;
+        List<UsuarioDto> lstUsuarios = this.recuperarTodosLosUsuarios();
+        UsuarioDto usuario = lstUsuarios.stream().filter(u -> u.getNombre().equals(username) && u.getPasswd().equals(password)).findFirst().orElse(null);
+
+        if(usuario != null) {
+            isLogged = true;
+        }
+
+        return isLogged;
+    }
 
 	@Override
 	public void guardarUsuario(UsuarioDto usuario) {
