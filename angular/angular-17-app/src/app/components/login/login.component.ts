@@ -57,7 +57,7 @@ export class LoginComponent  {
     crearUsuario() : void {
       this.usuarioService.saveUsuario(this.usuario).subscribe(
         response => {
-          
+          this.router.navigate(['']); 
             
         }
       );
