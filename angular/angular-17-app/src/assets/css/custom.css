@@ -366,7 +366,7 @@ p#start
 	line-height: 0.8em;
 	letter-spacing: -0.05em;
 	color: #000;
-	text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6;
+	text-shadow: -2px -2px 0 #69bb7e, 2px -2px 0 #69bb7e, -2px 2px 0 #69bb7e, 2px 2px 0 #69bb7e;
 	opacity: 0;
 	z-index: 1;
 	-webkit-animation: logo 5s ease-out 2.5s;
@@ -438,7 +438,7 @@ p#start
     overflow-y: scroll; 
     scrollbar-width: none; 
     -ms-overflow-style: none; 
-   
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   #titles::-webkit-scrollbar {
     display: none; 
@@ -469,7 +469,7 @@ p#start
 
 #titles a
 {
-	color: #ff6;
+	color: #69bb7e;
 	text-decoration: underline;
 }
 
@@ -487,7 +487,7 @@ p#start
 
 #titles p{
     font-size: 50px !important;
-    color: #ff6 !important;
+    color: #69bb7e !important;
 }
 
 /* animation */
