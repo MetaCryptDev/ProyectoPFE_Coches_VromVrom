@@ -11,16 +11,16 @@ public class CitaDto implements Serializable {
     private UsuarioDto usuario;
     private VehiculoDto vehiculo;
     private Date entrada;
-    private String servicio;
-    private VehiculoDto vehiculoSustitucion;
+    private ServicioDto servicio;
+    private VehiculoSustitucionDto vehiculoSustitucion;
     private String descripcionAveria;
 
     public CitaDto() {
         super();
     }
 
-    public CitaDto(Integer idCita, UsuarioDto usuario, VehiculoDto vehiculo, Date entrada, String servicio,
-            VehiculoDto vehiculoSustitucion, String descripcionAveria) {
+    public CitaDto(Integer idCita, UsuarioDto usuario, VehiculoDto vehiculo, Date entrada, ServicioDto servicio,
+            VehiculoSustitucionDto vehiculoSustitucion, String descripcionAveria) {
         super();
         this.idCita = idCita;
         this.usuario = usuario;
@@ -63,19 +63,19 @@ public class CitaDto implements Serializable {
         this.entrada = entrada;
     }
 
-    public String getServicio() {
+    public ServicioDto getServicio() {
         return servicio;
     }
 
-    public void setServicio(String servicio) {
+    public void setServicio(ServicioDto servicio) {
         this.servicio = servicio;
     }
 
-    public VehiculoDto getVehiculoSustitucion() {
+    public VehiculoSustitucionDto getVehiculoSustitucion() {
         return vehiculoSustitucion;
     }
 
-    public void setVehiculoSustitucion(VehiculoDto vehiculoSustitucion) {
+    public void setVehiculoSustitucion(VehiculoSustitucionDto vehiculoSustitucion) {
         this.vehiculoSustitucion = vehiculoSustitucion;
     }
 
