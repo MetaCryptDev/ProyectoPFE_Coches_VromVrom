@@ -52,7 +52,7 @@ public class UsuarioRestController {
 		}
 	}
 	
-	@GetMapping(value = "/recuperarUnProducto/{id}")
+	@GetMapping(value = "/recuperarUnUsuario/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
 	public UsuarioDto recuperarUnProducto(@PathVariable Integer id) {
 		UsuarioDto usuario = null;

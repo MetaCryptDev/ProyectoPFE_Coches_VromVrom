@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, NgModule, } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { UsuarioService } from '../../servicios/usuario-service.service';
@@ -12,7 +12,7 @@ import { Usuario } from '../../dto/usuario';
   templateUrl: './login.component.html',
   styleUrls: ['../../../assets/css/custom.css','../../../assets/css/templatemo.css','../../../assets/css/fontawesome.css','../../../assets/css/fontawesome.min.css',"../../../assets/css/login.css"]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent  {
 
   title : string = 'Nuevo usuario';
 
@@ -22,26 +22,12 @@ export class LoginComponent implements OnInit {
                 private router : Router,
                 private activatedRouter : ActivatedRoute) {}
 
-    ngOnInit(): void {
-     this.cargarUsuario();
+    login():void{
+
+      
     }
 
-    cargarUsuario() : void {
-      this.activatedRouter.params.subscribe(
-        params => {
-          let id = params['id']
-          if (id) {
-            this.usuarioService.findById(id).subscribe(
-              (usuario) => {
-                
-                this.title= 'Modificar Producto'
-                this.usuario = usuario
-              }
-            )
-          }
-        }
-      );
-    }
+  
 
     crearUsuario() : void {
       this.usuarioService.saveUsuario(this.usuario).subscribe(
