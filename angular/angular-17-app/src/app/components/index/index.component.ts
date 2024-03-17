@@ -46,8 +46,7 @@ export class IndexComponent implements OnInit {
    
     this.contactoService.saveContacto(this.contacto).subscribe(
       response => {
-         alert(this.contacto.mensaje);
-          
+         this.contacto = {idContacto: 0,  nombre: '', mail: '', motivo: '', mensaje: '' };
       }
     );
   }
