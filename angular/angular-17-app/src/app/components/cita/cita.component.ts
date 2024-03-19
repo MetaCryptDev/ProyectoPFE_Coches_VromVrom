@@ -23,19 +23,7 @@ export class CitaComponent {
                 private router : Router,
                 private activatedRouter : ActivatedRoute) {}
 
-
-                ngOnInit(){
-                this.loadScript("../../../assets/js/cita.js")
-              }
-          
-              loadScript(src: string) {
-                const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = src;
-                document.body.appendChild(script);
-              }
-
-
+              
     crearCita() : void {
       this.citaService.saveCita(this.cita).subscribe(
         response => {
