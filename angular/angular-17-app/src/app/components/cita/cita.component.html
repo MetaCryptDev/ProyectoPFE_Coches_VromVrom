@@ -18,6 +18,7 @@
                         <div class="form-floating">
                             <input type="mail" class="form-control texto-form" name="mail" id="mail" placeholder="Email" [(ngModel)] = "contacto.mail">
                             <label for="mail" class="texto-form">Correo</label>
+
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -50,7 +51,9 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <button href="#" id="btnServicios" class="btn btn-primary py-3 px-5 mt-3">
+
+                        <button  (click)="crearCita()" id="btnServicios" class="btn btn-primary py-3 px-5 mt-3">
+
                             Enviar solicitud
                             <i class="fa fa-arrow-right ms-3"></i>
                         </button>
@@ -60,4 +63,6 @@
         </div>
     </div>
 </section>
+<!-- Fin Contacto -->
 <app-footer></app-footer>
+
