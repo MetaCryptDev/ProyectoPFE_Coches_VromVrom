@@ -13,7 +13,7 @@ export const routes: Routes = [{
 },
 
 {
-path:"cita",title:"Pedir Cita", component: CitaComponent
+    path:"cita",title:"Pedir Cita", component: CitaComponent
 }
 
 
