@@ -8,8 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -25,12 +23,10 @@ public class CitaEntity implements Serializable {
     @Column(name = "ID_CITA")
     private Integer idCita;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_ID_USUARIO", referencedColumnName = "ID_USUARIO")
+    @Column(name = "FK_ID_USUARIO")
     private String usuarioId;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_MATRICULA", referencedColumnName = "MATRICULA")
+    @Column(name = "FK_MATRICULA")
     private String vehiculoMatricula;
 
     @Column(name = "ENTRADA")
@@ -39,12 +35,10 @@ public class CitaEntity implements Serializable {
     @Column(name = "SALIDA")
     private LocalDateTime salida;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_SERVICIO", referencedColumnName = "ID_SERVICIO")
+    @Column(name = "FK_SERVICIO")
     private Integer servicioId;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_VEHICULO_REPARACION", referencedColumnName = "MATRICULA") 
+    @Column(name = "FK_VEHICULO_REPARACION")
     private String vehiculoSustitucionMatricula;
 
     @Column(name = "DESCRIPCION_DE_AVERIA")

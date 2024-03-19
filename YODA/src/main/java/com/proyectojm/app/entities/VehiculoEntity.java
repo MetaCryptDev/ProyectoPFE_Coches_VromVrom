@@ -5,8 +5,6 @@ import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,9 +22,8 @@ public class VehiculoEntity implements Serializable {
 
     @Column(name = "MARCA")
     private String marca;
-    
-    @ManyToOne
-    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID_USUARIO")
+
+    @Column(name = "ID_USUARIO")
     private String idUsuario;
 
     // Constructor vacío
