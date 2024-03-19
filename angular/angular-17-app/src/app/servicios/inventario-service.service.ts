@@ -21,7 +21,7 @@ export class InventarioService {
     return this.http.post<Inventario>(this.urlEndPoint + 'insertar', Inventario, {headers: this.httpHeaders});
   }
 
-  removeCita(idPieza: number) : Observable<Inventario> {
+  removeInventario(idPieza: number) : Observable<Inventario> {
     return this.http.delete<Inventario>(this.urlEndPoint + 'eliminar/' + idPieza, {headers: this.httpHeaders});
   }
 

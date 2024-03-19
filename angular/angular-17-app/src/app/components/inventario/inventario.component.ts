@@ -24,7 +24,7 @@ export class InventarioComponent {
 
             
   crearProducto() : void {
-    this.inventarioService.saveInventario(this.inventario).subscribe(
+    this.inventarioService.saveProducto(this.inventario).subscribe(
       response => {
         this.router.navigate(['/listadoProductos']); 
           
@@ -33,7 +33,7 @@ export class InventarioComponent {
   }
 
   actualizarProducto() : void {
-    this.inventarioService.updateInventario(this.inventario).subscribe(
+    this.inventarioService.updateProducto(this.inventario).subscribe(
       response => {
         this.router.navigate(['/listadoProductos'])
        
@@ -42,7 +42,7 @@ export class InventarioComponent {
   }
 
   eliminarProducto() : void {
-    this.inventarioService.eliminarProducto(this.inventario).subscribe(
+    this.inventarioService.removeInventario(this.inventario.idPieza).subscribe(
       response => {
         this.router.navigate(['/listadoProductos'])
        
@@ -51,12 +51,21 @@ export class InventarioComponent {
   }
 
   buscarUnProducto() : void {
-    this.inventarioService.buscarUnProducto(this.inventario).subscribe(
+    this.inventarioService.findById(this.inventario.idPieza).subscribe(
       response => {
         this.router.navigate(['/listadoProductos'])
        
       }
     );
   }  
+
+  buscarProductos() : void {
+    this.inventarioService.findAll().subscribe(
+      response => {
+        this.router.navigate(['/listadoProductos'])
+       
+      }
+    );
+  }
 
 }
