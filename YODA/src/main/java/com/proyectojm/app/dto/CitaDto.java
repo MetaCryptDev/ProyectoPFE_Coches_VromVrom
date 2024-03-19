@@ -17,26 +17,31 @@ public class CitaDto implements Serializable {
     private String descripcionAveria;
     private String fecha;
     private String hora;
+    private String nombreUsuario;
 
     public CitaDto() {
         super();
     }
 
-    public CitaDto(Integer idCita, String idUsuario, String idVehiculo, LocalDateTime entrada, LocalDateTime salida,
-            Integer idServicio, String idVehiculoSustitucion, String descripcionAveria, String fecha, String hora) {
-        this.idCita = idCita;
-        this.idUsuario = idUsuario;
-        this.idVehiculo = idVehiculo;
-        this.entrada = entrada;
-        this.salida = salida;
-        this.idServicio = idServicio;
-        this.idVehiculoSustitucion = idVehiculoSustitucion;
-        this.descripcionAveria = descripcionAveria;
-        this.fecha = fecha;
-        this.hora = hora;
-    }
 
-    public Integer getIdCita() {
+    public CitaDto(Integer idCita, String idUsuario, String idVehiculo, LocalDateTime entrada, LocalDateTime salida,
+			Integer idServicio, String idVehiculoSustitucion, String descripcionAveria, String fecha, String hora,
+			String nombreUsuario) {
+		this.idCita = idCita;
+		this.idUsuario = idUsuario;
+		this.idVehiculo = idVehiculo;
+		this.entrada = entrada;
+		this.salida = salida;
+		this.idServicio = idServicio;
+		this.idVehiculoSustitucion = idVehiculoSustitucion;
+		this.descripcionAveria = descripcionAveria;
+		this.fecha = fecha;
+		this.hora = hora;
+		this.nombreUsuario = nombreUsuario;
+	}
+
+
+	public Integer getIdCita() {
         return idCita;
     }
 
@@ -115,8 +120,20 @@ public class CitaDto implements Serializable {
     public void setHora(String hora) {
         this.hora = hora;
     }
+    
+    
 
-    @Override
+    public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
+
+	@Override
     public String toString() {
         return "CitaDto [idCita=" + idCita + ", idUsuario=" + idUsuario + ", idVehiculo=" + idVehiculo + ", entrada="
                 + entrada + ", salida=" + salida + ", idServicio=" + idServicio + ", idVehiculoSustitucion="

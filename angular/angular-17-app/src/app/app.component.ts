@@ -18,8 +18,14 @@ export class AppComponent implements OnInit {
   imagen = "../imagenes/logo.png"
 
   ngOnInit(): void {
-    this.isLoggedIn = !!localStorage.getItem('currentUser');
-    this.admin = !!localStorage.getItem('currentUser');
+    const currentUser = localStorage.getItem('currentUser');
+    this.isLoggedIn = !!currentUser; 
+    if (currentUser) {
+      const userData = JSON.parse(currentUser);
+      this.admin = userData.rol === 'admin'; 
+    } else {
+      this.admin = false; 
+    }
     
   }
   logout(): void {
