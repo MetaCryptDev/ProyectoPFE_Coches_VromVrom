@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { IndexComponent } from './components/index/index.component';
 import { CitaComponent } from './components/cita/cita.component';
+import { InventarioComponent } from './components/inventario/inventario.component';
 
 export const routes: Routes = [{
     path:"", title:"Talleres YoDa", component: IndexComponent
@@ -14,7 +15,10 @@ export const routes: Routes = [{
 
 {
     path:"cita",title:"Pedir Cita", component: CitaComponent
-}
+},
 
+{
+    path:"inventario",title:"Mostrar Inventario", component: InventarioComponent
+}
 
 ];
