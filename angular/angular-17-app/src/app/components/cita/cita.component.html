@@ -38,14 +38,14 @@
 
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="date" id="date" class="form-control">
+                            <input type="date" id="date" class="form-control" name="fecha" [(ngModel)] = "cita.fecha">
                             <label for="date" class="texto-form">Selecciona una fecha:</label>
                         </div>
                     </div>
                     
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <select class="form-select texto-form" id="time" aria-label="Favorite time">
+                            <select class="form-select texto-form" id="time" name="hora" aria-label="Favorite time" [(ngModel)] = "cita.hora">
                                 <option selected>Hora</option>
                                 <option value="9">09:00</option>
                                 <option value="10">10:00</option>
