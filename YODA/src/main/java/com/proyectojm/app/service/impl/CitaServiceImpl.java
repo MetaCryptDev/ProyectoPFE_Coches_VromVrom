@@ -46,24 +46,33 @@ public class CitaServiceImpl implements IServiceCita {
 			//SALIDA cita.getEntrada().plusHours()
 			
 			switch(citaEntty.getServicioId()) {
-			case 1,2:
+			case 1	,	2:
 					citaEntty.setSalida(citaEntty.getEntrada().plusHours(2));
+				if(citaEntty.getSalida().getHour()>13) {
+					citaEntty.setSalida(citaEntty.getSalida().plusHours(2));
+				}
 				break;
 			
 			case 3:
 					citaEntty.setSalida(citaEntty.getEntrada().plusHours(1));
+					if(citaEntty.getSalida().getHour()>13) {
+						citaEntty.setSalida(citaEntty.getSalida().plusHours(2));
+					}
 				break;
 				
 			case 4:
 					citaEntty.setSalida(citaEntty.getEntrada().plusHours(4));
+					if(citaEntty.getSalida().getHour()>13) {
+						citaEntty.setSalida(citaEntty.getSalida().plusHours(2));
+					}
 				break;
 			
 			default:
-				citaEntty.setSalida(citaEntty.getEntrada().plusHours(0));
+				    citaEntty.setSalida(citaEntty.getEntrada().plusHours(0));
 				break;
 			}
 			
-			citaEntty.setSalida(cita.getEntrada().plusHours(2));
+			
 
 			// ID VEHICULO SUSTITUCION
 			citaEntty.setVehiculoSustitucionMatricula(cita.getIdVehiculoSustitucion() != null ? cita.getIdVehiculoSustitucion() : null);
