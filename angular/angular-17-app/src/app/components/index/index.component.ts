@@ -2,7 +2,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { Contacto } from '../../dto/contacto';
-import { ContactoService } from '../../servicios/contacto-service.service copy';
+import { ContactoService } from '../../servicios/contacto-service.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 @Component({
