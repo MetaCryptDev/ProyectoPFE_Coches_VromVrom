@@ -1,6 +1,7 @@
 package com.proyectojm.app.entities;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -21,42 +22,50 @@ public class CitaEntity implements Serializable {
     private Integer idCita;
 
     @ManyToOne
-    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID_USUARIO")
+    @JoinColumn(name = "FK_ID_USUARIO", referencedColumnName = "ID_USUARIO")
     private UsuarioEntity usuario;
 
     @ManyToOne
-    @JoinColumn(name = "MATRICULA", referencedColumnName = "MATRICULA")
+    @JoinColumn(name = "FK_MATRICULA", referencedColumnName = "MATRICULA")
     private VehiculoEntity vehiculo;
 
     @Column(name = "ENTRADA")
-    private Date entrada;
+    private LocalDateTime  entrada;
+    
+    @Column(name = "SALIDA")
+    private LocalDateTime  salida;
 
     @ManyToOne
-    @JoinColumn(name = "ID_SERVICIO", referencedColumnName = "ID_SERVICIO")
+    @JoinColumn(name = "FK_SERVICIO", referencedColumnName = "ID_SERVICIO")
     private ServicioEntity servicio;
 
     @ManyToOne
-    @JoinColumn(name = "MATRICULA2", referencedColumnName = "MATRICULA") //TABLA VEHICULO SUST
+    @JoinColumn(name = "FK_VEHICULO_REPARACION", referencedColumnName = "MATRICULA") //TABLA VEHICULO SUST
     private VehiculoSustitucionEntity vehiculoSustitucion;
 
-    @Column(name = "DESCRIPCION_AVERIA")
+    @Column(name = "DESCRIPCION_DE_AVERIA")
     private String descripcionAveria;
 
     // Constructor vacío
     public CitaEntity() {
     }
 
-	public CitaEntity(Integer idCita, UsuarioEntity usuario, VehiculoEntity vehiculo, Date entrada, ServicioEntity servicio,
-			VehiculoSustitucionEntity vehiculoSustitucion, String descripcionAveria) {
-		super();
+	
+
+	public CitaEntity(Integer idCita, UsuarioEntity usuario, VehiculoEntity vehiculo, LocalDateTime entrada,
+			LocalDateTime salida, ServicioEntity servicio, VehiculoSustitucionEntity vehiculoSustitucion,
+			String descripcionAveria) {
 		this.idCita = idCita;
 		this.usuario = usuario;
 		this.vehiculo = vehiculo;
 		this.entrada = entrada;
+		this.salida = salida;
 		this.servicio = servicio;
 		this.vehiculoSustitucion = vehiculoSustitucion;
 		this.descripcionAveria = descripcionAveria;
 	}
+
+
 
 	public Integer getIdCita() {
 		return idCita;
@@ -82,12 +91,20 @@ public class CitaEntity implements Serializable {
 		this.vehiculo = vehiculo;
 	}
 
-	public Date getEntrada() {
+	public LocalDateTime getEntrada() {
 		return entrada;
 	}
 
-	public void setEntrada(Date entrada) {
+	public void setEntrada(LocalDateTime entrada) {
 		this.entrada = entrada;
+	}
+
+	public LocalDateTime getSalida() {
+		return salida;
+	}
+
+	public void setSalida(LocalDateTime salida) {
+		this.salida = salida;
 	}
 
 	public ServicioEntity getServicio() {

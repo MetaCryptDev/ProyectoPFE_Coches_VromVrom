@@ -1,7 +1,7 @@
 package com.proyectojm.app.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class CitaDto implements Serializable {
     
@@ -10,7 +10,8 @@ public class CitaDto implements Serializable {
     private Integer idCita;
     private UsuarioDto usuario;
     private VehiculoDto vehiculo;
-    private Date entrada;
+    private LocalDateTime  entrada;    
+    private LocalDateTime  salida;
     private ServicioDto servicio;
     private VehiculoSustitucionDto vehiculoSustitucion;
     private String descripcionAveria;
@@ -19,19 +20,24 @@ public class CitaDto implements Serializable {
         super();
     }
 
-    public CitaDto(Integer idCita, UsuarioDto usuario, VehiculoDto vehiculo, Date entrada, ServicioDto servicio,
-            VehiculoSustitucionDto vehiculoSustitucion, String descripcionAveria) {
-        super();
-        this.idCita = idCita;
-        this.usuario = usuario;
-        this.vehiculo = vehiculo;
-        this.entrada = entrada;
-        this.servicio = servicio;
-        this.vehiculoSustitucion = vehiculoSustitucion;
-        this.descripcionAveria = descripcionAveria;
-    }
+    
 
-    public Integer getIdCita() {
+    public CitaDto(Integer idCita, UsuarioDto usuario, VehiculoDto vehiculo, LocalDateTime entrada,
+			LocalDateTime salida, ServicioDto servicio, VehiculoSustitucionDto vehiculoSustitucion,
+			String descripcionAveria) {
+		this.idCita = idCita;
+		this.usuario = usuario;
+		this.vehiculo = vehiculo;
+		this.entrada = entrada;
+		this.salida = salida;
+		this.servicio = servicio;
+		this.vehiculoSustitucion = vehiculoSustitucion;
+		this.descripcionAveria = descripcionAveria;
+	}
+
+
+
+	public Integer getIdCita() {
         return idCita;
     }
 
@@ -55,15 +61,25 @@ public class CitaDto implements Serializable {
         this.vehiculo = vehiculo;
     }
 
-    public Date getEntrada() {
-        return entrada;
-    }
+   
 
-    public void setEntrada(Date entrada) {
-        this.entrada = entrada;
-    }
+    public LocalDateTime getEntrada() {
+		return entrada;
+	}
 
-    public ServicioDto getServicio() {
+	public void setEntrada(LocalDateTime entrada) {
+		this.entrada = entrada;
+	}
+
+	public LocalDateTime getSalida() {
+		return salida;
+	}
+
+	public void setSalida(LocalDateTime salida) {
+		this.salida = salida;
+	}
+
+	public ServicioDto getServicio() {
         return servicio;
     }
 

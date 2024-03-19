@@ -53,7 +53,7 @@ public class CitaServiceImpl implements IServiceCita {
 			vehiculoEntty.setUsuario(vehiculoEntty.getUsuario());
 			citaEntty.setVehiculo(vehiculoEntty);
 			
-			citaEntty.setEntrada(cita.getEntrada());
+			//citaEntty.setEntrada(cita.getEntrada());
 			
 			
 			servicioEntty.setIdServicio(servicioEntty.getIdServicio());
@@ -105,7 +105,7 @@ public class CitaServiceImpl implements IServiceCita {
 			vehiculoEntty.setUsuario(vehiculoEntty.getUsuario());
 			citaEntty.setVehiculo(vehiculoEntty);
 			
-			citaEntty.setEntrada(cita.getEntrada());
+		//	citaEntty.setEntrada(cita.getEntrada());
 			
 			
 			servicioEntty.setIdServicio(servicioEntty.getIdServicio());
@@ -187,7 +187,7 @@ public class CitaServiceImpl implements IServiceCita {
                 
                 if(entity.getIdCita() != null) {
             //ENTRADA
-                actual.setEntrada(entity.getEntrada());
+             //   actual.setEntrada(entity.getEntrada());
                 }
                 
                 if(entity.getServicio() != null) {
@@ -260,7 +260,7 @@ public class CitaServiceImpl implements IServiceCita {
                         
                 if(entity.getIdCita() != null) {
                     //ENTRADA
-                    actual.setEntrada(entity.getEntrada());
+                //    actual.setEntrada(entity.getEntrada());
                     	}
                         
                 if(entity.getServicio() != null) {
