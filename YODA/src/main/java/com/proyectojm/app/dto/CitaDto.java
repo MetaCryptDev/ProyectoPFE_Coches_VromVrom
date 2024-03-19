@@ -5,133 +5,123 @@ import java.time.LocalDateTime;
 
 public class CitaDto implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private Integer idCita;
-	private UsuarioDto usuario;
-	private VehiculoDto vehiculo;
-	private LocalDateTime entrada;
-	private LocalDateTime salida;
-	private ServicioDto servicio;
-	private VehiculoSustitucionDto vehiculoSustitucion;
-	private String descripcionAveria;
-	private String fecha;
-	private String hora;
-	private Integer idServicio;
+    private Integer idCita;
+    private String idUsuario;
+    private String idVehiculo;
+    private LocalDateTime entrada;
+    private LocalDateTime salida;
+    private Integer idServicio;
+    private String idVehiculoSustitucion;
+    private String descripcionAveria;
+    private String fecha;
+    private String hora;
 
-	public CitaDto() {
-		super();
-	}
+    public CitaDto() {
+        super();
+    }
 
-	public CitaDto(Integer idCita, UsuarioDto usuario, VehiculoDto vehiculo, LocalDateTime entrada,
-			LocalDateTime salida, ServicioDto servicio, VehiculoSustitucionDto vehiculoSustitucion,
-			String descripcionAveria, String fecha, String hora, Integer idServicio) {
-		this.idCita = idCita;
-		this.usuario = usuario;
-		this.vehiculo = vehiculo;
-		this.entrada = entrada;
-		this.salida = salida;
-		this.servicio = servicio;
-		this.vehiculoSustitucion = vehiculoSustitucion;
-		this.descripcionAveria = descripcionAveria;
-		this.fecha = fecha;
-		this.hora = hora;
-		this.idServicio = idServicio;
-	}
+    public CitaDto(Integer idCita, String idUsuario, String idVehiculo, LocalDateTime entrada, LocalDateTime salida,
+            Integer idServicio, String idVehiculoSustitucion, String descripcionAveria, String fecha, String hora) {
+        this.idCita = idCita;
+        this.idUsuario = idUsuario;
+        this.idVehiculo = idVehiculo;
+        this.entrada = entrada;
+        this.salida = salida;
+        this.idServicio = idServicio;
+        this.idVehiculoSustitucion = idVehiculoSustitucion;
+        this.descripcionAveria = descripcionAveria;
+        this.fecha = fecha;
+        this.hora = hora;
+    }
 
-	public Integer getIdCita() {
-		return idCita;
-	}
+    public Integer getIdCita() {
+        return idCita;
+    }
 
-	public void setIdCita(Integer idCita) {
-		this.idCita = idCita;
-	}
+    public void setIdCita(Integer idCita) {
+        this.idCita = idCita;
+    }
 
-	public UsuarioDto getUsuario() {
-		return usuario;
-	}
+    public String getIdUsuario() {
+        return idUsuario;
+    }
 
-	public void setUsuario(UsuarioDto usuario) {
-		this.usuario = usuario;
-	}
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-	public VehiculoDto getVehiculo() {
-		return vehiculo;
-	}
+    public String getIdVehiculo() {
+        return idVehiculo;
+    }
 
-	public void setVehiculo(VehiculoDto vehiculo) {
-		this.vehiculo = vehiculo;
-	}
+    public void setIdVehiculo(String idVehiculo) {
+        this.idVehiculo = idVehiculo;
+    }
 
-	public LocalDateTime getEntrada() {
-		return entrada;
-	}
+    public LocalDateTime getEntrada() {
+        return entrada;
+    }
 
-	public void setEntrada(LocalDateTime entrada) {
-		this.entrada = entrada;
-	}
+    public void setEntrada(LocalDateTime entrada) {
+        this.entrada = entrada;
+    }
 
-	public LocalDateTime getSalida() {
-		return salida;
-	}
+    public LocalDateTime getSalida() {
+        return salida;
+    }
 
-	public void setSalida(LocalDateTime salida) {
-		this.salida = salida;
-	}
+    public void setSalida(LocalDateTime salida) {
+        this.salida = salida;
+    }
 
-	public ServicioDto getServicio() {
-		return servicio;
-	}
+    public Integer getIdServicio() {
+        return idServicio;
+    }
 
-	public void setServicio(ServicioDto servicio) {
-		this.servicio = servicio;
-	}
+    public void setIdServicio(Integer idServicio) {
+        this.idServicio = idServicio;
+    }
 
-	public VehiculoSustitucionDto getVehiculoSustitucion() {
-		return vehiculoSustitucion;
-	}
+    public String getIdVehiculoSustitucion() {
+        return idVehiculoSustitucion;
+    }
 
-	public void setVehiculoSustitucion(VehiculoSustitucionDto vehiculoSustitucion) {
-		this.vehiculoSustitucion = vehiculoSustitucion;
-	}
+    public void setIdVehiculoSustitucion(String idVehiculoSustitucion) {
+        this.idVehiculoSustitucion = idVehiculoSustitucion;
+    }
 
-	public String getDescripcionAveria() {
-		return descripcionAveria;
-	}
+    public String getDescripcionAveria() {
+        return descripcionAveria;
+    }
 
-	public void setDescripcionAveria(String descripcionAveria) {
-		this.descripcionAveria = descripcionAveria;
-	}
+    public void setDescripcionAveria(String descripcionAveria) {
+        this.descripcionAveria = descripcionAveria;
+    }
 
-	public String getFecha() {
-		return fecha;
-	}
+    public String getFecha() {
+        return fecha;
+    }
 
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
 
-	public String getHora() {
-		return hora;
-	}
+    public String getHora() {
+        return hora;
+    }
 
-	public void setHora(String hora) {
-		this.hora = hora;
-	}
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
 
-	public Integer getIdServicio() {
-		return idServicio;
-	}
-
-	public void setIdServicio(Integer idServicio) {
-		this.idServicio = idServicio;
-	}
-
-	@Override
-	public String toString() {
-		return "CitaDto [idCita=" + idCita + ", usuario=" + usuario + ", vehiculo=" + vehiculo + ", entrada=" + entrada
-				+ ", salida=" + salida + ", servicio=" + servicio + ", vehiculoSustitucion=" + vehiculoSustitucion
-				+ ", descripcionAveria=" + descripcionAveria + ", fecha=" + fecha + ", hora=" + hora + "]";
-	}
+    @Override
+    public String toString() {
+        return "CitaDto [idCita=" + idCita + ", idUsuario=" + idUsuario + ", idVehiculo=" + idVehiculo + ", entrada="
+                + entrada + ", salida=" + salida + ", idServicio=" + idServicio + ", idVehiculoSustitucion="
+                + idVehiculoSustitucion + ", descripcionAveria=" + descripcionAveria + ", fecha=" + fecha + ", hora="
+                + hora + "]";
+    }
 
 }

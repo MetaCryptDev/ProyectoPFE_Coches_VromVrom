@@ -9,18 +9,18 @@ public class VehiculoDto implements Serializable {
     private String matricula;
     private String modelo;
     private String marca;
-    private UsuarioDto usuario;
+    private String idUsuario;
 
     public VehiculoDto() {
         super();
     }
 
-    public VehiculoDto(String matricula, String modelo, String marca, UsuarioDto usuario) {
+    public VehiculoDto(String matricula, String modelo, String marca, String idUsuario) {
         super();
         this.matricula = matricula;
         this.modelo = modelo;
         this.marca = marca;
-        this.usuario = usuario;
+        this.idUsuario = idUsuario;
     }
 
     public String getMatricula() {
@@ -47,11 +47,11 @@ public class VehiculoDto implements Serializable {
         this.marca = marca;
     }
 
-    public UsuarioDto getUsuario() {
-        return usuario;
+    public String getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setUsuario(UsuarioDto usuario) {
-        this.usuario = usuario;
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

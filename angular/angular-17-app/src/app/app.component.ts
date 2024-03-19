@@ -13,11 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppComponent implements OnInit {
 
   isLoggedIn = false;
+  admin = false;
   title = 'angular-17-app';
   imagen = "../imagenes/logo.png"
 
   ngOnInit(): void {
     this.isLoggedIn = !!localStorage.getItem('currentUser');
+    this.admin = !!localStorage.getItem('currentUser');
     
   }
   logout(): void {

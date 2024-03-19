@@ -2,15 +2,12 @@ package com.proyectojm.app.entities;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -19,33 +16,30 @@ import jakarta.persistence.Table;
 public class CitaEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "secuencia")
-	@SequenceGenerator(name = "secuencia",allocationSize = 1,sequenceName = "SEQ_CITA")
+
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "secuencia")
+    @SequenceGenerator(name = "secuencia", allocationSize = 1, sequenceName = "SEQ_CITA")
     @Column(name = "ID_CITA")
     private Integer idCita;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_ID_USUARIO", referencedColumnName = "ID_USUARIO")
-    private UsuarioEntity usuario;
+    @Column(name = "FK_ID_USUARIO")
+    private String usuarioId;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_MATRICULA", referencedColumnName = "MATRICULA")
-    private VehiculoEntity vehiculo;
+    @Column(name = "FK_MATRICULA")
+    private String vehiculoMatricula;
 
     @Column(name = "ENTRADA")
-    private LocalDateTime  entrada;
-    
+    private LocalDateTime entrada;
+
     @Column(name = "SALIDA")
-    private LocalDateTime  salida;
+    private LocalDateTime salida;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_SERVICIO", referencedColumnName = "ID_SERVICIO")
-    private ServicioEntity servicio;
+    @Column(name = "FK_SERVICIO")
+    private Integer servicioId;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_VEHICULO_REPARACION", referencedColumnName = "MATRICULA") //TABLA VEHICULO SUST
-    private VehiculoSustitucionEntity vehiculoSustitucion;
+    @Column(name = "FK_VEHICULO_REPARACION")
+    private String vehiculoSustitucionMatricula;
 
     @Column(name = "DESCRIPCION_DE_AVERIA")
     private String descripcionAveria;
@@ -54,85 +48,81 @@ public class CitaEntity implements Serializable {
     public CitaEntity() {
     }
 
-	
+    // Constructor con todos los campos
+    public CitaEntity(Integer idCita, String usuarioId, String vehiculoMatricula, LocalDateTime entrada,
+                      LocalDateTime salida, Integer servicioId, String vehiculoSustitucionMatricula,
+                      String descripcionAveria) {
+        this.idCita = idCita;
+        this.usuarioId = usuarioId;
+        this.vehiculoMatricula = vehiculoMatricula;
+        this.entrada = entrada;
+        this.salida = salida;
+        this.servicioId = servicioId;
+        this.vehiculoSustitucionMatricula = vehiculoSustitucionMatricula;
+        this.descripcionAveria = descripcionAveria;
+    }
 
-	public CitaEntity(Integer idCita, UsuarioEntity usuario, VehiculoEntity vehiculo, LocalDateTime entrada,
-			LocalDateTime salida, ServicioEntity servicio, VehiculoSustitucionEntity vehiculoSustitucion,
-			String descripcionAveria) {
-		this.idCita = idCita;
-		this.usuario = usuario;
-		this.vehiculo = vehiculo;
-		this.entrada = entrada;
-		this.salida = salida;
-		this.servicio = servicio;
-		this.vehiculoSustitucion = vehiculoSustitucion;
-		this.descripcionAveria = descripcionAveria;
-	}
+    public Integer getIdCita() {
+        return idCita;
+    }
 
+    public void setIdCita(Integer idCita) {
+        this.idCita = idCita;
+    }
 
+    public String getUsuarioId() {
+        return usuarioId;
+    }
 
-	public Integer getIdCita() {
-		return idCita;
-	}
+    public void setUsuarioId(String usuarioId) {
+        this.usuarioId = usuarioId;
+    }
 
-	public void setIdCita(Integer idCita) {
-		this.idCita = idCita;
-	}
+    public String getVehiculoMatricula() {
+        return vehiculoMatricula;
+    }
 
-	public UsuarioEntity getUsuario() {
-		return usuario;
-	}
+    public void setVehiculoMatricula(String vehiculoMatricula) {
+        this.vehiculoMatricula = vehiculoMatricula;
+    }
 
-	public void setUsuario(UsuarioEntity usuario) {
-		this.usuario = usuario;
-	}
+    public LocalDateTime getEntrada() {
+        return entrada;
+    }
 
-	public VehiculoEntity getVehiculo() {
-		return vehiculo;
-	}
+    public void setEntrada(LocalDateTime entrada) {
+        this.entrada = entrada;
+    }
 
-	public void setVehiculo(VehiculoEntity vehiculo) {
-		this.vehiculo = vehiculo;
-	}
+    public LocalDateTime getSalida() {
+        return salida;
+    }
 
-	public LocalDateTime getEntrada() {
-		return entrada;
-	}
+    public void setSalida(LocalDateTime salida) {
+        this.salida = salida;
+    }
 
-	public void setEntrada(LocalDateTime entrada) {
-		this.entrada = entrada;
-	}
+    public Integer getServicioId() {
+        return servicioId;
+    }
 
-	public LocalDateTime getSalida() {
-		return salida;
-	}
+    public void setServicioId(Integer servicioId) {
+        this.servicioId = servicioId;
+    }
 
-	public void setSalida(LocalDateTime salida) {
-		this.salida = salida;
-	}
+    public String getVehiculoSustitucionMatricula() {
+        return vehiculoSustitucionMatricula;
+    }
 
-	public ServicioEntity getServicio() {
-		return servicio;
-	}
+    public void setVehiculoSustitucionMatricula(String vehiculoSustitucionMatricula) {
+        this.vehiculoSustitucionMatricula = vehiculoSustitucionMatricula;
+    }
 
-	public void setServicio(ServicioEntity servicio) {
-		this.servicio = servicio;
-	}
+    public String getDescripcionAveria() {
+        return descripcionAveria;
+    }
 
-	public VehiculoSustitucionEntity getVehiculoSustitucion() {
-		return vehiculoSustitucion;
-	}
-
-	public void setVehiculoSustitucion(VehiculoSustitucionEntity vehiculoSustitucion) {
-		this.vehiculoSustitucion = vehiculoSustitucion;
-	}
-
-	public String getDescripcionAveria() {
-		return descripcionAveria;
-	}
-
-	public void setDescripcionAveria(String descripcionAveria) {
-		this.descripcionAveria = descripcionAveria;
-	}
-    
+    public void setDescripcionAveria(String descripcionAveria) {
+        this.descripcionAveria = descripcionAveria;
+    }
 }

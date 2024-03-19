@@ -5,8 +5,6 @@ import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,20 +23,19 @@ public class VehiculoEntity implements Serializable {
     @Column(name = "MARCA")
     private String marca;
 
-    @ManyToOne
-    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID_USUARIO")
-    private UsuarioEntity usuario;
+    @Column(name = "ID_USUARIO")
+    private String idUsuario;
 
     // Constructor vacío
     public VehiculoEntity() {
     }
 
     // Constructor con todos los campos
-    public VehiculoEntity(String matricula, String modelo, String marca, UsuarioEntity usuario) {
+    public VehiculoEntity(String matricula, String modelo, String marca, String idUsuario) {
         this.matricula = matricula;
         this.modelo = modelo;
         this.marca = marca;
-        this.usuario = usuario;
+        this.idUsuario = idUsuario;
     }
 
     // Getters y setters
@@ -66,11 +63,11 @@ public class VehiculoEntity implements Serializable {
         this.marca = marca;
     }
 
-    public UsuarioEntity getUsuario() {
-        return usuario;
+    public String getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setUsuario(UsuarioEntity usuario) {
-        this.usuario = usuario;
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }
