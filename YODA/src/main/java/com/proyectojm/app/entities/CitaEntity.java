@@ -6,9 +6,12 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +19,8 @@ import jakarta.persistence.Table;
 public class CitaEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "secuencia")
+	@SequenceGenerator(name = "secuencia",allocationSize = 1,sequenceName = "SEQ_CITA")
     @Id
     @Column(name = "ID_CITA")
     private Integer idCita;

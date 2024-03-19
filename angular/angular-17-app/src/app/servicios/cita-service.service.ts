@@ -18,7 +18,7 @@ export class CitaService {
   }
 
   saveCita(cita : Cita) : Observable<Cita> {
-    return this.http.post<Cita>(this.urlEndPoint + 'insertar', Cita, {headers: this.httpHeaders});
+    return this.http.post<Cita>(this.urlEndPoint + 'insertar', cita, {headers: this.httpHeaders});
   }
 
   removeCita(idCita: number) : Observable<Cita> {
