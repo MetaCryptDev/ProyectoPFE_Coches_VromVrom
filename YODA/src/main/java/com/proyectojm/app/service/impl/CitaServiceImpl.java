@@ -37,39 +37,55 @@ public class CitaServiceImpl implements IServiceCita {
 		try {
 
 			citaEntty.setIdCita(cita.getIdCita());
-			
-			usuarioEntty.setIdUsuario(usuarioEntty.getIdUsuario());
-			usuarioEntty.setNombre(usuarioEntty.getNombre());
-			usuarioEntty.setApellido(usuarioEntty.getApellido());
-			usuarioEntty.setMail(usuarioEntty.getMail());
-			usuarioEntty.setPasswd(usuarioEntty.getPasswd());
-			usuarioEntty.setTelefono(usuarioEntty.getPasswd());
-			citaEntty.setUsuario(usuarioEntty);
+			citaEntty.setEntrada(cita.getEntrada());
 			
 			
-			vehiculoEntty.setMatricula(vehiculoEntty.getMatricula());
-			vehiculoEntty.setMarca(vehiculoEntty.getMarca());
-			vehiculoEntty.setModelo(vehiculoEntty.getModelo());
-			vehiculoEntty.setUsuario(vehiculoEntty.getUsuario());
-			citaEntty.setVehiculo(vehiculoEntty);
+			if(cita.getUsuario()!=null) {
+				
+				usuarioEntty.setIdUsuario(cita.getUsuario().getIdUsuario());
+				usuarioEntty.setNombre(cita.getUsuario().getNombre());
+				usuarioEntty.setApellido(cita.getUsuario().getApellido());
+				usuarioEntty.setMail(cita.getUsuario().getMail());
+				usuarioEntty.setPasswd(cita.getUsuario().getPasswd());
+				usuarioEntty.setTelefono(cita.getUsuario().getPasswd());
+				citaEntty.setUsuario(usuarioEntty);
+				
+			}
 			
-			//citaEntty.setEntrada(cita.getEntrada());
+			if(cita.getVehiculo()!=null) {
+				
+				vehiculoEntty.setMatricula(cita.getVehiculo().getMatricula());
+				vehiculoEntty.setMarca(cita.getVehiculo().getMarca());
+				vehiculoEntty.setModelo(cita.getVehiculo().getModelo());
+				//vehiculoEntty.setUsuario(cita.getVehiculo().getUsuario());
+				citaEntty.setVehiculo(vehiculoEntty);
+			}
 			
 			
-			servicioEntty.setIdServicio(servicioEntty.getIdServicio());
-			servicioEntty.setNombre(servicioEntty.getNombre());
-			servicioEntty.setManoDeObra(servicioEntty.getManoDeObra());
-			citaEntty.setServicio(servicioEntty);
+			if(cita.getIdServicio()!=null) {
+				
+				servicioEntty.setIdServicio(cita.getServicio().getIdServicio());
+				servicioEntty.setNombre(cita.getServicio().getNombre());
+				servicioEntty.setManoDeObra(cita.getServicio().getManoDeObra());
+				citaEntty.setServicio(servicioEntty);
+				
+			}
 			
+			if(cita.getVehiculoSustitucion()!=null) {
+				vehiculoSustitucionEntty.setMarca(cita.getVehiculoSustitucion().getMarca());
+				vehiculoSustitucionEntty.setMatricula(cita.getVehiculoSustitucion().getMatricula());
+				vehiculoSustitucionEntty.setModelo(cita.getVehiculoSustitucion().getModelo());
+				vehiculoSustitucionEntty.setPrecioPorDia(cita.getVehiculoSustitucion().getPrecioPorDia());
+				vehiculoSustitucionEntty.setUrlImagen(cita.getVehiculoSustitucion().getUrlImagen());
+				citaEntty.setVehiculoSustitucion(vehiculoSustitucionEntty);
+				
+			}
 			
-			vehiculoSustitucionEntty.setMarca(vehiculoSustitucionEntty.getMarca());
-			vehiculoSustitucionEntty.setMatricula(vehiculoSustitucionEntty.getMatricula());
-			vehiculoSustitucionEntty.setModelo(vehiculoSustitucionEntty.getModelo());
-			vehiculoSustitucionEntty.setPrecioPorDia(vehiculoSustitucionEntty.getPrecioPorDia());
-			vehiculoSustitucionEntty.setUrlImagen(vehiculoSustitucionEntty.getUrlImagen());
-			citaEntty.setVehiculoSustitucion(vehiculoSustitucionEntty);
+			if(cita.getDescripcionAveria()!=null) {
+				citaEntty.setDescripcionAveria(cita.getDescripcionAveria());
+				
+			}
 			
-			citaEntty.setDescripcionAveria(cita.getDescripcionAveria());
 			
 			citaDao.save(citaEntty);
 

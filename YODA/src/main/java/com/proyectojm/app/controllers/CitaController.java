@@ -27,9 +27,9 @@ public class CitaController {
 	@PostMapping(value = "/insertar")
 	@ResponseStatus(value = HttpStatus.CREATED)
 	public void insertar(@RequestBody CitaDto cita) {
-		System.out.println(cita.getDescripcionAveria());
-		try {
 		
+		try {
+		System.out.println(cita.getIdServicio());
 			citaService.guardarCita(cita);
 			
 		} catch (Exception e) {

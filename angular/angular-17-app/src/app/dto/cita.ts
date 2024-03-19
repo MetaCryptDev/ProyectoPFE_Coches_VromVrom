@@ -4,7 +4,8 @@ export class Cita {
     entrada!: string;
     servicio!: string;
     vehiculoSustitucion!: string;
-    descripcion_averia!: string;
+    descripcionAveria!: string;
     fecha!: string;
     hora!: string;
+    idServicio!:number;
 }
