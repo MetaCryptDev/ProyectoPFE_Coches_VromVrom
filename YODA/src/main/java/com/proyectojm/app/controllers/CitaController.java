@@ -17,13 +17,12 @@ import com.proyectojm.app.service.IServiceContacto;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping(value = "/contacto")
+@RequestMapping(value = "/cita")
 public class CitaController {
 	
 	@Autowired
 	private IServiceCita citaService;
-	@Autowired
-	private CitaController cita;
+	
 		
 	@PostMapping(value = "/insertar")
 	@ResponseStatus(value = HttpStatus.CREATED)
