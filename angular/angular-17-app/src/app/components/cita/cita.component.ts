@@ -38,6 +38,7 @@ export class CitaComponent implements OnInit {
 
               
     crearCita() : void {
+      this.cita.entrada = `${this.cita.fecha}T${this.cita.hora}:00`;
       this.citaService.saveCita(this.cita).subscribe(
         response => {
           this.router.navigate(['']); 
