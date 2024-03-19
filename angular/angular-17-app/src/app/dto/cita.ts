@@ -8,5 +8,5 @@ export class Cita {
     fecha!: string;
     hora!: string;
     idServicio!:number;
-    nombreUsuario!: string;
+    idUsuario!: number;
 }

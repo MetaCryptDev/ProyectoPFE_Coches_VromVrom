@@ -9,14 +9,19 @@ import org.springframework.stereotype.Service;
 
 import com.proyectojm.app.dao.IDAOCita;
 import com.proyectojm.app.dto.CitaDto;
+import com.proyectojm.app.dto.ServicioDto;
 import com.proyectojm.app.entities.CitaEntity;
 import com.proyectojm.app.service.IServiceCita;
+import com.proyectojm.app.service.IServiceServicio;
 
 @Service
 public class CitaServiceImpl implements IServiceCita {
 
     @Autowired
     private IDAOCita citaDao;
+    
+    @Autowired 
+    private IServiceServicio servicioServicio;
 
     @Override
     public void guardarCita(CitaDto cita) {
@@ -37,6 +42,12 @@ public class CitaServiceImpl implements IServiceCita {
 
 			// ID SERVICIO
 			citaEntty.setServicioId(cita.getIdServicio() != null ? cita.getIdServicio() : null);
+			
+			//SALIDA cita.getEntrada().plusHours()
+			
+			
+			
+			citaEntty.setSalida(cita.getEntrada().plusHours(2));
 
 			// ID VEHICULO SUSTITUCION
 			citaEntty.setVehiculoSustitucionMatricula(cita.getIdVehiculoSustitucion() != null ? cita.getIdVehiculoSustitucion() : null);

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { CitaService } from '../../servicios/cita-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Cita } from '../../dto/cita';
+import { Usuario } from '../../dto/usuario';
 @Component({
   selector: 'app-cita',
   standalone: true,
@@ -19,7 +20,7 @@ import { Cita } from '../../dto/cita';
 export class CitaComponent implements OnInit {
   title : string = 'Nuevo Cita';
 
-
+  user:Usuario =new Usuario();
   contacto : Contacto = new Contacto();
   cita : Cita = new Cita();
 
@@ -33,11 +34,13 @@ export class CitaComponent implements OnInit {
     let userData = JSON.parse(currentUser);
     this.contacto.nombre = userData.nombre;
     this.contacto.mail = userData.mail;
+    this.cita.idUsuario = userData.idUsuario;
   }
   }
 
               
     crearCita() : void {
+      
       this.cita.entrada = `${this.cita.fecha}T${this.cita.hora}:00:00`;
       console.log('Enviando cita:', JSON.stringify(this.cita));
       this.citaService.saveCita(this.cita).subscribe(

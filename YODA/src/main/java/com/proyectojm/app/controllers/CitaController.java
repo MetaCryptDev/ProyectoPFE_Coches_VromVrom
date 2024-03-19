@@ -29,7 +29,7 @@ public class CitaController {
 	public void insertar(@RequestBody CitaDto cita) {
 		
 		try {
-		System.out.println(cita.getIdServicio());
+		System.out.println(cita.getIdUsuario());
 			citaService.guardarCita(cita);
 			
 		} catch (Exception e) {

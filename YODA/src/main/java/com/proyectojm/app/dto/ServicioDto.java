@@ -8,13 +8,13 @@ public class ServicioDto implements Serializable {
 
     private Integer idServicio;
     private String nombre;
-    private Double manoDeObra;
+    private Integer manoDeObra;
 
     public ServicioDto() {
         super();
     }
 
-    public ServicioDto(Integer idServicio, String nombre, Double manoDeObra) {
+    public ServicioDto(Integer idServicio, String nombre, Integer manoDeObra) {
         super();
         this.idServicio = idServicio;
         this.nombre = nombre;
@@ -37,11 +37,11 @@ public class ServicioDto implements Serializable {
         this.nombre = nombre;
     }
 
-    public Double getManoDeObra() {
+    public Integer getManoDeObra() {
         return manoDeObra;
     }
 
-    public void setManoDeObra(Double manoDeObra) {
+    public void setManoDeObra(Integer manoDeObra) {
         this.manoDeObra = manoDeObra;
     }
 }

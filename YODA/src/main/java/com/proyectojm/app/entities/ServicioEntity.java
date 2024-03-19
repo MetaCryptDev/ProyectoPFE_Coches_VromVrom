@@ -21,14 +21,14 @@ public class ServicioEntity implements Serializable {
     private String nombre;
 
     @Column(name = "MANODEOBRA")
-    private Double manoDeObra;
+    private Integer manoDeObra;
 
     // Constructor vacío
     public ServicioEntity() {
     }
 
     // Constructor con todos los campos
-    public ServicioEntity(Integer idServicio, String nombre, Double manoDeObra) {
+    public ServicioEntity(Integer idServicio, String nombre, Integer manoDeObra) {
         this.idServicio = idServicio;
         this.nombre = nombre;
         this.manoDeObra = manoDeObra;
@@ -51,11 +51,11 @@ public class ServicioEntity implements Serializable {
         this.nombre = nombre;
     }
 
-    public Double getManoDeObra() {
+    public Integer getManoDeObra() {
         return manoDeObra;
     }
 
-    public void setManoDeObra(Double manoDeObra) {
+    public void setManoDeObra(Integer manoDeObra) {
         this.manoDeObra = manoDeObra;
     }
 }
