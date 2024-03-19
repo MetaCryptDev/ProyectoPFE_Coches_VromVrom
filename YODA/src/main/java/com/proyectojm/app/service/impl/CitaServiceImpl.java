@@ -45,7 +45,23 @@ public class CitaServiceImpl implements IServiceCita {
 			
 			//SALIDA cita.getEntrada().plusHours()
 			
+			switch(citaEntty.getServicioId()) {
+			case 1,2:
+					citaEntty.setSalida(citaEntty.getEntrada().plusHours(2));
+				break;
 			
+			case 3:
+					citaEntty.setSalida(citaEntty.getEntrada().plusHours(1));
+				break;
+				
+			case 4:
+					citaEntty.setSalida(citaEntty.getEntrada().plusHours(4));
+				break;
+			
+			default:
+				citaEntty.setSalida(citaEntty.getEntrada().plusHours(0));
+				break;
+			}
 			
 			citaEntty.setSalida(cita.getEntrada().plusHours(2));
 
