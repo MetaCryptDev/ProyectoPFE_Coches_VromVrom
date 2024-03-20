@@ -3,12 +3,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { IndexComponent } from './components/index/index.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Usuario } from '../app/dto/usuario';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink,IndexComponent,HttpClientModule],
+  imports: [RouterOutlet, RouterLink, IndexComponent, HttpClientModule],
   templateUrl: './app.component.html',
-  styleUrls: ['../assets/css/custom.css','../assets/css/templatemo.css','../assets/css/fontawesome.css','../assets/css/fontawesome.min.css'],
+  styleUrls: ['../assets/css/custom.css', '../assets/css/templatemo.css', '../assets/css/fontawesome.css', '../assets/css/fontawesome.min.css'],
 })
 export class AppComponent implements OnInit {
 
@@ -19,19 +21,18 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     const currentUser = localStorage.getItem('currentUser');
-    this.isLoggedIn = !!currentUser; 
+    this.isLoggedIn = !!currentUser;
     if (currentUser) {
-      const userData = JSON.parse(currentUser);
-      this.admin = userData.rol === 'admin'; 
+      const userData: Usuario = JSON.parse(currentUser);
+      this.admin = userData.rol === 2;
     } else {
-      this.admin = false; 
+      this.admin = false;
     }
-    
   }
+
   logout(): void {
     localStorage.removeItem('currentUser');
     window.location.reload();
-     
-}
-  
+  }
+
 }

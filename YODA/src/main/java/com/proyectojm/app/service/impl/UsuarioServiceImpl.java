@@ -43,7 +43,8 @@ public class UsuarioServiceImpl implements IServiceUsuario {
 			usuarioEntty.setMail(usuario.getMail());
 			usuarioEntty.setTelefono(usuario.getTelefono());
 			usuarioEntty.setPasswd(usuario.getPasswd());
-
+			usuarioEntty.setRol(usuario.getRol());
+			
 			usuarioDao.save(usuarioEntty);
 
 		} catch (Exception e) {
@@ -65,7 +66,8 @@ public class UsuarioServiceImpl implements IServiceUsuario {
     			usuarioEntty.setMail(usuario.getMail());
     			usuarioEntty.setTelefono(usuario.getTelefono());
     			usuarioEntty.setPasswd(usuario.getPasswd());
-
+    			usuarioEntty.setRol(usuario.getRol());
+    			
     			usuarioDao.save(usuarioEntty);
             } else {
                 System.out.println("La entidad no existe.");
@@ -108,6 +110,7 @@ public class UsuarioServiceImpl implements IServiceUsuario {
 	                actual.setMail(entity.getMail());
 	                actual.setTelefono(entity.getTelefono());
 	                actual.setPasswd(entity.getPasswd());
+	                actual.setRol(entity.getRol());
 	    			
 	                lstResultado.add(actual);
 	            }
@@ -133,6 +136,7 @@ public class UsuarioServiceImpl implements IServiceUsuario {
                actual.setMail(entity.getMail());
                actual.setTelefono(entity.getTelefono());
                actual.setPasswd(entity.getPasswd());
+               actual.setRol(entity.getRol());
            }
        } catch (Exception e) {
            System.out.println(e.getMessage());

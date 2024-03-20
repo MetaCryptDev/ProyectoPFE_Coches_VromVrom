@@ -12,12 +12,13 @@ public class UsuarioDto implements Serializable {
     private String telefono;
     private String mail;
     private String passwd;
+    private Integer rol;
 
     public UsuarioDto() {
         super();
     }
 
-    public UsuarioDto(Integer idUsuario, String nombre, String apellido, String telefono, String mail, String passwd) {
+    public UsuarioDto(Integer idUsuario, String nombre, String apellido, String telefono, String mail, String passwd, Integer rol) {
         super();
         this.idUsuario = idUsuario;
         this.nombre = nombre;
@@ -25,9 +26,18 @@ public class UsuarioDto implements Serializable {
         this.telefono = telefono;
         this.mail = mail;
         this.passwd = passwd;
+        this.rol = rol;
     }
 
-    public Integer getIdUsuario() {
+    public Integer getRol() {
+		return rol;
+	}
+
+	public void setRol(Integer rol) {
+		this.rol = rol;
+	}
+
+	public Integer getIdUsuario() {
         return idUsuario;
     }
 
