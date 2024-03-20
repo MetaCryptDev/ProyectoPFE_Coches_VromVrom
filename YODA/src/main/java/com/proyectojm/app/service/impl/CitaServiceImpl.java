@@ -19,15 +19,15 @@ import com.proyectojm.app.service.IServiceServicio;
 @Service
 public class CitaServiceImpl implements IServiceCita {
 
-    @Autowired
-    private IDAOCita citaDao;
-    
-    @Autowired 
-    private IServiceServicio servicioServicio;
+	@Autowired
+	private IDAOCita citaDao;
 
-    @Override
-    public void guardarCita(CitaDto cita) {
-    	CitaEntity citaEntty = new CitaEntity();
+	@Autowired
+	private IServiceServicio servicioServicio;
+
+	@Override
+	public void guardarCita(CitaDto cita) {
+		CitaEntity citaEntty = new CitaEntity();
 		try {
 
 			// ID CITA
@@ -44,40 +44,39 @@ public class CitaServiceImpl implements IServiceCita {
 
 			// ID SERVICIO
 			citaEntty.setServicioId(cita.getIdServicio() != null ? cita.getIdServicio() : null);
-			
-			//SALIDA cita.getEntrada().plusHours()
-			
-			switch(citaEntty.getServicioId()) {
-			case 1	,	2:
-					citaEntty.setSalida(citaEntty.getEntrada().plusHours(2));
-				if(citaEntty.getSalida().getHour()>13) {
+
+			// SALIDA cita.getEntrada().plusHours()
+
+			switch (citaEntty.getServicioId()) {
+			case 1, 2:
+				citaEntty.setSalida(citaEntty.getEntrada().plusHours(2));
+				if (citaEntty.getSalida().getHour() > 13) {
 					citaEntty.setSalida(citaEntty.getSalida().plusHours(2));
 				}
 				break;
-			
+
 			case 3:
-					citaEntty.setSalida(citaEntty.getEntrada().plusHours(1));
-					if(citaEntty.getSalida().getHour()>13) {
-						citaEntty.setSalida(citaEntty.getSalida().plusHours(2));
-					}
+				citaEntty.setSalida(citaEntty.getEntrada().plusHours(1));
+				if (citaEntty.getSalida().getHour() > 13) {
+					citaEntty.setSalida(citaEntty.getSalida().plusHours(2));
+				}
 				break;
-				
+
 			case 4:
-					citaEntty.setSalida(citaEntty.getEntrada().plusHours(4));
-					if(citaEntty.getSalida().getHour()>13) {
-						citaEntty.setSalida(citaEntty.getSalida().plusHours(2));
-					}
+				citaEntty.setSalida(citaEntty.getEntrada().plusHours(4));
+				if (citaEntty.getSalida().getHour() > 13) {
+					citaEntty.setSalida(citaEntty.getSalida().plusHours(2));
+				}
 				break;
-			
+
 			default:
-				    citaEntty.setSalida(citaEntty.getEntrada().plusHours(0));
+				citaEntty.setSalida(citaEntty.getEntrada().plusHours(0));
 				break;
 			}
-			
-			
 
 			// ID VEHICULO SUSTITUCION
-			citaEntty.setVehiculoSustitucionMatricula(cita.getIdVehiculoSustitucion() != null ? cita.getIdVehiculoSustitucion() : null);
+			citaEntty.setVehiculoSustitucionMatricula(
+					cita.getIdVehiculoSustitucion() != null ? cita.getIdVehiculoSustitucion() : null);
 
 			// DESCRIPCION AVERIA
 			citaEntty.setDescripcionAveria(cita.getDescripcionAveria() != null ? cita.getDescripcionAveria() : null);
@@ -87,12 +86,12 @@ public class CitaServiceImpl implements IServiceCita {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-    }
+	}
 
-    @Override
-    public void modificarCita(CitaDto cita) {
-    	CitaEntity citaEntty = new CitaEntity();
-    	
+	@Override
+	public void modificarCita(CitaDto cita) {
+		CitaEntity citaEntty = new CitaEntity();
+
 		try {
 
 			// ID CITA
@@ -111,180 +110,180 @@ public class CitaServiceImpl implements IServiceCita {
 			citaEntty.setServicioId(cita.getIdServicio() != null ? cita.getIdServicio() : null);
 
 			// ID VEHICULO SUSTITUCION
-			citaEntty.setVehiculoSustitucionMatricula(cita.getIdVehiculoSustitucion() != null ? cita.getIdVehiculoSustitucion() : null);
+			citaEntty.setVehiculoSustitucionMatricula(
+					cita.getIdVehiculoSustitucion() != null ? cita.getIdVehiculoSustitucion() : null);
 
 			// DESCRIPCION AVERIA
 			citaEntty.setDescripcionAveria(cita.getDescripcionAveria() != null ? cita.getDescripcionAveria() : null);
 
-			
 			citaDao.save(citaEntty);
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-    }
+	}
 
-    @Override
-    public void eliminarCita(Integer id) {
-    	CitaEntity cita = null;
-        try {
-            cita = citaDao.findById(id).orElse(null);
-            if (cita != null) {
-            	citaDao.delete(cita);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
+	@Override
+	public void eliminarCita(Integer id) {
+		CitaEntity cita = null;
+		try {
+			cita = citaDao.findById(id).orElse(null);
+			if (cita != null) {
+				citaDao.delete(cita);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
-    @Override
-    public List<CitaDto> recuperarTodasLasCitas() {
-    	List<CitaDto> lstResultado = null;
-        Iterable<CitaEntity> lstEntidades = null;
+	@Override
+	public List<CitaDto> recuperarTodasLasCitas() {
+		List<CitaDto> lstResultado = null;
+		Iterable<CitaEntity> lstEntidades = null;
 
-        try {
-            lstResultado = new ArrayList<>();
-            lstEntidades = citaDao.findAll();
+		try {
+			lstResultado = new ArrayList<>();
+			lstEntidades = citaDao.findAll();
 
-            for (Iterator<CitaEntity> iterator = lstEntidades.iterator(); iterator.hasNext();) {
-            	CitaEntity entity = iterator.next();
-            	CitaDto actual = new CitaDto();
-            	
-            	// ID CITA
-            	actual.setIdCita(entity.getIdCita() != null ? entity.getIdCita() : null);
+			for (Iterator<CitaEntity> iterator = lstEntidades.iterator(); iterator.hasNext();) {
+				CitaEntity entity = iterator.next();
+				CitaDto actual = new CitaDto();
 
-            	// ENTRADA
-            	actual.setEntrada(entity.getEntrada() != null ? entity.getEntrada() : null);
+				// ID CITA
+				actual.setIdCita(entity.getIdCita() != null ? entity.getIdCita() : null);
 
-            	// ID USUARIO
-            	actual.setIdUsuario(entity.getUsuarioId() != null ? entity.getUsuarioId() : null);
+				// ENTRADA
+				actual.setEntrada(entity.getEntrada() != null ? entity.getEntrada() : null);
 
-            	// ID VEHICULO
-            	actual.setIdVehiculo(entity.getVehiculoMatricula() != null ? entity.getVehiculoMatricula() : null);
+				// ID USUARIO
+				actual.setIdUsuario(entity.getUsuarioId() != null ? entity.getUsuarioId() : null);
 
-            	// ID SERVICIO
-            	actual.setIdServicio(entity.getServicioId() != null ? entity.getServicioId() : null);
+				// ID VEHICULO
+				actual.setIdVehiculo(entity.getVehiculoMatricula() != null ? entity.getVehiculoMatricula() : null);
 
-            	// ID VEHICULO SUSTITUCION
-            	actual.setIdVehiculoSustitucion(entity.getVehiculoSustitucionMatricula() != null ? entity.getVehiculoSustitucionMatricula() : null);
+				// ID SERVICIO
+				actual.setIdServicio(entity.getServicioId() != null ? entity.getServicioId() : null);
 
-            	// DESCRIPCION AVERIA
-            	actual.setDescripcionAveria(entity.getDescripcionAveria() != null ? entity.getDescripcionAveria() : null);
+				// ID VEHICULO SUSTITUCION
+				actual.setIdVehiculoSustitucion(
+						entity.getVehiculoSustitucionMatricula() != null ? entity.getVehiculoSustitucionMatricula()
+								: null);
 
-                lstResultado.add(actual);
-            }
+				// DESCRIPCION AVERIA
+				actual.setDescripcionAveria(
+						entity.getDescripcionAveria() != null ? entity.getDescripcionAveria() : null);
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+				lstResultado.add(actual);
+			}
 
-        return lstResultado;
-    }
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 
-    @Override
-    public CitaDto recuperarUnaCita(Integer id) {
-    	CitaDto actual = new CitaDto();
-    	CitaEntity entity = null;
-  
-        try {
-            entity = citaDao.findById(id).orElse(null);
-            if (entity != null) {
-            	// ID CITA
-            	actual.setIdCita(entity.getIdCita() != null ? entity.getIdCita() : null);
+		return lstResultado;
+	}
 
-            	// ENTRADA
-            	actual.setEntrada(entity.getEntrada() != null ? entity.getEntrada() : null);
+	@Override
+	public CitaDto recuperarUnaCita(Integer id) {
+		CitaDto actual = new CitaDto();
+		CitaEntity entity = null;
 
-            	// ID USUARIO
-            	actual.setIdUsuario(entity.getUsuarioId() != null ? entity.getUsuarioId() : null);
+		try {
+			entity = citaDao.findById(id).orElse(null);
+			if (entity != null) {
+				// ID CITA
+				actual.setIdCita(entity.getIdCita() != null ? entity.getIdCita() : null);
 
-            	// ID VEHICULO
-            	actual.setIdVehiculo(entity.getVehiculoMatricula() != null ? entity.getVehiculoMatricula() : null);
+				// ENTRADA
+				actual.setEntrada(entity.getEntrada() != null ? entity.getEntrada() : null);
 
-            	// ID SERVICIO
-            	actual.setIdServicio(entity.getServicioId() != null ? entity.getServicioId() : null);
+				// ID USUARIO
+				actual.setIdUsuario(entity.getUsuarioId() != null ? entity.getUsuarioId() : null);
 
-            	// ID VEHICULO SUSTITUCION
-            	actual.setIdVehiculoSustitucion(entity.getVehiculoSustitucionMatricula() != null ? entity.getVehiculoSustitucionMatricula() : null);
+				// ID VEHICULO
+				actual.setIdVehiculo(entity.getVehiculoMatricula() != null ? entity.getVehiculoMatricula() : null);
 
-            	// DESCRIPCION AVERIA
-            	actual.setDescripcionAveria(entity.getDescripcionAveria() != null ? entity.getDescripcionAveria() : null);
+				// ID SERVICIO
+				actual.setIdServicio(entity.getServicioId() != null ? entity.getServicioId() : null);
 
-                
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return actual;
-    }
-    @Override
-    public List<LocalTime> recuperarHorasDisponibles(Integer idServicio, LocalDate fecha) {
-    	
-    	 int duracionServicio;
-         switch (idServicio) {
-             case 1,2:
-             
-                 duracionServicio = 2; 
-                 break;
-             case 3:
-                 duracionServicio = 1; 
-                 break;
-             case 4:
-                 duracionServicio = 4; 
-                 break;
-             default:
-                 duracionServicio = 0; 
-                 break;
-         }
-        // Definir las horas de inicio posibles para las citas.
-    	 List<LocalTime> horasPosibles = new ArrayList<>();
-    	    LocalTime horaFinal = LocalTime.of(19, 0); // Hora de cierre
-    	    LocalTime horaInicio = LocalTime.of(9, 0); // Hora de apertura
-    	    LocalTime horaDescanso = LocalTime.of(14, 0); // Hora de descanso
+				// ID VEHICULO SUSTITUCION
+				actual.setIdVehiculoSustitucion(
+						entity.getVehiculoSustitucionMatricula() != null ? entity.getVehiculoSustitucionMatricula()
+								: null);
 
-    	    // Solo añadir horas de inicio que permitan que el servicio termine antes de la hora de cierre
-    	    // y que no comience en la hora de descanso
-    	    while (horaInicio.plusHours(duracionServicio).isBefore(horaFinal) || 
-    	           horaInicio.plusHours(duracionServicio).equals(horaFinal)) {
-    	        if (!horaInicio.equals(horaDescanso)) { // Evita añadir la hora del descanso
-    	            horasPosibles.add(horaInicio);
-    	        }
-    	        horaInicio = horaInicio.plusHours(1);
-    	    }
-        
-        
-       
+				// DESCRIPCION AVERIA
+				actual.setDescripcionAveria(
+						entity.getDescripcionAveria() != null ? entity.getDescripcionAveria() : null);
 
-        // Buscar todas las citas para el día especificado.
-        List<CitaEntity> citasDelDia = citaDao.findByEntradaBetween(
-            fecha.atStartOfDay(),
-            fecha.plusDays(1).atStartOfDay()
-        );
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return actual;
+	}
 
-        // Lista para guardar las horas disponibles.
-        List<LocalTime> horasDisponibles = new ArrayList<>(horasPosibles);
+	@Override
+	public List<LocalTime> recuperarHorasDisponibles(Integer idServicio, LocalDate fecha) {
 
-        // Verificar disponibilidad de cada hora.
-        for (LocalTime hora : horasPosibles) {
-            int citasEnHora = 0;
-            LocalDateTime inicioComparacion = LocalDateTime.of(fecha, hora);
-            LocalDateTime finComparacion = inicioComparacion.plusHours(duracionServicio);
-            
-            for (CitaEntity cita : citasDelDia) {
-                // Comprobamos si la cita actual se superpone con la hora que estamos verificando.
-            	if (cita.getEntrada().isBefore(finComparacion) && cita.getSalida().isAfter(inicioComparacion)) {
-                    citasEnHora++;
-                    System.out.println(citasEnHora);
-                }
-            }
+		int duracionServicio;
+		switch (idServicio) {
+		case 1, 2:
 
-            // Si hay 3 o más citas en esta hora, no está disponible.
-            if (citasEnHora >= 3) {
-                horasDisponibles.remove(hora);
-                
-            }
-        }
+			duracionServicio = 2;
+			break;
+		case 3:
+			duracionServicio = 1;
+			break;
+		case 4:
+			duracionServicio = 4;
+			break;
+		default:
+			duracionServicio = 0;
+			break;
+		}
+		// Definir las horas de abrir y cierre del taller
+		List<LocalTime> horasPosibles = new ArrayList<>();
+		LocalTime horaFinal = LocalTime.of(19, 0);
+		LocalTime horaInicio = LocalTime.of(9, 0);
+		LocalTime horaDescanso = LocalTime.of(14, 0);
 
-        return horasDisponibles;
-    }
+		while (horaInicio.plusHours(duracionServicio).isBefore(horaFinal)
+				|| horaInicio.plusHours(duracionServicio).equals(horaFinal)) {
+			if (!horaInicio.equals(horaDescanso)) {
+				horasPosibles.add(horaInicio);
+			}
+			horaInicio = horaInicio.plusHours(1);
+		}
+
+		// Buscar todas las citas para el día especificado.
+		List<CitaEntity> citasDelDia = citaDao.findByEntradaBetween(fecha.atStartOfDay(),
+				fecha.plusDays(1).atStartOfDay());
+
+		// Lista para guardar las horas disponibles.
+		List<LocalTime> horasDisponibles = new ArrayList<>(horasPosibles);
+
+		// Verificar disponibilidad de cada hora.
+		for (LocalTime hora : horasPosibles) {
+			int citasEnHora = 0;
+			LocalDateTime inicioComparacion = LocalDateTime.of(fecha, hora);
+			LocalDateTime finComparacion = inicioComparacion.plusHours(duracionServicio);
+
+			for (CitaEntity cita : citasDelDia) {
+				// Comprobamos si la cita actual se superpone con la hora que estamos
+				// verificando.
+				if (cita.getEntrada().isBefore(finComparacion) && cita.getSalida().isAfter(inicioComparacion)) {
+					citasEnHora++;
+					System.out.println(citasEnHora);
+				}
+			}
+
+			// Si hay 3 o más citas en esta hora, no está disponible.
+			if (citasEnHora >= 3) {
+				horasDisponibles.remove(hora);
+
+			}
+		}
+
+		return horasDisponibles;
+	}
 }
