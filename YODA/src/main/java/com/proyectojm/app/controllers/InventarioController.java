@@ -37,11 +37,12 @@ public class InventarioController {
 		return listaInventario;
 	}
 	
-	@GetMapping(value = "/buscar")
+	@PostMapping(value = "/buscar")
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public List<InventarioDto> buscar(String descripcion) {
+	public List<InventarioDto> buscar(@RequestBody InventarioDto inventario) {
 		List<InventarioDto> listaEncontrados = null;
-		listaEncontrados = inventarioService.buscador(descripcion);
+		System.out.println(inventario.getDescripcion());
+		listaEncontrados = inventarioService.buscador(inventario.getDescripcion());
 		
 		return listaEncontrados;
 	}

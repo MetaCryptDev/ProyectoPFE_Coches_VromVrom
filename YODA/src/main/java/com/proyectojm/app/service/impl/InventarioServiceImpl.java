@@ -116,11 +116,12 @@ public class InventarioServiceImpl implements IServiceInventario {
 	@Override
 	@Transactional
 	public List<InventarioDto> buscador(String descripcion) {
-		List<InventarioEntity> listaEncontrados = inventarioDao.findByDescripcionContaining(descripcion);
-		
-		List<InventarioDto> lstResultado = null;
-        Iterable<InventarioEntity> lstEntidades = listaEncontrados;
+		System.out.println(descripcion);
+		List<InventarioDto> lstResultado = new ArrayList<>();
+        Iterable<InventarioEntity> lstEntidades = null;
         try {
+        	
+        	lstEntidades = inventarioDao.findByDescripcionContaining(descripcion);
             lstResultado = new ArrayList<>();
             for (Iterator<InventarioEntity> iterator = lstEntidades.iterator(); iterator.hasNext();) {
                 InventarioEntity entity = iterator.next();
@@ -131,7 +132,9 @@ public class InventarioServiceImpl implements IServiceInventario {
                 actual.setDescripcion(entity.getDescripcion());
                 actual.setUrlImagen(entity.getUrlImagen());
                 lstResultado.add(actual);
+                System.out.println("hola");
             }
+            System.out.println(lstResultado.size());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

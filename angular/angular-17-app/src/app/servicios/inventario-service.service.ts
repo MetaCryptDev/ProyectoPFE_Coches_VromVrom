@@ -33,8 +33,8 @@ export class InventarioService {
     return this.http.put<Inventario>(this.urlEndPoint + 'actualizar/' + inventario.idPieza, inventario, {headers: this.httpHeaders});
   }
 
-  findPorDescripcion(descripcion : string) : Observable<Inventario[]> {
-    return this.http.get<Inventario[]>(this.urlEndPoint + 'buscar');
+  findPorDescripcion(inventario : Inventario) : Observable<Inventario[]> {
+    return this.http.post<Inventario[]>(this.urlEndPoint + 'buscar', inventario);
   }
 
 }

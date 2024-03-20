@@ -75,7 +75,7 @@ export class InventarioComponent {
 
   buscarPorDescripcion(): void {
     this.listaInventario = [];
-    this.inventarioService.findPorDescripcion(this.inventario.descripcion).subscribe(
+    this.inventarioService.findPorDescripcion(this.inventario).subscribe(
       (response: Inventario[]) => {
         this.listaInventario = response;
       }
