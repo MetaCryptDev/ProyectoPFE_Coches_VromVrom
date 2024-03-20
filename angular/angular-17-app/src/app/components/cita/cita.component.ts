@@ -38,6 +38,13 @@ export class CitaComponent implements OnInit {
       this.contacto.mail = userData.mail;
       this.cita.idUsuario = userData.idUsuario;
     }
+    const inputDateElement = document.getElementById("date");
+    if (inputDateElement) {
+      const today = new Date();
+      today.setDate(today.getDate() + 1); // Añade un día al día actual
+      const tomorrow = today.toISOString().split('T')[0];
+      inputDateElement.setAttribute("min", tomorrow);
+    }
   }
 
   toggleVehiculoSustitucion() {
