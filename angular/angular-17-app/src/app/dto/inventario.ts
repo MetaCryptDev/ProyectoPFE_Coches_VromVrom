@@ -3,5 +3,7 @@ export class Inventario {
     cantidad!: number;
     precio!: number;
     descripcion!: string;
+    marca!: string;
+    modelo!: string;
     urlImagen!: string;
 }

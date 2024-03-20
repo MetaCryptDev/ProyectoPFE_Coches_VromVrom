@@ -8,5 +8,5 @@ import com.proyectojm.app.entities.InventarioEntity;
 
 public interface IDAOInventario extends CrudRepository<InventarioEntity, Integer> {
 
-	List<InventarioEntity> findByDescripcionContaining(String descripcion);
+	List<InventarioEntity> findByDescripcionIgnoreCaseContaining(String descripcion);
 }

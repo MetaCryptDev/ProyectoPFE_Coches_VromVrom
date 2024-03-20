@@ -29,7 +29,7 @@ Drop sequence SEQ_CONTACTO;
 
 -- Eliminar secuencia cita
 
-Driop sequence SEQ_CITA;
+Drop sequence SEQ_CITA;
 
 -- Crear secuencia usuario
 
@@ -106,6 +106,8 @@ CREATE TABLE Inventario (
     CANTIDAD NUMBER,
     PRECIO NUMBER(10,2),
     DESCRIPCION VARCHAR2(255),
+    MARCA VARCHAR2(255),
+    MODELO VARCHAR2(255),
     URL_IMAGEN VARCHAR2(255)
 );
 
@@ -144,3 +146,9 @@ INSERT INTO Servicios (ID_SERVICIO, NOMBRE, MANO_DE_OBRA) VALUES ('4', 'Averia m
 INSERT INTO VEHICULO_SUSTITUCION (MATRICULA, MODELO, MARCA, PRECIO_POR_DIA,URL_IMAGEN) VALUES ('MAT1234', 'e', 'Honda', 50.00,'../assets/imagenes/honda.jpg');
 INSERT INTO VEHICULO_SUSTITUCION (MATRICULA, MODELO, MARCA, PRECIO_POR_DIA,URL_IMAGEN) VALUES ('MAT5678', '5E', 'Renault', 55.00,'../assets/imagenes/e5.jpg');
 INSERT INTO VEHICULO_SUSTITUCION (MATRICULA, MODELO, MARCA, PRECIO_POR_DIA,URL_IMAGEN) VALUES ('MAT9012', 'E-Up', 'Volkswagen', 60.00,'../assets/imagenes/eup.jpeg');
+
+-- Insertar datos inventario
+
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (1, 15, 20,'Opel','Corsa' 'Aceite para el motor', '../../assets/imagenes/aceiteCoche.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (2, 23, 50, 'Citroen','Xsara' 'Ejemplo', '../../assets/imagenes/coche1.jpg');
+commit;

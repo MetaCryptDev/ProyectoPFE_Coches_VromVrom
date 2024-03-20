@@ -25,6 +25,12 @@ public class InventarioEntity implements Serializable {
 
     @Column(name = "DESCRIPCION")
     private String descripcion;
+    
+    @Column(name = "MARCA")
+    private String marca;
+    
+    @Column(name = "MODELO")
+    private String modelo;
 
     @Column(name = "URL_IMAGEN")
     private String urlImagen;
@@ -33,16 +39,25 @@ public class InventarioEntity implements Serializable {
     public InventarioEntity() {
     }
 
-    // Constructor con todos los campos
-    public InventarioEntity(Integer idPieza, Integer cantidad, Double precio, String descripcion, String urlImagen) {
-        this.idPieza = idPieza;
-        this.cantidad = cantidad;
-        this.precio = precio;
-        this.descripcion = descripcion;
-        this.urlImagen = urlImagen;
-    }
 
-    // Getters y setters
+    
+    
+    public InventarioEntity(Integer idPieza, Integer cantidad, Double precio, String descripcion, String marca,
+			String modelo, String urlImagen) {
+		super();
+		this.idPieza = idPieza;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.descripcion = descripcion;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.urlImagen = urlImagen;
+	}
+
+
+
+
+	// Getters y setters
     public Integer getIdPieza() {
         return idPieza;
     }
@@ -75,7 +90,39 @@ public class InventarioEntity implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public String getUrlImagen() {
+    
+    
+    
+    
+    public String getMarca() {
+		return marca;
+	}
+
+
+
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+
+
+
+	public String getModelo() {
+		return modelo;
+	}
+
+
+
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+
+
+
+	public String getUrlImagen() {
         return urlImagen;
     }
 

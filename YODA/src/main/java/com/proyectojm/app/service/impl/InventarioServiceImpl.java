@@ -27,6 +27,8 @@ public class InventarioServiceImpl implements IServiceInventario {
             piezaEntity.setCantidad(pieza.getCantidad());
             piezaEntity.setPrecio(pieza.getPrecio());
             piezaEntity.setDescripcion(pieza.getDescripcion());
+            piezaEntity.setMarca(pieza.getMarca());
+            piezaEntity.setModelo(pieza.getModelo());
             piezaEntity.setUrlImagen(pieza.getUrlImagen());
 
             inventarioDao.save(piezaEntity);
@@ -44,6 +46,8 @@ public class InventarioServiceImpl implements IServiceInventario {
                 piezaEntity.setCantidad(pieza.getCantidad());
                 piezaEntity.setPrecio(pieza.getPrecio());
                 piezaEntity.setDescripcion(pieza.getDescripcion());
+                piezaEntity.setMarca(pieza.getMarca());
+                piezaEntity.setModelo(pieza.getModelo());
                 piezaEntity.setUrlImagen(pieza.getUrlImagen());
 
                 inventarioDao.save(piezaEntity);
@@ -84,6 +88,8 @@ public class InventarioServiceImpl implements IServiceInventario {
                 actual.setCantidad(entity.getCantidad());
                 actual.setPrecio(entity.getPrecio());
                 actual.setDescripcion(entity.getDescripcion());
+                actual.setMarca(entity.getMarca());
+                actual.setModelo(entity.getModelo());
                 actual.setUrlImagen(entity.getUrlImagen());
                 lstResultado.add(actual);
             }
@@ -105,6 +111,8 @@ public class InventarioServiceImpl implements IServiceInventario {
                 actual.setCantidad(entity.getCantidad());
                 actual.setPrecio(entity.getPrecio());
                 actual.setDescripcion(entity.getDescripcion());
+                actual.setMarca(entity.getMarca());
+                actual.setModelo(entity.getModelo());
                 actual.setUrlImagen(entity.getUrlImagen());
             }
         } catch (Exception e) {
@@ -121,7 +129,7 @@ public class InventarioServiceImpl implements IServiceInventario {
         Iterable<InventarioEntity> lstEntidades = null;
         try {
         	
-        	lstEntidades = inventarioDao.findByDescripcionContaining(descripcion);
+        	lstEntidades = inventarioDao.findByDescripcionIgnoreCaseContaining(descripcion);
             lstResultado = new ArrayList<>();
             for (Iterator<InventarioEntity> iterator = lstEntidades.iterator(); iterator.hasNext();) {
                 InventarioEntity entity = iterator.next();
@@ -130,6 +138,8 @@ public class InventarioServiceImpl implements IServiceInventario {
                 actual.setCantidad(entity.getCantidad());
                 actual.setPrecio(entity.getPrecio());
                 actual.setDescripcion(entity.getDescripcion());
+                actual.setMarca(entity.getMarca());
+                actual.setModelo(entity.getModelo());
                 actual.setUrlImagen(entity.getUrlImagen());
                 lstResultado.add(actual);
                 System.out.println("hola");
