@@ -241,7 +241,7 @@ public class CitaServiceImpl implements IServiceCita {
 			duracionServicio = 0;
 			break;
 		}
-		// Definir las horas de abrir y cierre del taller
+		
 		List<LocalTime> horasPosibles = new ArrayList<>();
 		LocalTime horaFinal = LocalTime.of(19, 0);
 		LocalTime horaInicio = LocalTime.of(9, 0);
@@ -255,29 +255,28 @@ public class CitaServiceImpl implements IServiceCita {
 			horaInicio = horaInicio.plusHours(1);
 		}
 
-		// Buscar todas las citas para el día especificado.
+		
 		List<CitaEntity> citasDelDia = citaDao.findByEntradaBetween(fecha.atStartOfDay(),
 				fecha.plusDays(1).atStartOfDay());
 
-		// Lista para guardar las horas disponibles.
+	
 		List<LocalTime> horasDisponibles = new ArrayList<>(horasPosibles);
 
-		// Verificar disponibilidad de cada hora.
+		
 		for (LocalTime hora : horasPosibles) {
 			int citasEnHora = 0;
 			LocalDateTime inicioComparacion = LocalDateTime.of(fecha, hora);
 			LocalDateTime finComparacion = inicioComparacion.plusHours(duracionServicio);
 
 			for (CitaEntity cita : citasDelDia) {
-				// Comprobamos si la cita actual se superpone con la hora que estamos
-				// verificando.
+				
 				if (cita.getEntrada().isBefore(finComparacion) && cita.getSalida().isAfter(inicioComparacion)) {
 					citasEnHora++;
 					System.out.println(citasEnHora);
 				}
 			}
 
-			// Si hay 3 o más citas en esta hora, no está disponible.
+			
 			if (citasEnHora >= 3) {
 				horasDisponibles.remove(hora);
 
