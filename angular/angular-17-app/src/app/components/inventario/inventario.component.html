@@ -12,7 +12,7 @@
                             <div class="col-md-10">
                                 <div class="row g-2">
                                     <div class="col-md-4">
-                                        <input type="text" class="form-control border-0"
+                                        <input type="text" name="inputDescripcion" [(ngModel)]="inventario.descripcion" class="form-control border-0"
                                             placeholder="Descripcion..." />
                                     </div>
                                     <div class="col-md-4">
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <button class="btn btn-dark border-0 w-100">Buscar</button>
+                                <button class="btn btn-dark border-0 w-100" (click)="buscarPorDescripcion()">Buscar</button>
                             </div>
                         </div>
                     </div>
@@ -48,61 +48,17 @@
     </div>
 
     <div class="container inventario">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../../assets/imagenes/aceiteCoche.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Aceite para coche</h5>
-                <p class="card-text">Unidades disponibles: 20</p>
-            </div>
-        </div>
 
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../../assets/imagenes/aceiteCoche.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Aceite para coche</h5>
-                <p class="card-text">Unidades disponibles: 20</p>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../../assets/imagenes/aceiteCoche.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Aceite para coche</h5>
-                <p class="card-text">Unidades disponibles: 20</p>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../../assets/imagenes/aceiteCoche.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Aceite para coche</h5>
-                <p class="card-text">Unidades disponibles: 20</p>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../../assets/imagenes/aceiteCoche.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Aceite para coche</h5>
-                <p class="card-text">Unidades disponibles: 20</p>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../../assets/imagenes/aceiteCoche.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Aceite para coche</h5>
-                <p class="card-text">Unidades disponibles: 20</p>
-            </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../../assets/imagenes/aceiteCoche.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Aceite para coche</h5>
-                <p class="card-text">Unidades disponibles: 20</p>
-            </div>
-        </div>
+            @for(pieza of listaInventario; track pieza.idPieza){
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" [src]="pieza.urlImagen" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ pieza.descripcion }}</h5>
+                        <p class="card-text">Unidades disponibles: {{ pieza.cantidad }}</p>
+                    </div>
+                
+                </div>
+            }
     </div>
 </section>
 <!-- Fin de Inventario -->

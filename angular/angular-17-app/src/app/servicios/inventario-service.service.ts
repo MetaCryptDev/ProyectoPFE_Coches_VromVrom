@@ -10,7 +10,7 @@ export class InventarioService {
 
   constructor(private http : HttpClient) { }
 
-  private urlEndPoint : string = 'http://localhost:8080/cita/';
+  private urlEndPoint : string = 'http://localhost:8080/inventario/';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   findAll() : Observable<Inventario[]> {
@@ -31,6 +31,10 @@ export class InventarioService {
 
   updateProducto(inventario: Inventario) : Observable<Inventario> {
     return this.http.put<Inventario>(this.urlEndPoint + 'actualizar/' + inventario.idPieza, inventario, {headers: this.httpHeaders});
+  }
+
+  findPorDescripcion(descripcion : string) : Observable<Inventario[]> {
+    return this.http.get<Inventario[]>(this.urlEndPoint + 'buscar');
   }
 
 }

@@ -11,5 +11,6 @@ public interface IServiceInventario {
 	void eliminarPieza(Integer id);
 	List<InventarioDto> recuperarTodasLasPiezas();
 	InventarioDto recuperarUnaPieza(Integer id);
+	List<InventarioDto> buscador(String descripcion);
 
 }

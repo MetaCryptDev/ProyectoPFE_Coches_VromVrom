@@ -112,4 +112,29 @@ public class InventarioServiceImpl implements IServiceInventario {
         }
         return actual;
     }
+
+	@Override
+	@Transactional
+	public List<InventarioDto> buscador(String descripcion) {
+		List<InventarioEntity> listaEncontrados = inventarioDao.findByDescripcionContaining(descripcion);
+		
+		List<InventarioDto> lstResultado = null;
+        Iterable<InventarioEntity> lstEntidades = listaEncontrados;
+        try {
+            lstResultado = new ArrayList<>();
+            for (Iterator<InventarioEntity> iterator = lstEntidades.iterator(); iterator.hasNext();) {
+                InventarioEntity entity = iterator.next();
+                InventarioDto actual = new InventarioDto();
+                actual.setIdPieza(entity.getIdPieza());
+                actual.setCantidad(entity.getCantidad());
+                actual.setPrecio(entity.getPrecio());
+                actual.setDescripcion(entity.getDescripcion());
+                actual.setUrlImagen(entity.getUrlImagen());
+                lstResultado.add(actual);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return lstResultado;
+	}
 }

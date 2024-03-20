@@ -25,7 +25,7 @@ export class LoginComponent  {
 
                 ngOnInit(){
                 this.loadScript("../../../assets/js/login.js")
-              }
+                }
           
               loadScript(src: string) {
                 const script = document.createElement('script');
