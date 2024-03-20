@@ -15,7 +15,7 @@ import { Usuario } from '../app/dto/usuario';
 export class AppComponent implements OnInit {
 
   isLoggedIn = false;
-  admin = false;
+  mecanico = false;
   title = 'angular-17-app';
   imagen = "../imagenes/logo.png"
 
@@ -24,9 +24,9 @@ export class AppComponent implements OnInit {
     this.isLoggedIn = !!currentUser;
     if (currentUser) {
       const userData: Usuario = JSON.parse(currentUser);
-      this.admin = userData.rol === 2;
+      this.mecanico = userData.rol === 1;
     } else {
-      this.admin = false;
+      this.mecanico = false;
     }
   }
 
