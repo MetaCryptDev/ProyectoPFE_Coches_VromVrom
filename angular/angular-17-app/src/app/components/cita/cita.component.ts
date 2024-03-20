@@ -38,6 +38,7 @@ export class CitaComponent implements OnInit {
       this.contacto.mail = userData.mail;
       this.cita.idUsuario = userData.idUsuario;
     }
+    window.scrollTo(0, 0);
     const inputDateElement = document.getElementById("date");
     if (inputDateElement) {
       const today = new Date();
