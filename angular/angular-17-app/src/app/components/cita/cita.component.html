@@ -25,7 +25,7 @@
                     
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <select class="form-select texto-form" name="servicio" id="time" aria-label="Favorite time" [(ngModel)] = "cita.idServicio">
+                            <select class="form-select texto-form" name="servicio" id="service" [(ngModel)]="cita.idServicio" (change)="actualizarHorasDisponibles()">
                                 <option selected disabled>Escoja una opcion</option>
                                 <option value="1">Cambio de Aceite</option>
                                 <option value="2">Cambio de Ruedas</option>
@@ -39,23 +39,16 @@
 
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="date" id="date" class="form-control" name="fecha" [(ngModel)] = "cita.fecha">
+                            <input type="date" id="date" class="form-control" name="fecha" [(ngModel)]="cita.fecha" (change)="actualizarHorasDisponibles()">
                             <label for="date" class="texto-form">Selecciona una fecha:</label>
                         </div>
                     </div>
                     
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <select class="form-select texto-form" id="time" name="hora" aria-label="Favorite time" [(ngModel)] = "cita.hora">
+                            <select class="form-select texto-form" id="time" name="hora" [(ngModel)]="cita.hora" aria-label="Favorite time">
                                 <option selected>Hora</option>
-                                <option value="09">09:00</option>
-                                <option value="10">10:00</option>
-                                <option value="11">11:00</option>
-                                <option value="12">12:00</option>
-                                <option value="13">13:00</option>
-                                <option value="16">16:00</option>
-                                <option value="17">17:00</option>
-                                <option value="18">18:00</option>
+                                <option *ngFor="let hora of horasDisponibles" [value]="hora">{{hora}}</option>
                             </select>
                             <label for="time" class="texto-form">Hora de la cita</label>
                         </div>

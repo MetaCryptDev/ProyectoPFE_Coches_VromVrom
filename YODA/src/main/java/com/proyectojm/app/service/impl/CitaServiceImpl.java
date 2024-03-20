@@ -1,5 +1,8 @@
 package com.proyectojm.app.service.impl;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import com.proyectojm.app.dao.IDAOCita;
 import com.proyectojm.app.dto.CitaDto;
-import com.proyectojm.app.dto.ServicioDto;
 import com.proyectojm.app.entities.CitaEntity;
 import com.proyectojm.app.service.IServiceCita;
 import com.proyectojm.app.service.IServiceServicio;
@@ -214,5 +216,64 @@ public class CitaServiceImpl implements IServiceCita {
             System.out.println(e.getMessage());
         }
         return actual;
+    }
+    @Override
+    public List<LocalTime> recuperarHorasDisponibles(Integer idServicio, LocalDate fecha) {
+        // Definir las horas de inicio posibles para las citas.
+        List<LocalTime> horasPosibles = List.of(
+            LocalTime.of(9, 0), LocalTime.of(10, 0), LocalTime.of(11, 0), LocalTime.of(12, 0),
+            LocalTime.of(13, 0), LocalTime.of(15, 0), LocalTime.of(16, 0), LocalTime.of(17, 0),
+            LocalTime.of(18, 0), LocalTime.of(19, 0)
+        );
+        
+        
+        int duracionServicio;
+        switch (idServicio) {
+            case 1,2:
+            
+                duracionServicio = 2; 
+                break;
+            case 3:
+                duracionServicio = 1; 
+                break;
+            case 4:
+                duracionServicio = 4; 
+                break;
+            default:
+                duracionServicio = 0; 
+                break;
+        }
+
+        // Buscar todas las citas para el día especificado.
+        List<CitaEntity> citasDelDia = citaDao.findByEntradaBetween(
+            fecha.atStartOfDay(),
+            fecha.plusDays(1).atStartOfDay()
+        );
+
+        // Lista para guardar las horas disponibles.
+        List<LocalTime> horasDisponibles = new ArrayList<>(horasPosibles);
+
+        // Verificar disponibilidad de cada hora.
+        for (LocalTime hora : horasPosibles) {
+            int citasEnHora = 0;
+            LocalDateTime inicioComparacion = LocalDateTime.of(fecha, hora);
+            LocalDateTime finComparacion = inicioComparacion.plusHours(duracionServicio);
+            
+            for (CitaEntity cita : citasDelDia) {
+                // Comprobamos si la cita actual se superpone con la hora que estamos verificando.
+            	if (cita.getEntrada().isBefore(finComparacion) && cita.getSalida().isAfter(inicioComparacion)) {
+                    citasEnHora++;
+                    System.out.println(citasEnHora);
+                }
+            }
+
+            // Si hay 3 o más citas en esta hora, no está disponible.
+            if (citasEnHora >= 3) {
+                horasDisponibles.remove(hora);
+                
+            }
+        }
+
+        return horasDisponibles;
     }
 }

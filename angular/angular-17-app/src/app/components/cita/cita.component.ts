@@ -9,17 +9,18 @@ import { CitaService } from '../../servicios/cita-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Cita } from '../../dto/cita';
 import { Usuario } from '../../dto/usuario';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-cita',
   standalone: true,
-  imports: [FooterComponent,FormsModule,RouterModule],
+  imports: [FooterComponent,FormsModule,RouterModule,CommonModule],
   templateUrl: './cita.component.html',
   styleUrls: ['./cita.component.css','../../../assets/css/custom.css','../../../assets/css/templatemo.css','../../../assets/css/fontawesome.css','../../../assets/css/fontawesome.min.css']
 
 })
 export class CitaComponent implements OnInit {
   title : string = 'Nuevo Cita';
-
+  horasDisponibles: string[] = [];
   user:Usuario =new Usuario();
   contacto : Contacto = new Contacto();
   cita : Cita = new Cita();
@@ -41,7 +42,7 @@ export class CitaComponent implements OnInit {
               
     crearCita() : void {
       
-      this.cita.entrada = `${this.cita.fecha}T${this.cita.hora}:00:00`;
+      this.cita.entrada = `${this.cita.fecha}T${this.cita.hora}`;
       console.log('Enviando cita:', JSON.stringify(this.cita));
       this.citaService.saveCita(this.cita).subscribe(
         response => {
@@ -50,5 +51,21 @@ export class CitaComponent implements OnInit {
         }
       );
     }
+
+    actualizarHorasDisponibles() {
+      if (this.cita.idServicio && this.cita.fecha) {
+          this.citaService.getHorasDisponibles(this.cita.idServicio, this.cita.fecha)
+              .subscribe(
+                  horas => {
+                      this.horasDisponibles = horas;
+                  },
+                  error => {
+                      console.error('Error al recuperar las horas disponibles:', error);
+                      this.horasDisponibles = []; // Limpiar las horas si hay un error
+                  }
+              );
+      }
+  }
+
 }
 
