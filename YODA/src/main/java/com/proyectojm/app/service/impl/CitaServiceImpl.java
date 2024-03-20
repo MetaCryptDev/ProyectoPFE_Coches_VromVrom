@@ -219,30 +219,41 @@ public class CitaServiceImpl implements IServiceCita {
     }
     @Override
     public List<LocalTime> recuperarHorasDisponibles(Integer idServicio, LocalDate fecha) {
+    	
+    	 int duracionServicio;
+         switch (idServicio) {
+             case 1,2:
+             
+                 duracionServicio = 2; 
+                 break;
+             case 3:
+                 duracionServicio = 1; 
+                 break;
+             case 4:
+                 duracionServicio = 4; 
+                 break;
+             default:
+                 duracionServicio = 0; 
+                 break;
+         }
         // Definir las horas de inicio posibles para las citas.
-        List<LocalTime> horasPosibles = List.of(
-            LocalTime.of(9, 0), LocalTime.of(10, 0), LocalTime.of(11, 0), LocalTime.of(12, 0),
-            LocalTime.of(13, 0), LocalTime.of(15, 0), LocalTime.of(16, 0), LocalTime.of(17, 0),
-            LocalTime.of(18, 0), LocalTime.of(19, 0)
-        );
+    	 List<LocalTime> horasPosibles = new ArrayList<>();
+    	    LocalTime horaFinal = LocalTime.of(19, 0); // Hora de cierre
+    	    LocalTime horaInicio = LocalTime.of(9, 0); // Hora de apertura
+    	    LocalTime horaDescanso = LocalTime.of(14, 0); // Hora de descanso
+
+    	    // Solo añadir horas de inicio que permitan que el servicio termine antes de la hora de cierre
+    	    // y que no comience en la hora de descanso
+    	    while (horaInicio.plusHours(duracionServicio).isBefore(horaFinal) || 
+    	           horaInicio.plusHours(duracionServicio).equals(horaFinal)) {
+    	        if (!horaInicio.equals(horaDescanso)) { // Evita añadir la hora del descanso
+    	            horasPosibles.add(horaInicio);
+    	        }
+    	        horaInicio = horaInicio.plusHours(1);
+    	    }
         
         
-        int duracionServicio;
-        switch (idServicio) {
-            case 1,2:
-            
-                duracionServicio = 2; 
-                break;
-            case 3:
-                duracionServicio = 1; 
-                break;
-            case 4:
-                duracionServicio = 4; 
-                break;
-            default:
-                duracionServicio = 0; 
-                break;
-        }
+       
 
         // Buscar todas las citas para el día especificado.
         List<CitaEntity> citasDelDia = citaDao.findByEntradaBetween(

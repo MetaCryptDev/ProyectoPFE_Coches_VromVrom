@@ -34,9 +34,9 @@ export class CitaService {
   }
 
   getHorasDisponibles(idServicio: number, fecha: string): Observable<string[]> {
-    // Construye la URL manualmente
+    
     const url = `${this.urlEndPoint}horasDisponibles?idServicio=${idServicio}&fecha=${fecha}`;
-    alert(url);  // Solo para debugging, puedes quitarlo después
+    
     return this.http.get<string[]>(url, {headers: this.httpHeaders});
 }
 
