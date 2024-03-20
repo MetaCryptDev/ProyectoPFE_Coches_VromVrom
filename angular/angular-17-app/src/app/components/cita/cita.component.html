@@ -1,5 +1,5 @@
- <!-- Inicio Contacto -->
- <section class="about bg-dark section-cita" id="about" id="contact">
+<!-- Inicio Contacto -->
+<section class="about bg-dark section-cita" id="about" id="contact">
     <div class="container-xxl py-5 d-flex justify-content-center">
         <div class="col-lg-6 wow fadeIn contacto" data-wow-delay="0.1s">
             <h1 class="display-6 mb-5">Solicita tu cita</h1>
@@ -8,42 +8,34 @@
                 <div class="row g-3">
                     <div class="col-md-6 mx-auto">
                         <div class="form-floating">
-                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)] = "contacto.nombre">
+                            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="contacto.nombre">
                             <label for="nombre" class="texto-form">Nombre</label>
                         </div>
-                        
-                       
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="mail" class="form-control texto-form" name="mail" id="mail" placeholder="Email" [(ngModel)] = "contacto.mail">
+                            <input type="mail" class="form-control texto-form" name="mail" id="mail" placeholder="Email" [(ngModel)]="contacto.mail">
                             <label for="mail" class="texto-form">Correo</label>
-
                         </div>
                     </div>
-                  
-                    
                     <div class="col-md-6">
                         <div class="form-floating">
                             <select class="form-select texto-form" name="servicio" id="service" [(ngModel)]="cita.idServicio" (change)="actualizarHorasDisponibles()">
-                                <option selected disabled>Escoja una opcion</option>
+                                <option selected disabled>Escoja una opción</option>
                                 <option value="1">Cambio de Aceite</option>
                                 <option value="2">Cambio de Ruedas</option>
-                                <option value="3">Cambio de Bateria</option>
-                                <option value="4">Averia Mecánica</option>
-                               
+                                <option value="3">Cambio de Batería</option>
+                                <option value="4">Avería Mecánica</option>
                             </select>
-                            <label for="time" class="texto-form">Servicio</label>
+                            <label for="service" class="texto-form">Servicio</label>
                         </div>
                     </div>
-
                     <div class="col-md-6">
                         <div class="form-floating">
                             <input type="date" id="date" class="form-control" name="fecha" [(ngModel)]="cita.fecha" (change)="actualizarHorasDisponibles()">
                             <label for="date" class="texto-form">Selecciona una fecha:</label>
                         </div>
                     </div>
-                    
                     <div class="col-md-6">
                         <div class="form-floating">
                             <select class="form-select texto-form" id="time" name="hora" [(ngModel)]="cita.hora" aria-label="Favorite time">
@@ -53,17 +45,49 @@
                             <label for="time" class="texto-form">Hora de la cita</label>
                         </div>
                     </div>
+                    <div id="check" class="col-md-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="cocheSustitucion" [(ngModel)]="vehiculoSustBool" (change)="toggleVehiculoSustitucion()">
+                            <label class="form-check-label" for="cocheSustitucion">
+                                ¿Necesita coche de sustitución?
+                            </label>
+                        </div>
+                    </div>
+                    @if (vehiculoSustBool == true) {
+                        <div class="col-md-6" id="vehiculoSustDiv">
+                            <div class="form-floating">
+                                <select class="form-select texto-form" id="cocheSustitucionSelect" name="cocheSustitucionSelect" [(ngModel)]="cita.vehiculoSustitucion">
+                                    <option selected disabled>Seleccione un coche de sustitución</option>
+                                    <option value="Coche1">Coche 1</option>
+                                    <option value="Coche2">Coche 2</option>
+                                    <option value="Coche3">Coche 3</option>
+                                </select>
+                                <label for="cocheSustitucionSelect" class="texto-form">Coche de sustitución</label>
+                            </div>
+                            <div class="mt-3">
+                                @if (cita.vehiculoSustitucion === 'Coche1'){
+                                    <img src="../../../assets/imagenes/coche1.jpg" alt="Coche 1" class="img-fluid">
 
+                                }
+                                @else if (cita.vehiculoSustitucion === 'Coche2') {
+                                    <img src="../../../assets/imagenes/coche2.jpeg" alt="Coche 2" class="img-fluid">
+                                }
+                                @else if (cita.vehiculoSustitucion === 'Coche3') {
+                                    <img src="../../../assets/imagenes/coche3.jpg" alt="Coche 3" class="img-fluid">
+                                }
+                                
+                            </div>
+                        </div>
+                    }
+                    
                     <div class="col-12">
                         <div class="form-floating">
-                            <textarea class="form-control texto-form" placeholder="Leave a message here" id="message" name="problema" style="height: 100px" [(ngModel)] = "cita.descripcionAveria"></textarea>
+                            <textarea class="form-control texto-form" placeholder="Leave a message here" id="message" name="problema" style="height: 100px" [(ngModel)]="cita.descripcionAveria"></textarea>
                             <label for="message" class="texto-form">Describe tu problema</label>
                         </div>
                     </div>
                     <div class="col-12">
-
-                        <button  (click)="crearCita()" id="btnServicios" class="btn btn-primary py-3 px-5 mt-3">
-
+                        <button (click)="crearCita()" id="btnServicios" class="btn btn-primary py-3 px-5 mt-3">
                             Enviar solicitud
                             <i class="fa fa-arrow-right ms-3"></i>
                         </button>
@@ -75,4 +99,3 @@
 </section>
 <!-- Fin Contacto -->
 <app-footer></app-footer>
-
