@@ -38,8 +38,12 @@ export class InventarioComponent {
     );
   }
 
-  actualizarProducto() : void {
-    this.inventarioService.updateProducto(this.inventario).subscribe(
+  actualizarProducto(pieza: Inventario) : void {
+    if (pieza.cantidad<=0 || pieza.cantidad==null){
+      pieza.cantidad = 0
+    }
+    alert(JSON.stringify(pieza));
+    this.inventarioService.updateProducto(pieza).subscribe(
       response => {
         this.router.navigate(['/inventario'])
        
