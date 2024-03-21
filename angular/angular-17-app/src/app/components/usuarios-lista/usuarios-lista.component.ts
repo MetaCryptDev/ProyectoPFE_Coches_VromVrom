@@ -40,4 +40,14 @@ export class UsuariosListaComponent {
       }
     );
   }
+
+  eliminarUsuario() : void {
+    this.usuarioService.removeUsuario(this.usuario.idUsuario).subscribe(
+      response => {
+        this.router.navigate(['/listadoUsuarios'])
+       
+      }
+    );
+  }
+  
 }
