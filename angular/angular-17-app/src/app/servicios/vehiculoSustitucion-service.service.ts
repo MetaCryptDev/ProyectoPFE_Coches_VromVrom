@@ -14,7 +14,7 @@ export class VehiculoSustitucionService {
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   findAll(): Observable<VehiculoSustitucion[]> {
-    return this.http.get<VehiculoSustitucion[]>(this.urlEndPoint + 'recuperarTodosLosVehiculosSustitucion');
+    return this.http.get<VehiculoSustitucion[]>(this.urlEndPoint + 'verTodos');
   }
 
   saveVehiculoSustitucion(vehiculoSustitucion: VehiculoSustitucion): Observable<VehiculoSustitucion> {
@@ -26,7 +26,7 @@ export class VehiculoSustitucionService {
   }
 
   findById(matricula: string): Observable<VehiculoSustitucion> {
-    return this.http.get<VehiculoSustitucion>(this.urlEndPoint + 'recuperarUnVehiculoSustitucion/' + matricula);
+    return this.http.get<VehiculoSustitucion>(this.urlEndPoint + 'recuperarUno/' + matricula);
   }
 
   updateVehiculoSustitucion(vehiculoSustitucion: VehiculoSustitucion): Observable<VehiculoSustitucion> {

@@ -99,6 +99,8 @@ public class VehiculoSustitucionServiceImpl implements IServiceVehiculoSustituci
     public VehiculoSustitucionDto recuperarUnVehiculoSustitucion(String matricula) {
         VehiculoSustitucionDto actual = new VehiculoSustitucionDto();
         VehiculoSustitucionEntity entity = null;
+        System.out.println("find 1");
+
         try {
             entity = vehiculoSustitucionDao.findById(matricula).orElse(null);
             if (entity != null) {
