@@ -54,13 +54,4 @@ export class LoginComponent {
     );
   }
 
-  actualizarUsuario(): void {
-    this.usuarioService.updateUsuario(this.usuario).subscribe(
-      response => {
-        this.router.navigate(['/listadoProductos'])
-
-      }
-    );
-  }
-
 }
