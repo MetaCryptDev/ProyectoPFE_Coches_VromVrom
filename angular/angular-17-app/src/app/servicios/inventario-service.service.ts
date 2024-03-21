@@ -30,7 +30,7 @@ export class InventarioService {
   }
 
   updateProducto(inventario: Inventario) : Observable<Inventario> {
-    return this.http.put<Inventario>(this.urlEndPoint + 'actualizar/' + inventario.idPieza, inventario, {headers: this.httpHeaders});
+    return this.http.put<Inventario>(this.urlEndPoint + 'actualizar', inventario, {headers: this.httpHeaders});
   }
 
   findPorDescripcion(inventario : Inventario) : Observable<Inventario[]> {
