@@ -18,8 +18,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  
                     @for(usuario of listaUsuarios; track usuario.idUsuario){
+                      <tr>
                       <td>{{ usuario.idUsuario }}</td>
                       <td>{{ usuario.nombre }}</td>
                       <td>{{ usuario.apellido }}</td>
@@ -42,15 +43,16 @@
                         <button class="btn btn-primary" (click)="modificacionUsuario(usuario)" >Editar</button>
                         <button class="btn btn-danger" (click)="eliminarUsuario(usuario)">Eliminar</button>
                       </td>
+                    </tr>
                   }
-                  </tr>
+                  
                 </tbody>
               </table>
 
              
 
                 <br>
-            <button> <a href=""> Volver atrás </a></button>
+            <button> <a routerLink=""> Volver atrás </a></button>
         </div>
     </div>
 </section>

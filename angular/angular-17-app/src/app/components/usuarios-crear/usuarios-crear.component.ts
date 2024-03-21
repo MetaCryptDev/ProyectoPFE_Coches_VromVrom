@@ -50,7 +50,7 @@ export class UsuariosCrearComponent {
   actualizarUsuario(): void {
     this.usuarioService.saveUsuario(this.usuarioRecogido).subscribe(
       response => {
-        this.router.navigate(['/listadoUsuarios'])
+        this.router.navigate(['/listUsuario'])
        
       }
     );

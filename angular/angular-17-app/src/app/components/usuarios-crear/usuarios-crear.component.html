@@ -21,12 +21,23 @@
                     <label for="mail" class="form-label">Correo</label>
                     <input type="text" class="form-control" name="mail" id="mail" [(ngModel)] = "usuarioRecogido.mail">
                 </div>
+
+                <div class="mb-3">
+                    <label for="rol" class="form-label">Rol</label>
+                    <select type="password" class="form-control" name="rol" id="rol" [(ngModel)] = "usuarioRecogido.rol">
+                        <option selected disabled>Escoja una opción</option>
+                        <option value="0">Cliente</option>
+                        <option value="1">Mecanico</option>
+                        <option value="2">Admin</option>
+                    </select>
+                </div>   
+
                 @if(usuarioRecogido.idUsuario == null){
                 <div class="mb-3">
                         <label for="mail" class="form-label">Contraseña</label>
                         <input type="password" class="form-control" name="mail" id="mail" [(ngModel)] = "usuarioRecogido.passwd">
                 </div>
-                
+
                 <button type="submit" (click)="actualizarUsuario()"> Añadir Usuario</button>
                 }
                 @else{
