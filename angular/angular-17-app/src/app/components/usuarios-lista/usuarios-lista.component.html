@@ -4,7 +4,7 @@
         <div class="col-lg-6 wow fadeIn contacto" data-wow-delay="0.1s">
             <h1 class="display-6 mb-5">Lista de Usuarios</h1>
             <p class="mb-4">Añadir Nuevo Usuario</p>
-            <table class="table">
+            <table class="table table-dark">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -26,7 +26,17 @@
                       <td>{{ usuario.telefono }}</td>
                       <td>{{ usuario.mail }}</td>
                       <td>{{ usuario.passwd }}</td>
-                      <td>{{ usuario.rol }}</td>
+                      <td>
+                        @if(usuario.rol == 0 || usuario.rol==null){
+                          Cliente
+                        }
+                        @else if (usuario.rol == 1) {
+                          Mecanico
+                        }
+                        @else{
+                          Administrador
+                        }
+                      </td>
                       <td>
                         <!-- Aquí puedes añadir botones para editar o eliminar usuarios -->
                         <button class="btn btn-primary" (click)="modificacionUsuario(usuario)" >Editar</button>
