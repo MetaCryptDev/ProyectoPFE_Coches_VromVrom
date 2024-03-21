@@ -47,7 +47,7 @@
                     </div>
                     <div id="check" class="col-md-6">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="cocheSustitucion" [(ngModel)]="vehiculoSustBool" (change)="toggleVehiculoSustitucion()">
+                            <input class="form-check-input" type="checkbox" value="" name="vehiculoSustBool" id="cocheSustitucion" [(ngModel)]="vehiculoSustBool" (change)="toggleVehiculoSustitucion()">
                             <label class="form-check-label" for="cocheSustitucion">
                                 ¿Necesita coche de sustitución?
                             </label>
@@ -56,26 +56,16 @@
                     @if (vehiculoSustBool == true) {
                         <div class="col-md-6" id="vehiculoSustDiv">
                             <div class="form-floating">
-                                <select class="form-select texto-form" id="cocheSustitucionSelect" name="vehiculoSustitucion" [(ngModel)]="cita.idVehiculoSustitucion">
+                                <select class="form-select texto-form" id="cocheSustitucionSelect" name="vehiculoSustitucion" [(ngModel)]="cita.idVehiculoSustitucion" (change)="buscarVehiculoSust()">
                                     <option selected disabled>Seleccione un coche de sustitución</option>
-                                    <option value="MAT1234">HONDA</option>
-                                    <option value="MAT5678">RENAULT</option>
-                                    <option value="MAT9012">VOLKSWAGEN</option>
+                                    @for (vehiculoSust of listaVehivulos; track vehiculoSust.matricula) {
+                                        <option [value]="vehiculoSust.matricula">{{vehiculoSust.modelo}}</option>
+                                    }
                                 </select>
                                 <label for="cocheSustitucionSelect" class="texto-form">Coche de sustitución</label>
                             </div>
                             <div class="mt-3 form-floating">
-                                @if (cita.idVehiculoSustitucion === 'MAT1234'){
-                                    <img src="../../../assets/imagenes/honda.jpg" alt="Coche 1" class="img-fluid">
-
-                                }
-                                @else if (cita.idVehiculoSustitucion === 'MAT5678') {
-                                    <img src="../../../assets/imagenes/eup.jpeg" alt="Coche 2" class="img-fluid">
-                                }
-                                @else if (cita.idVehiculoSustitucion === 'MAT9012') {
-                                    <img src="../../../assets/imagenes/e5.jpg" alt="Coche 3" class="img-fluid">
-                                }
-                                
+                                <img [src]="vehiculoSustitucion.urlImagen" class="img-fluid">
                             </div>
                         </div>
                     }

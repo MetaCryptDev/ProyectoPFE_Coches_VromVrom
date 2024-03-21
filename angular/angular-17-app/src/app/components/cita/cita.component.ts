@@ -5,6 +5,8 @@ import { ContactoService } from '../../servicios/contacto-service.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CitaService } from '../../servicios/cita-service.service';
+import { VehiculoSustitucion } from '../../dto/vehiculoSustitucion';
+import { VehiculoSustitucionService } from '../../servicios/vehiculoSustitucion-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Cita } from '../../dto/cita';
 import { Usuario } from '../../dto/usuario';
@@ -23,9 +25,12 @@ export class CitaComponent implements OnInit {
   user: Usuario = new Usuario();
   contacto: Contacto = new Contacto();
   cita: Cita = new Cita();
+  vehiculoSustitucion: VehiculoSustitucion = new VehiculoSustitucion();
   vehiculoSustBool: boolean = false;
+  listaVehivulos: VehiculoSustitucion[]= [];
 
   constructor(private citaService: CitaService,
+    private VehiculoSustitucionService: VehiculoSustitucionService,
     private router: Router,
     private activatedRouter: ActivatedRoute,
     private changeDetectorRef: ChangeDetectorRef) {}
@@ -46,6 +51,8 @@ export class CitaComponent implements OnInit {
       const tomorrow = today.toISOString().split('T')[0];
       inputDateElement.setAttribute("min", tomorrow);
     }
+
+    this.buscarVehiculosSust();
   }
 
   toggleVehiculoSustitucion() {
@@ -79,5 +86,21 @@ export class CitaComponent implements OnInit {
           }
         );
     }
+  }
+
+  buscarVehiculosSust(): void {
+    this.VehiculoSustitucionService.findAll().subscribe(
+      (response: VehiculoSustitucion[]) => {
+        this.listaVehivulos = response;
+      }
+    );
+  }
+
+  buscarVehiculoSust(): void {
+    this.VehiculoSustitucionService.findById(this.cita.idVehiculoSustitucion).subscribe(
+      (response: VehiculoSustitucion) => {
+        this.vehiculoSustitucion = response;
+      }
+    );
   }
 }
