@@ -1,2 +1,43 @@
-
+<!-- Lista de Usuarios -->
+<section class="about bg-dark section-cita" id="about" id="admin">
+    <div class="container-xxl py-5 d-flex justify-content-center">
+        <div class="col-lg-6 wow fadeIn contacto" data-wow-delay="0.1s">
+            <h1 class="display-6 mb-5">Lista de Usuarios</h1>
+            <p class="mb-4">Añadir Nuevo Usuario</p>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Correo electrónico</th>
+                    <th>Contraseña</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let usuario of listaUsuarios">
+                    <td>{{ usuario.idUsuario }}</td>
+                    <td>{{ usuario.nombre }}</td>
+                    <td>{{ usuario.apellido }}</td>
+                    <td>{{ usuario.telefono }}</td>
+                    <td>{{ usuario.mail }}</td>
+                    <td>{{ usuario.passwd }}</td>
+                    <td>{{ usuario.rol }}</td>
+                    <td>
+                      <!-- Aquí puedes añadir botones para editar o eliminar usuarios -->
+                      <button class="btn btn-primary" href="#" >Editar</button>
+                      <button class="btn btn-danger" (click)="eliminarUsuario()">Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+                <br>
+            <button> <a th:href="@{/usuario/gestionUsuario}"> Volver atrás </a></button>
+        </div>
+    </div>
+</section>
+<!-- Fin de Lista de Usuarios -->
 <app-footer></app-footer>

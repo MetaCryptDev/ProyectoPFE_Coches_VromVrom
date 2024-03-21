@@ -2,25 +2,25 @@
 <section class="about bg-dark section-cita" id="about" id="admin">
     <div class="container-xxl py-5 d-flex justify-content-center">
         <div class="col-lg-6 wow fadeIn contacto" data-wow-delay="0.1s">
-            <h1 class="display-6 mb-5">Bienvenido Administrador<label>(Aqui introducir el nombre con Spring) </label></h1>
+            <h1 class="display-6 mb-5">Lista de Usuarios</h1>
             <p class="mb-4">Añadir Nuevo Usuario</p>
             <form th:action="@{/usuario/anadir}"  method="get">
-                <label>Escriba el nombre del usuario: </label>
+                <label>Nombre: </label>
                 <input name="nombre" type="text" placeholder="Escriba su nombre">
                 <br>
-                <label>Escriba el apellido1 del usuario: </label>
-                <input name="apellido1" type="text" placeholder="Escriba su primer apellido">
+                <label>Primer Apellido: </label>
+                <input name="apellido1"  type="text" placeholder="Escriba su primer apellido">
                 <br>
-                <label>Escriba el apellido2 del usuario: </label>
+                <label>Segundo Apellido: </label>
                 <input name="apellido2" type="text" placeholder="Escriba su segundo apellido">
                 <br>
-                <label>Escriba el email del usuario: </label>
+                <label>Email: </label>
                 <input name="email" type="text" placeholder="Escriba su email">
                 <br>
-                <label>Escriba la contraseña del usuario: </label>
+                <label>Contraseña: </label>
                 <input name="passwd" type="password" placeholder="Escriba una contraseña">
                 <br>
-                <label>Seleccione un rol: </label>
+                <label>Roles: </label>
                 <select name="rol" multiple title="roles">
                     <option th:each="rol : ${listaRoles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
                 </select>
