@@ -149,6 +149,7 @@ INSERT INTO VEHICULO_SUSTITUCION (MATRICULA, MODELO, MARCA, PRECIO_POR_DIA,URL_I
 
 -- Insertar datos inventario
 
-INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (1, 15, 20,'Opel','Corsa' 'Aceite para el motor', '../../assets/imagenes/aceiteCoche.jpg');
-INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (2, 23, 50, 'Citroen','Xsara' 'Ejemplo', '../../assets/imagenes/coche1.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (1, 15, 20,'Opel','Corsa', 'Aceite para el motor', '../../assets/imagenes/aceiteCoche.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (2, 23, 50, 'Citroen','Xsara', 'Ejemplo', '../../assets/imagenes/coche1.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (3, 12, 12, '','', 'Filtro de aire', '../../assets/imagenes/filtroCoche.jpg');
 commit;
