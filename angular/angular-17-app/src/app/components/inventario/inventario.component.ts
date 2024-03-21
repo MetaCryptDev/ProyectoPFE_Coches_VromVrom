@@ -42,6 +42,7 @@ export class InventarioComponent {
     if (pieza.cantidad<=0 || pieza.cantidad==null){
       pieza.cantidad = 0
     }
+    alert(pieza.descripcion+" actualizada")
     //alert(JSON.stringify(pieza));
     this.inventarioService.updateProducto(pieza).subscribe(
       response => {
