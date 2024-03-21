@@ -18,7 +18,7 @@ export class UsuariosCrearComponent {
   title: string = 'Nuevo usuario';
 
   usuario: Usuario = new Usuario();
-  usuarioRecogido: Usuario | undefined;
+  usuarioRecogido: Usuario = new Usuario();
   editar: number = 0;
 
   
@@ -27,7 +27,7 @@ export class UsuariosCrearComponent {
     const navigation = this.router.getCurrentNavigation();
     
     if (navigation && navigation.extras && navigation.extras.state) {
-        this.usuarioRecogido = navigation.extras.state['usuarioRecogido'] as Usuario | undefined;
+        this.usuarioRecogido = navigation.extras.state['usuarioRecogido'] as Usuario;
     }
 }
 
