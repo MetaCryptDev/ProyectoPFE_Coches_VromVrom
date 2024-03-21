@@ -68,7 +68,7 @@ public class UsuarioRestController {
 		return usuario;
 	}
 	
-	
+
 	
 	
 	@PostMapping(value = "/insertar")

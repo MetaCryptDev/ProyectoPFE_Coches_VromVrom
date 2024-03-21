@@ -46,7 +46,6 @@ export class UsuariosListaComponent {
   }
 
   eliminarUsuario(usuario :Usuario) : void {
-    alert(JSON.stringify(usuario));
     this.usuarioService.removeUsuario(usuario.idUsuario).subscribe(
       response => {
         this.router.navigate(['/listUsuario'])
@@ -55,7 +54,6 @@ export class UsuariosListaComponent {
     );
   }
   modificacionUsuario(usuario :Usuario) : void {
-    alert(JSON.stringify(usuario));  
     this.router.navigate(['/crearUsuario'], { state: { usuarioRecogido: usuario } });
   }
   

@@ -48,7 +48,7 @@ export class UsuariosCrearComponent {
   }
 
   actualizarUsuario(): void {
-    this.usuarioService.updateUsuario(this.usuario).subscribe(
+    this.usuarioService.saveUsuario(this.usuarioRecogido).subscribe(
       response => {
         this.router.navigate(['/listadoUsuarios'])
        

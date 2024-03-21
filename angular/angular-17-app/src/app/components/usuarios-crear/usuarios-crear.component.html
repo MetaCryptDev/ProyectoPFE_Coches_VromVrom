@@ -11,20 +11,17 @@
                 </div>
                 <div class="mb-3">
                     <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)] = "usuario.apellido">
+                    <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)] = "usuarioRecogido.apellido">
                 </div>
                 <div class="mb-3">
                     <label for="telefono" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" name="telefono" id="telefono" [(ngModel)] = "usuario.telefono">
+                    <input type="text" class="form-control" name="telefono" id="telefono" [(ngModel)] = "usuarioRecogido.telefono">
                 </div>
                 <div class="mb-3">
                     <label for="mail" class="form-label">Correo</label>
-                    <input type="text" class="form-control" name="mail" id="mail" [(ngModel)] = "usuario.mail">
+                    <input type="text" class="form-control" name="mail" id="mail" [(ngModel)] = "usuarioRecogido.mail">
                 </div>
-                <div class="mb-3">
-                    <label for="passwd" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" name="passwd" id="passwd" [(ngModel)] = "usuario.passwd">
-                </div>
+
                 <br><br>
                 @if(usuarioRecogido?.idUsuario == null){
                 <button type="submit" (click)="crearUsuario()"> Añadir Usuario</button>
@@ -36,7 +33,7 @@
                 <button type="reset"> Limpiar Campos </button>
             </form>
                 <br>
-                <button> <a href="Usuarios"> Volver atrás </a></button>
+                <button> <a routerLink="/listUsuario"> Volver atrás </a></button>
         </div>
     </div>
 </section>
