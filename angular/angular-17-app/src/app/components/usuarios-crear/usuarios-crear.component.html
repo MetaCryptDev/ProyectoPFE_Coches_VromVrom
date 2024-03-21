@@ -4,30 +4,33 @@
         <div class="col-lg-6 wow fadeIn contacto" data-wow-delay="0.1s">
             <h1 class="display-6 mb-5">Lista de Usuarios</h1>
             <p class="mb-4">Añadir Nuevo Usuario</p>
-            <form th:action="@{/usuario/anadir}"  method="get">
-                <label>Nombre: </label>
-                <input name="nombre" type="text" placeholder="Escriba su nombre">
-                <br>
-                <label>Primer Apellido: </label>
-                <input name="apellido1"  type="text" placeholder="Escriba su primer apellido">
-                <br>
-                <label>Segundo Apellido: </label>
-                <input name="apellido2" type="text" placeholder="Escriba su segundo apellido">
-                <br>
-                <label>Email: </label>
-                <input name="email" type="text" placeholder="Escriba su email">
-                <br>
-                <label>Contraseña: </label>
-                <input name="passwd" type="password" placeholder="Escriba una contraseña">
-                <br>
-                <label>Roles: </label>
-                <select name="rol" multiple title="roles">
-                    <option th:each="rol : ${listaRoles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
-                </select>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="name"  [(ngModel)]="usuarioRecogido.nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)] = "usuario.apellido">
+                </div>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="telefono" [(ngModel)] = "usuario.telefono">
+                </div>
+                <div class="mb-3">
+                    <label for="mail" class="form-label">Correo</label>
+                    <input type="text" class="form-control" name="mail" id="mail" [(ngModel)] = "usuario.mail">
+                </div>
+                <div class="mb-3">
+                    <label for="passwd" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" name="passwd" id="passwd" [(ngModel)] = "usuario.passwd">
+                </div>
                 <br><br>
-                @if(usuario.idUsuario == null){
-                <button type="submit" (click)="actualizarUsuario()"> Aplicar cambios</button>
+                @if(usuarioRecogido?.idUsuario == null){
                 <button type="submit" (click)="crearUsuario()"> Añadir Usuario</button>
+                }
+                @else{
+                    <button type="submit" (click)="actualizarUsuario()"> Aplicar cambios</button>
                 }
                 
                 <button type="reset"> Limpiar Campos </button>
