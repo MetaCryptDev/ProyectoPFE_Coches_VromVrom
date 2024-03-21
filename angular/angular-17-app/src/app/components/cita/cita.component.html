@@ -56,24 +56,24 @@
                     @if (vehiculoSustBool == true) {
                         <div class="col-md-6" id="vehiculoSustDiv">
                             <div class="form-floating">
-                                <select class="form-select texto-form" id="cocheSustitucionSelect" name="cocheSustitucionSelect" [(ngModel)]="cita.vehiculoSustitucion">
+                                <select class="form-select texto-form" id="cocheSustitucionSelect" name="vehiculoSustitucion" [(ngModel)]="cita.idVehiculoSustitucion">
                                     <option selected disabled>Seleccione un coche de sustitución</option>
-                                    <option value="Coche1">Coche 1</option>
-                                    <option value="Coche2">Coche 2</option>
-                                    <option value="Coche3">Coche 3</option>
+                                    <option value="MAT1234">HONDA</option>
+                                    <option value="MAT5678">RENAULT</option>
+                                    <option value="MAT9012">VOLKSWAGEN</option>
                                 </select>
                                 <label for="cocheSustitucionSelect" class="texto-form">Coche de sustitución</label>
                             </div>
                             <div class="mt-3 form-floating">
-                                @if (cita.vehiculoSustitucion === 'Coche1'){
-                                    <img src="../../../assets/imagenes/coche1.jpg" alt="Coche 1" class="img-fluid">
+                                @if (cita.idVehiculoSustitucion === 'MAT1234'){
+                                    <img src="../../../assets/imagenes/honda.jpg" alt="Coche 1" class="img-fluid">
 
                                 }
-                                @else if (cita.vehiculoSustitucion === 'Coche2') {
-                                    <img src="../../../assets/imagenes/coche2.jpeg" alt="Coche 2" class="img-fluid">
+                                @else if (cita.idVehiculoSustitucion === 'MAT5678') {
+                                    <img src="../../../assets/imagenes/eup.jpeg" alt="Coche 2" class="img-fluid">
                                 }
-                                @else if (cita.vehiculoSustitucion === 'Coche3') {
-                                    <img src="../../../assets/imagenes/coche3.jpg" alt="Coche 3" class="img-fluid">
+                                @else if (cita.idVehiculoSustitucion === 'MAT9012') {
+                                    <img src="../../../assets/imagenes/e5.jpg" alt="Coche 3" class="img-fluid">
                                 }
                                 
                             </div>

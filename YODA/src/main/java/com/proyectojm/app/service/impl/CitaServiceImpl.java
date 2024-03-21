@@ -80,9 +80,8 @@ public class CitaServiceImpl implements IServiceCita {
 			}
 
 			// ID VEHICULO SUSTITUCION
-			citaEntty.setVehiculoSustitucionMatricula(
-					cita.getIdVehiculoSustitucion() != null ? cita.getIdVehiculoSustitucion() : null);
-
+			citaEntty.setVehiculoSustitucionMatricula(cita.getIdVehiculoSustitucion() != null ? cita.getIdVehiculoSustitucion() : null);
+			System.out.println("vehiculo sust" + citaEntty.getVehiculoSustitucionMatricula());
 			// DESCRIPCION AVERIA
 			citaEntty.setDescripcionAveria(cita.getDescripcionAveria() != null ? cita.getDescripcionAveria() : null);
 

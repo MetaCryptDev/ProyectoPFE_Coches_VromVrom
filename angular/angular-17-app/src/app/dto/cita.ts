@@ -3,7 +3,7 @@ export class Cita {
     vehiculo!: string;
     entrada!: string;
     servicio!: string;
-    vehiculoSustitucion!: string;
+    idVehiculoSustitucion!: string;
     descripcionAveria!: string;
     fecha!: string;
     hora!: string;

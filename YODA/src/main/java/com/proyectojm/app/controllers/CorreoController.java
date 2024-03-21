@@ -38,14 +38,24 @@ public class CorreoController {
         
         UsuarioDto usuario = usuarioService.recuperarUnUsuario(Integer.parseInt(cita.getUsuarioId()));
         ServicioDto servicio = servicioService.recuperarUnServicio(cita.getServicioId());
+        
         try {
+            if(cita.getDescripcionAveria() == null || cita.getDescripcionAveria().isEmpty()) {
+            	cita.setDescripcionAveria("Avería no especificada");
+            }
+            
+            if(cita.getVehiculoSustitucionMatricula() == null || cita.getVehiculoSustitucionMatricula().isEmpty()) {
+        		cita.setVehiculoSustitucionMatricula("Vehículo de sustitución no solicitado.");
+        	}
+            
             helper.setTo(usuario.getMail());
             helper.setSubject("Talleres YoDa: " + servicio.getNombre() + " " + cita.getEntrada().getDayOfMonth() + "/" + cita.getEntrada().getMonthValue() + " " + cita.getEntrada().getHour() + ":00");
             helper.setText("¡Hola, " + usuario.getNombre() + "!\n"
             		+ "Se ha registrado una cita a nombre de " + usuario.getNombre() + " " + usuario.getApellido() + ", el día " 
             		+ cita.getEntrada().getDayOfMonth() + "/" + cita.getEntrada().getMonthValue() + " a las " + cita.getEntrada().getHour() + ":00. \n\n"
             		+ "Motivo de la cita: \n" + cita.getDescripcionAveria() + "\n\nServicio solicitado:\n" + servicio.getNombre()
-            		+ "\n\nMatrícula:\n" + cita.getVehiculoMatricula()
+            		//+ "\n\nMatrícula:\n" + cita.getVehiculoMatricula()
+            		+ "\n\nVehículo de sustitución:\n" + cita.getVehiculoSustitucionMatricula()
             		+ "\n\nSe ruega puntualidad. En caso de no poder asistir a la fecha citada, por favor póngase en contacto con nosotros a través del número 926-586-068 o enviándonos un correo a talleresyoda@gmail.com. \nTambién puede encontrarnos de 9:00 a 13:00 y de 15:00 a 19:00 en Calle Miguel de Cervantes, 17, Manzanares."
             		+ "\n\n¡Gracias por elegirnos!\nTalleres YoDa");
 
@@ -61,16 +71,26 @@ public class CorreoController {
     public void citaTaller(CitaEntity cita, ServicioDto servicio, UsuarioDto usuario) {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
+        
         try {
+        	if(cita.getDescripcionAveria() == null || cita.getDescripcionAveria().isEmpty()) {
+            	cita.setDescripcionAveria("Avería no especificada");
+            }
+        	
+        	if(cita.getVehiculoSustitucionMatricula() == null || cita.getVehiculoSustitucionMatricula().isEmpty()) {
+        		cita.setVehiculoSustitucionMatricula("Vehículo de sustitución no solicitado.");
+        	}
+        	
             helper.setTo(correoTaller);
             helper.setSubject("Nueva Cita " + cita.getIdCita() + ": " + cita.getEntrada().getDayOfMonth() + "/" + cita.getEntrada().getMonthValue() + " " + cita.getEntrada().getHour() + ":00");
             helper.setText("Se ha registrado una cita a nombre de " + usuario.getNombre() + " " + usuario.getApellido() + ", el día " 
             		+ cita.getEntrada().getDayOfMonth() + "/" + cita.getEntrada().getMonthValue() + " a las " + cita.getEntrada().getHour() + ":00. \n\n"
-            		+ "Matrícula:\n" + cita.getVehiculoMatricula()
+            		//+ "Matrícula:\n" + cita.getVehiculoMatricula()
             		+ "\n\nMotivo de la cita: \n" + cita.getDescripcionAveria() 
             		+ "\n\nServicio solicitado:\n" + servicio.getNombre()
             		+ "\n\nDuración estimada del servicio:\n" + servicio.getManoDeObra() + " horas"
             		+ "\n\nHora estimada de salida:\n" + cita.getSalida().getHour() + ":00"
+            		+ "\n\nVehículo de sustitución:\n" + cita.getVehiculoSustitucionMatricula()
             		);
 
             javaMailSender.send(mimeMessage);
