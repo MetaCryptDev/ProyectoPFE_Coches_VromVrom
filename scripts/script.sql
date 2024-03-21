@@ -156,4 +156,7 @@ INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, 
 INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (5, 18, 64, '','', 'Discos de freno', '../../assets/imagenes/discos.jpg');
 INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (6, 32, 27.11, '','', 'Juego de pastillas de freno', '../../assets/imagenes/pastillas.jpg');
 INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (7, 64, 102.50, '','', 'Neumaticos Michelin', '../../assets/imagenes/neumaticos.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (8, 8, 780.50, '','', 'Faros Mercedes Clase A', '../../assets/imagenes/farosMercedesClaseA.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (9, 16, 30.50, '','', 'Bombillas led H7', '../../assets/imagenes/bombillas.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (10, 21, 20.18, '','', 'Kit limpiaparabrisas', '../../assets/imagenes/limpiaparabrisas.jpg');
 commit;
