@@ -48,8 +48,7 @@ export class UsuariosListaComponent {
   eliminarUsuario(usuario :Usuario) : void {
     this.usuarioService.removeUsuario(usuario.idUsuario).subscribe(
       response => {
-        this.router.navigate(['/listUsuario'])
-       
+        window.location.href= '/listUsuario';
       }
     );
   }
