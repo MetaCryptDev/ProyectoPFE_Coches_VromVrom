@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.proyectojm.app.controllers.CorreoController;
 import com.proyectojm.app.dao.IDAOCita;
 import com.proyectojm.app.dto.CitaDto;
 import com.proyectojm.app.entities.CitaEntity;
@@ -24,6 +25,10 @@ public class CitaServiceImpl implements IServiceCita {
 
 	@Autowired
 	private IServiceServicio servicioServicio;
+	
+	@Autowired
+	private CorreoController correos;
+		
 
 	@Override
 	public void guardarCita(CitaDto cita) {
@@ -82,6 +87,7 @@ public class CitaServiceImpl implements IServiceCita {
 			citaEntty.setDescripcionAveria(cita.getDescripcionAveria() != null ? cita.getDescripcionAveria() : null);
 
 			citaDao.save(citaEntty);
+			correos.enviarCorreo(citaEntty);
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

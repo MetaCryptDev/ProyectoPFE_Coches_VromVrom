@@ -20,7 +20,7 @@ public class ServicioEntity implements Serializable {
     @Column(name = "NOMBRE")
     private String nombre;
 
-    @Column(name = "MANODEOBRA")
+    @Column(name = "MANO_DE_OBRA")
     private Integer manoDeObra;
 
     // Constructor vacío

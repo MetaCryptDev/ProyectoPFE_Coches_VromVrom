@@ -25,6 +25,7 @@ public class UsuarioRestController {
 	
 	@Autowired
 	private IServiceUsuario usuarioService;
+	
 	@Autowired
 	private CorreoController correos;
 	

@@ -26,7 +26,6 @@ public class CitaController {
 	
 	@Autowired
 	private IServiceCita citaService;
-	
 		
 	@PostMapping(value = "/insertar")
 	@ResponseStatus(value = HttpStatus.CREATED)
