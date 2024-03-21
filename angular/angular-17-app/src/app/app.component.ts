@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
 
   isLoggedIn = false;
   mecanico = false;
+  admin = false;
   title = 'angular-17-app';
   imagen = "../imagenes/logo.png"
 
@@ -24,9 +25,11 @@ export class AppComponent implements OnInit {
     this.isLoggedIn = !!currentUser;
     if (currentUser) {
       const userData: Usuario = JSON.parse(currentUser);
+      this.admin = userData.rol === 2;
       this.mecanico = userData.rol === 1;
     } else {
       this.mecanico = false;
+      this.admin = false;
     }
   }
 

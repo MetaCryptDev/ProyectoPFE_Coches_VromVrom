@@ -41,7 +41,8 @@ export class UsuariosListaComponent {
     );
   }
 
-  eliminarUsuario() : void {
+  eliminarUsuario(usuario :Usuario) : void {
+    alert(JSON.stringify(usuario));
     this.usuarioService.removeUsuario(this.usuario.idUsuario).subscribe(
       response => {
         this.router.navigate(['/listadoUsuarios'])
