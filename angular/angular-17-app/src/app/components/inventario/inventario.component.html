@@ -39,7 +39,7 @@
                         <h5 class="card-title">{{ pieza.descripcion }}</h5>
                         <p class="card-text">Unidades disponibles: {{ pieza.cantidad }}</p>
                         <input type="hidden" [(ngModel)]="pieza.idPieza"/>
-                        <input type="text" name="Cantidad" [(ngModel)]="pieza.cantidad" class="form-control border-0" [placeholder]="pieza.cantidad"/>
+                        <input type="text" id="inputCard" name="Cantidad" [(ngModel)]="pieza.cantidad" class="form-control border-0" [placeholder]="pieza.cantidad"/>
                         <button class="btn btn-dark border-0 w-100" (click)="actualizarProducto(pieza)">Actualizar cantidad</button>
                     </div>
                 

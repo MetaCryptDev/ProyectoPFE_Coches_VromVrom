@@ -302,6 +302,10 @@ section .container {
         width: 300% !important;
     }
 
+    #inputCard{
+        margin-bottom: 3% !important;
+    }
+
     /* Fin Inventario */
 
 

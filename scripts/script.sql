@@ -150,10 +150,13 @@ INSERT INTO VEHICULO_SUSTITUCION (MATRICULA, MODELO, MARCA, PRECIO_POR_DIA,URL_I
 -- Insertar datos inventario
 
 INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (1, 15, 20,'Opel','Corsa', 'Aceite para el motor', '../../assets/imagenes/aceiteCoche.jpg');
-INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (2, 23, 50, 'Citroen','Xsara', 'Ejemplo', '../../assets/imagenes/coche1.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (2, 23, 17.23, '','', 'Liquido anticongelante', '../../assets/imagenes/anticongelante.jpg');
 INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (3, 12, 12, '','', 'Filtro de aire', '../../assets/imagenes/filtroCoche.jpg');
 INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (4, 7, 70, '','', 'Bateria de coche 70aH 640A', '../../assets/imagenes/bateria.jpg');
 INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (5, 18, 64, '','', 'Discos de freno', '../../assets/imagenes/discos.jpg');
-INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (6, 32, 70, '','', 'Pastillas de freno', '../../assets/imagenes/pastillas.jpg');
-INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (7, 64, 70, '','', 'Neumaticos Michelin(x4)', '../../assets/imagenes/neumaticos.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (6, 32, 27.11, '','', 'Juego de pastillas de freno', '../../assets/imagenes/pastillas.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (7, 64, 102.50, '','', 'Neumaticos Michelin', '../../assets/imagenes/neumaticos.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (8, 8, 780.50, '','', 'Faros Mercedes Clase A', '../../assets/imagenes/farosMercedesClaseA.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (9, 16, 30.50, '','', 'Bombillas led H7', '../../assets/imagenes/bombillas.jpg');
+INSERT INTO INVENTARIO (ID_PIEZA, CANTIDAD, PRECIO, MARCA, MODELO, DESCRIPCION, URL_IMAGEN) VALUES (10, 21, 20.18, '','', 'Kit limpiaparabrisas', '../../assets/imagenes/limpiaparabrisas.jpg');
 commit;
