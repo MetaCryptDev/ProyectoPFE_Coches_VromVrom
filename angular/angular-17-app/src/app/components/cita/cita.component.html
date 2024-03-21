@@ -59,7 +59,7 @@
                                 <select class="form-select texto-form" id="cocheSustitucionSelect" name="vehiculoSustitucion" [(ngModel)]="cita.idVehiculoSustitucion" (change)="buscarVehiculoSust()">
                                     <option selected disabled>Seleccione un coche de sustitución</option>
                                     @for (vehiculoSust of listaVehivulos; track vehiculoSust.matricula) {
-                                        <option [value]="vehiculoSust.matricula">{{vehiculoSust.modelo}}</option>
+                                        <option [value]="vehiculoSust.matricula">{{vehiculoSust.marca}} {{vehiculoSust.modelo}}</option>
                                     }
                                 </select>
                                 <label for="cocheSustitucionSelect" class="texto-form">Coche de sustitución</label>
