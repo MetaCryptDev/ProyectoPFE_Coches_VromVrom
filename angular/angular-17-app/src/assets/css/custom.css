@@ -298,6 +298,10 @@ section .container {
         width: 90% !important;
     }
     
+    #inputDescripcion{
+        width: 300% !important;
+    }
+
     /* Fin Inventario */
 
 
