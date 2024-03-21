@@ -34,8 +34,9 @@ export class AppComponent implements OnInit {
   }
 
   logout(): void {
+    
     localStorage.removeItem('currentUser');
-    window.location.reload();
+    window.location.href="";
   }
 
 }

@@ -38,16 +38,16 @@
                         <input type="password" class="form-control" name="mail" id="mail" [(ngModel)] = "usuarioRecogido.passwd">
                 </div>
 
-                <button type="submit" (click)="actualizarUsuario()"> Añadir Usuario</button>
+                <button type="submit" class="btn btn-primary py-3 px-5 mt-3" (click)="actualizarUsuario()"> Añadir Usuario</button>
                 }
                 @else{
-                    <button type="submit" (click)="actualizarUsuario()"> Aplicar cambios</button>
+                    <button type="submit" class="btn btn-primary py-3 px-5 mt-3" (click)="actualizarUsuario()"> Aplicar cambios</button>
                 }
                 
-                <button type="reset"> Limpiar Campos </button>
+                <button type="reset" class="btn btn-danger py-3 px-5 mt-3 "> Limpiar Campos </button>
             </form>
                 <br>
-                <button> <a routerLink="/listUsuario"> Volver atrás </a></button>
+                <a routerLink="/listUsuario" class="btn btn-primary py-3 px-5 mt-3"> Volver atrás </a>
         </div>
     </div>
 </section>
