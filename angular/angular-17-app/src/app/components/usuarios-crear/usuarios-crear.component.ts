@@ -18,10 +18,18 @@ export class UsuariosCrearComponent {
   title: string = 'Nuevo usuario';
 
   usuario: Usuario = new Usuario();
+  usuarioRecogido: Usuario | undefined;
+  editar: number = 0;
 
-  constructor(private usuarioService: UsuarioService,
-    private router: Router,
-    private activatedRouter: ActivatedRoute) { }
+  
+
+  constructor(private usuarioService: UsuarioService, private router: Router, private activatedRoute: ActivatedRoute) {
+    const navigation = this.router.getCurrentNavigation();
+    
+    if (navigation && navigation.extras && navigation.extras.state) {
+        this.usuarioRecogido = navigation.extras.state['usuarioRecogido'] as Usuario | undefined;
+    }
+}
 
   loadScript(src: string) {
     const script = document.createElement('script');
@@ -43,9 +51,8 @@ export class UsuariosCrearComponent {
     this.usuarioService.updateUsuario(this.usuario).subscribe(
       response => {
         this.router.navigate(['/listadoUsuarios'])
-
+       
       }
     );
-  }
-
+  } 
 }

@@ -25,11 +25,15 @@
                     <option th:each="rol : ${listaRoles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
                 </select>
                 <br><br>
+                @if(usuario.idUsuario == null){
+                <button type="submit" (click)="actualizarUsuario()"> Aplicar cambios</button>
                 <button type="submit" (click)="crearUsuario()"> Añadir Usuario</button>
+                }
+                
                 <button type="reset"> Limpiar Campos </button>
             </form>
                 <br>
-            <button> <a th:href="@{/usuario/gestionUsuario}"> Volver atrás </a></button>
+                <button> <a href="Usuarios"> Volver atrás </a></button>
         </div>
     </div>
 </section>

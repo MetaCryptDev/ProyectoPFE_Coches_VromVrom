@@ -6,6 +6,7 @@ import { IndexComponent } from './components/index/index.component';
 import { CitaComponent } from './components/cita/cita.component';
 import { InventarioComponent } from './components/inventario/inventario.component';
 import { UsuariosListaComponent } from './components/usuarios-lista/usuarios-lista.component';
+import { UsuariosCrearComponent } from './components/usuarios-crear/usuarios-crear.component';
 
 export const routes: Routes = [{
     path:"", title:"Talleres YoDa", component: IndexComponent
@@ -23,6 +24,10 @@ export const routes: Routes = [{
 },
 {
     path:"listUsuario",title:"Usuarios", component: UsuariosListaComponent
+},
+
+{
+    path:"crearUsuario",title:"Usuarios", component: UsuariosCrearComponent
 }
 
 ];

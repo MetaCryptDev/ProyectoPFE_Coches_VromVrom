@@ -33,6 +33,10 @@ export class UsuariosListaComponent {
     document.body.appendChild(script);
   }
 
+  ngOnInit(){
+    this.buscarUsuarios()
+  }
+
   buscarUsuarios(): void {
     this.usuarioService.findAll().subscribe(
       (response: Usuario[]) => {
@@ -43,12 +47,16 @@ export class UsuariosListaComponent {
 
   eliminarUsuario(usuario :Usuario) : void {
     alert(JSON.stringify(usuario));
-    this.usuarioService.removeUsuario(this.usuario.idUsuario).subscribe(
+    this.usuarioService.removeUsuario(usuario.idUsuario).subscribe(
       response => {
-        this.router.navigate(['/listadoUsuarios'])
+        this.router.navigate(['/listUsuario'])
        
       }
     );
+  }
+  modificacionUsuario(usuario :Usuario) : void {
+    alert(JSON.stringify(usuario));  
+    this.router.navigate(['/crearUsuario'], { state: { usuarioRecogido: usuario } });
   }
   
 }
